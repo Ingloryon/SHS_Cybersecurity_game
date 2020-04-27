@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 38: expected 'image_name_component' not found.
-    show (im.FactorScale("gabriel_normal.png", 0.25))
-         ^
+File "game/script.rpy", line 502: invalid syntax
+    has_malware = flag_1_6==0 && flag_1_6A1==1
+                                ^
+    
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Apr 27 14:05:30 2020
+Mon Apr 27 23:53:00 2020
