@@ -3,31 +3,65 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define B = Character("Bob", color="#ff6633")
+define B_shout = Character("Bob", color="#ff6633",what_size=54)
+define Al = Character("Alice", color="#99ff33")
+define Ad = Character("Andrew", color="#cc9900")
+define G = Character("Gabriel", color="#0099ff")
+define S = Character("Sarah", color="#6600ff")
+define P = Character("Mrs.Parker", color="#660033")
+
+#Scale Gabriel
+image gabriel_angry= im.FactorScale("gabriel_angry.png", 0.25)
+image gabriel_confused= im.FactorScale("gabriel_confused.png", 0.25)
+image gabriel_cry= im.FactorScale("gabriel_cry.png", 0.25)
+image Gabriel_flustered= im.FactorScale("Gabriel_flustered.png", 0.25)
+image gabriel_happy= im.FactorScale("gabriel_happy.png", 0.25)
+image gabriel_nervous= im.FactorScale("gabriel_nervous.png", 0.25)
+image gabriel_normal= im.FactorScale("gabriel_normal.png", 0.25)
+image gabriel_sad= im.FactorScale("gabriel_sad.png", 0.25)
+image gabriel_shocked= im.FactorScale("gabriel_shocked.png", 0.25)
+#Scale Alice
+image alice_smile= im.FactorScale("alice_smile.png", 0.25)
+#Scale Andrew
+image andrew_normal= im.FactorScale("andrew_normal.png", 0.25)
+#Scale Parker
+image parker_normal= im.FactorScale("parker_normal.png", 0.25)
 
 
 # The game starts here.
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    scene bg_alarm
 
-    scene bg room
+    "{i}*Drinnnnnnnnnnnnnng*{/i}"
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    B "Mmmh... ?
+        \nPfff et dire que j’ai déjà mis le réveil le plus tard possible…"
+    B "Faut vraiment que je pense à me coucher plus tôt.
+        \nBon aller pas le temps de trainer, petite douche et c’est partit."
 
-    show eileen happy
+    scene bg_living_room
 
-    # These display lines of dialogue.
+    B "Ok je suis prêt
+        \nJ’ai pas l’impression d’avoir entendu le réveil de Gabriel, je vais aller rapidement vérifier qu’il est réveillé."
+    B_shout "Gabriel! n'oublie pas que tu dois être à l’arrêt de bus dans moins de 20 min!"
+    B_shout "Eh Gabriel tu es réveillé ?"
 
-    e "You've created a new Ren'Py game."
+    show gabriel_normal
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    G "Ouais ouais, c’est bon t’inquiètes. Je serai au bus à l’heure, je prend juste une douche j’ai pas envie de petit déjeuner ce matin."
 
-    # This ends the game.
+    B "Bon ça marche.
+        \nD’ailleurs ca te dirait qu’on se mate un film ce soir pour fêter la fin de la semaine ?
+        \nJe pensais télécharger le dernier Star Wars."
+
+    G "Heu ouais pourquoi pas mais je devais peut etre voir Loris ce soir. Je te redis."
+
+    B "D’accord, on verra bien ce soir. Aller j’y vais, bon courage pour les cours Gab !"
+
+    #scene Bureau
+
 
     return
