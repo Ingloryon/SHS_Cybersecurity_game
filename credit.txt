@@ -1,0 +1,8 @@
+Gabriel: Name = "Code: Shounen A (V3)", Author = "runeraccoon", License = CC BY-NC 4.0: "https://creativecommons.org/licenses/by-nc/4.0/", link: "https://runeraccoon.itch.io/code-shounen-a" 
+Alice: (modified) Name = "Visual Novel Character - Miranda", Author = "artbykelci", License = Pro Licence : "https://www.gamedevmarket.net/about/licences/", link: "https://www.gamedevmarket.net/asset/visual-novel-character-miranda/"
+Andrew: Name = "Visual Novel Character - Edward", Author = "artbykelci", License = Pro Licence : "https://www.gamedevmarket.net/about/licences/", link: "https://www.gamedevmarket.net/asset/visual-novel-character-edward/"
+Parker: Name = "Visual Novel Character - Morgan", Author = "artbykelci", License = Pro Licence : "https://www.gamedevmarket.net/about/licences/", link: "https://www.gamedevmarket.net/asset/visual-novel-character-morgan/"
+Bureau: (modified) Author = "fancycrave1", link: "https://pixabay.com/fr/photos/accueil-bureau-espace-de-travail-820389/"
+Corridor: Author = "derwiki", link: "https://pixabay.com/fr/photos/couloir-point-de-vue-france-paris-530053/"
+Living room: link: "https://c.pxhere.com/photos/0f/d7/fireplace_apartment_room_interior_design_decoration_design-945402.jpg!d"
+Office: Author = "fredericomeyer", link: "https://pixabay.com/illustrations/office-minimal-white-render-3d-1966384/"
