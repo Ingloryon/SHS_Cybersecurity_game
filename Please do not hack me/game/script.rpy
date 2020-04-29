@@ -28,6 +28,9 @@ image andrew_normal= im.FactorScale("andrew_normal.png", 0.25)
 #Scale Parker
 image parker_normal= im.FactorScale("parker_normal.png", 0.25)
 
+#Transition define
+define slowdissolve = Dissolve(1.5)
+define mediumdissolve = Dissolve(1.0)
 
 # The game starts here.
 
@@ -41,6 +44,7 @@ label start:
     $ relation_parker=0
 
     scene bg_alarm
+    with slowdissolve
 
     "{i}*Drinnnnnnnnnnnnnng*{/i}"
 
@@ -50,6 +54,7 @@ label start:
         \nBon aller pas le temps de trainer, petite douche et c’est parti."
 
     scene bg_living_room
+    with slowdissolve
 
     B "Ok je suis prêt
         \nJ’ai pas l’impression d’avoir entendu le réveil de Gabriel, je vais aller rapidement vérifier qu’il est réveillé."
@@ -57,6 +62,7 @@ label start:
     B_shout "Eh Gabriel tu es réveillé ?"
 
     show gabriel_normal
+    with mediumdissolve
     G "Ouais ouais, c’est bon t’inquiète. Je serai au bus à l’heure, je prend juste une douche j’ai pas envie de petit déjeuner ce matin."
 
     B "Bon ça marche.
@@ -72,8 +78,10 @@ label start:
 #--------------------------------------------------------------------
 
     scene bg_job
+    with slowdissolve
 
     show parker_normal
+    with mediumdissolve
     P "Bonjour Bob
         \nJ’ai regardé ton rapport sur le projet Johnson, c’est du bon boulot !"
 
@@ -93,8 +101,10 @@ label start:
 #-------------------------------------------------------------------------------
 
     scene bg_corridor
+    with slowdissolve
 
     show alice_smile
+    with mediumdissolve
     Al "Hey hey, salut Bob! Comment tu vas?
         \nAlors comme ça il parait que tu vas être assigné sur le projet Baker ?"
 
@@ -120,6 +130,7 @@ label start:
 #-------------------------------------------------------------------------------
 
     scene bg_job
+    with slowdissolve
 
     B "Ok tout le monde! Monsieur Parker nous a chargé d’un nouveau dossier
         qu’on commence la semaine prochaine."
@@ -127,6 +138,7 @@ label start:
         et j’ai l’impression que la compagnie prend ce projet particulièrement
         à coeur donc je compte sur vous pour être une fois de plus au top la semaine prochaine!"
     show andrew_normal
+    with mediumdissolve
     B "Bien. Pour commencer Andrew est-ce que tu pourrais aller nous chercher
         les archives du dernier dossier que nous avons traité avec eux ?"
     B "Et début semaine prochaine tu pourrais nous faire un récapitulatif
@@ -177,6 +189,7 @@ label start:
 
 #-------------------------------------------------------------------------------
     scene bg_computer_mail
+    with slowdissolve
 
     B "Bon voyons les messages du jour…"
 
@@ -186,6 +199,7 @@ label start:
         \nJe ne me souviens même plus à quoi ce compte pouvait bien servir."
 
     show andrew_normal
+    with mediumdissolve
 
     Ad "Bob, j’ai trouvé des informations intéressantes sur la compagnie Baker. Tu peux venir voir ?"
 
@@ -213,6 +227,7 @@ label start:
         "[Bob tape Roll20 dans barre recherche, et va sur le site]"
 
         scene bg_computer_roll20
+        with slowdissolve
 
         B "Qu’est-ce que j’avais bien pu mettre comme identifiants?
             \nMmmh, probablement un de ceux que je mets un peu partout."
@@ -226,15 +241,18 @@ label start:
 #-------------------------------------------------------------------------------
 
     scene bg_living_room
+    with slowdissolve
 
     "[Après une journée de travail bien remplie…]"
 
     show gabriel_normal
+    with mediumdissolve
 
     B "Alors Gabriel, comment s’est passé ta journée aujourd’hui ?"
 
     hide gabriel_normal
     show gabriel_angry
+    with mediumdissolve
 
     G "Comme d’habitude, avec cette grognasse de proviseure, même si je ne fais rien c’est toujours de ma faute.
         \nJ’en ai marre."
@@ -262,6 +280,7 @@ label start:
 
         hide gabriel_angry
         show gabriel_flustered
+        with mediumdissolve
 
         G "C’est ça rigole mais en attendant la salle de retenue n’a jamais été aussi pleine!"
 
@@ -274,6 +293,7 @@ label start:
     label _1_3_done:
 
     show gabriel_normal
+    with mediumdissolve
 
     B "Et sinon qu’as-tu de prévu ce week-end ?
         \nN’oublie pas que ta mère vient te chercher demain matin."
@@ -296,6 +316,7 @@ label start:
 
         hide gabriel_normal
         show gabriel_angry
+        with mediumdissolve
 
         G "*Marmonne*"
         "[Gabriel s’en va]"
@@ -360,6 +381,7 @@ label start:
 #-------------------------------------------------------------------------------
 
     scene bg_computer_fb
+    with slowdissolve
 
     "[Une notification apparaît]"
     B "Une nouvelle demande d’ami sur Facebook ?
@@ -371,6 +393,7 @@ label start:
     "[Bob sur son fil Facebook]"
 
     scene bg_computer_fb_posting
+    with slowdissolve
 
     B "Super journée, je commence à bosser sur un nouveau projet très cool et important au boulot, affaire à suivre... ;)"
 
@@ -379,8 +402,10 @@ label start:
 #-------------------------------------------------------------------------------
 
     scene bg_living_room
+    with slowdissolve
 
     show gabriel_normal
+    with mediumdissolve
 
     B "Hey Gab!
         \nJ’ai vu que ta chambre était loin d’être rangée alors que je te l’ai demandé plusieurs fois déjà, tu pourrais faire un effort s’il te plaît ?"
@@ -388,6 +413,7 @@ label start:
 
     hide gabriel_normal
     show gabriel_angry
+    with mediumdissolve
 
     G "Mais oui bien sûr… et toi tu pourrais ranger tous tes papiers qui trainent depuis des mois dans ton bureau ?
         \nBientot il y en aura tellement que je pourrai même plus poser mon ordi dessus!"
@@ -402,6 +428,7 @@ label start:
     Je vais aller ranger ça vite fait bien fait comme ça, ça motivera Gabriel à ranger sa chambre."
 
     scene bg_desk_messy
+    with slowdissolve
 
     B "Oh c’est vrai qu’il y a beaucoup plus de documents que ce que je pensais."
 
@@ -424,6 +451,7 @@ label start:
     label _1_5_done:
 
     scene bg_desk
+    with slowdissolve
 
     B "Voilà qui est fait, ce n’était pas si long après tout.
         \nJe me regarderai bien un film maintenant que tout est rangé, ça fait un moment que j’attends de voir le dernier Star Wars."
@@ -432,17 +460,20 @@ label start:
         \nBon tant pis, il aurait pu me prévenir quand même..."
 
     scene bg_computer_fb
+    with slowdissolve
 
     B "Voyons, si j’arrive à le télécharger."
 
     "[Bob tape sur le moteur de recherche]"
 
     scene bg_computer_search_starwars
+    with slowdissolve
 
     "[Téléchargement gratuit dernier Star Wars]"
     "[Bob clique sur le premier lien]"
 
     scene bg_computer_starwars_first_link
+    with slowdissolve
 
     B "Je vais essayer sur ce site"
     "[Bob télécharge le fichier]"
@@ -460,6 +491,7 @@ label start:
         B "Bien, essayons celui-là"
 
         scene bg_computer_search_starwars
+        with slowdissolve
 
         B "L’apparence de ce site m’a l’air bizarre."
 
@@ -474,12 +506,14 @@ label start:
             $ flag_1_6A1 = 0
 
             scene bg_computer_starwars_first_link
+            with slowdissolve
 
             jump _1_6B
         label _1_6A1B:
             $ flag_1_6A1 = 1
 
             scene bg_computer_starwars_second_link
+            with slowdissolve
 
             "[Bob télécharge le fichier et lance le film (qui ne démarre pas)]"
             B "Pourquoi le film ne se lance-t-il pas ?"
@@ -502,6 +536,7 @@ label start:
     $ has_malware = flag_1_6==0 and flag_1_6A1==1
 
     scene bg_black
+    with slowdissolve
 
     "[Après la fin du film]"
     B "Vraiment sympa ce film.
