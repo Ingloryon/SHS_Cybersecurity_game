@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 502: invalid syntax
-    has_malware = flag_1_6==0 && flag_1_6A1==1
-                                ^
-    
+File "game/script.rpy", line 577: expected python_expression
+    elif:
+        ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Mon Apr 27 23:53:00 2020
+Sun May 03 14:16:28 2020

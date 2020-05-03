@@ -479,6 +479,8 @@ label start:
     "[Bob télécharge le fichier]"
     B "Mmmh… La qualité est vraiment pas terrible…"
 
+    $ has_malware = False
+
     menu:
         "Je vais essayer de trouver un meilleur site.":
             jump _1_6A
@@ -494,6 +496,9 @@ label start:
         with slowdissolve
 
         B "L’apparence de ce site m’a l’air bizarre."
+
+        $ DisplayExeExtension=False
+        $ RunMovieExe=False
 
         menu:
             "Je crois que je vais retourner sur le premier site.":
@@ -513,12 +518,42 @@ label start:
             $ flag_1_6A1 = 1
 
             scene bg_computer_starwars_second_link
-            with slowdissolve
+            with mediumdissolve
 
-            "[Bob télécharge le fichier et lance le film (qui ne démarre pas)]"
-            B "Pourquoi le film ne se lance-t-il pas ?"
-            "[Bob clique plusieurs fois sur le fichier]"
-            B "Ah enfin, ce n’était pas trop tôt. Et cette fois la qualité est au rendez-vous !"
+            "[Bob a téléchargé le fichier]"
+
+            label loop_1_6:
+                if not(DisplayExeExtension or RunMovieExe):
+                    scene bg_computer_starwars_second_link
+                    show screen could_click_extension
+
+                $ renpy.pause()
+                jump loop_1_6
+
+            label end_loop_1_6:
+
+                if DisplayExeExtension:
+                    scene bg_computer_starwars_second_link_with_exe
+
+                    menu:
+                        "Je prefère retourner sur le premier site et effacer ce fichier":
+                            jump _1_6A1B1A
+                        "Allez! Je démarre ce film":
+                            jump _1_6A1B1B
+                    label _1_6A1B1A:
+                        $ flag_1_6A1B1 = 0
+                        scene bg_computer_starwars_first_link
+                        jump _1_6B
+                    label _1_6A1B1B:
+                        $ flag_1_6A1B1 = 1
+                        jump _1_6A1B_done
+                    label _1_6A1B_done:
+                "[Bob lance le film (qui ne démarre pas)]"
+                B "Pourquoi le film ne se lance-t-il pas ?"
+                "[Bob clique plusieurs fois sur le fichier]"
+                B "Ah enfin, ce n’était pas trop tôt. Et cette fois la qualité est au rendez-vous !"
+
+                $ has_malware= True
 
             jump _1_6A_done
         label _1_6A_done:
@@ -533,7 +568,6 @@ label start:
         jump _1_6_done
     label _1_6_done:
 
-    $ has_malware = flag_1_6==0 and flag_1_6A1==1
 
     scene bg_black
     with slowdissolve
@@ -551,3 +585,16 @@ label start:
     "END OF SCRIPT"
 
     return
+
+    screen could_click_extension:
+        modal False
+        imagebutton:
+            xpos 1235 ypos 116
+            idle "checkbox_show_extension.png"
+            hover "checkbox_show_extension.png"
+            action [SetVariable("DisplayExeExtension", True), Hide("could_click_extension"), Jump("end_loop_1_6")]
+        imagebutton:
+            xpos 262 ypos 312
+            idle "movie_avi_exe.png"
+            hover "movie_avi_exe.png"
+            action [SetVariable("RunMovieExe", True), Hide("could_click_extension"), Jump("end_loop_1_6")]
