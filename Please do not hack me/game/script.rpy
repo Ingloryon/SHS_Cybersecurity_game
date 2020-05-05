@@ -50,7 +50,7 @@ label start:
     "{i}*Drinnnnnnnnnnnnnng*{/i}"
 
     "Mmmh... ?
-        \nPfff et dire que j’ai déjà mis le réveil le plus tard possible…"
+        \nPfff et dire que j’ai déjà mis le réveil le plus tard possible..."
     "Faut vraiment que je pense à me coucher plus tôt.
         \nBon aller pas le temps de trainer, petite douche et c’est parti."
 
@@ -59,7 +59,7 @@ label start:
 
     "Ok je suis prêt
         \nJ’ai pas l’impression d’avoir entendu le réveil de Gabriel, je vais aller rapidement vérifier qu’il est réveillé."
-    B_shout "Gabriel! n'oublie pas que tu dois être à l’arrêt de bus dans moins de 20 min!"
+    B_shout "Gabriel ! N'oublie pas que tu dois être à l’arrêt de bus dans moins de 20 minutes !"
     B_shout "Eh Gabriel tu es réveillé ?"
 
     show gabriel_normal
@@ -106,14 +106,14 @@ label start:
 
     show alice_smile
     with mediumdissolve
-    Al "Hey hey, salut Bob! Comment tu vas?
+    Al "Hey hey, salut Bob! Comment tu vas ?
         \nAlors comme ça il parait que tu vas être assigné sur le projet Baker ?"
 
-    "Mais attends comment tu sais déjà ça ?? "
+    "Mais attends comment tu sais déjà ça ? "
 
     Al "Héhé, j’ai mes informateurs tu sais ? J’ai embauché pleins de gens pour t’espionner !"
 
-    "Non mais arrête, elle vient juste de l’annoncer comment tu as fait pour être déjà au courant ?"
+    "Non mais arrête, il vient juste de l’annoncer comment tu as fait pour être déjà au courant ?"
 
     Al "Haha je te fais marcher !
         \nJ’ai parlé hier avec Monsieur Parker et il m’a dit qu’il comptait te mettre sur le dossier."
@@ -122,10 +122,10 @@ label start:
     "Oh mince, tu aurais voulu bosser sur le dossier Baker ?"
 
     Al "Bien sûr que non, je suis bien contente pour toi, tu le mérites ce projet.
-        \nAllez, trêve de plaisanteries, j’ai du pain sur la planche!"
+        \nAllez, trêve de plaisanteries, j’ai du pain sur la planche !"
 
     "Oula oui tu as raison, il faut que je me dépêche aussi sinon l’équipe va m’attendre !
-        \nÀ plus tard Alice!"
+        \nÀ plus tard Alice !"
     hide alice_smile
 
 #-------------------------------------------------------------------------------
@@ -133,11 +133,11 @@ label start:
     scene bg_job
     with slowdissolve
 
-    "Ok tout le monde! Monsieur Parker nous a chargé d’un nouveau dossier
+    "Ok tout le monde ! Monsieur Parker nous a chargé d’un nouveau dossier
         qu’on commence la semaine prochaine."
     "Il s’agit d’une affaire en collaboration avec la compagnie Baker
         et j’ai l’impression que la compagnie prend ce projet particulièrement
-        à coeur donc je compte sur vous pour être une fois de plus au top la semaine prochaine!"
+        à coeur donc je compte sur vous pour être une fois de plus au top la semaine prochaine !"
     show andrew_normal
     with mediumdissolve
     "Bien. Pour commencer Andrew est-ce que tu pourrais aller nous chercher
@@ -150,7 +150,7 @@ label start:
     Ad "Je trouve pas ca très productif de ta part et j’aimerais que tu me donnes
         un peu plus de responsabilités sur le projet de la semaine prochaine."
 
-    "…
+    "...
         \nAndrew ce n’est pas la première fois que tu te plains des tâches qui te sont assignées."
     "La dernière fois qu’on en a parlé tu m’as déjà fait comprendre que tu voulais plus de responsabilités."
 
@@ -192,7 +192,7 @@ label start:
     scene bg_computer_mail
     with slowdissolve
 
-    "Bon voyons les messages du jour…"
+    "Bon voyons les messages du jour..."
 
     "[La boîte mail est pleine de spams et de tentatives de connexions au compte Roll20]"
 
@@ -205,7 +205,7 @@ label start:
     Ad "Bob, j’ai trouvé des informations intéressantes sur la compagnie Baker. Tu peux venir voir ?"
 
     menu:
-        "Oh tu as quand même été chercher les archives au final ? C’est sympa, je viens regarder ça avec toi!":
+        "Oh tu as quand même été chercher les archives au final ? C’est sympa, je viens regarder ça avec toi !":
             jump _1_2A
 
         "Ok, attends 5 minutes je termine ce que je fais et j’arrive.":
@@ -230,9 +230,9 @@ label start:
         scene bg_computer_roll20
         with slowdissolve
 
-        "Qu’est-ce que j’avais bien pu mettre comme identifiants?
+        "Qu’est-ce que j’avais bien pu mettre comme identifiants ?
             \nMmmh, probablement un de ceux que je mets un peu partout."
-        "…\nAhah, c'était ça, parfait."
+        "...\nAhah, c'était ça, parfait."
         "Je vais supprimer mon compte, je l’utiliserai sans doute plus jamais et ça résoudra le problème par la même occasion."
 
         jump _1_2_done
@@ -259,7 +259,7 @@ label start:
         \nJ’en ai marre."
 
     menu:
-        "Hey ne soit pas grossier ! Tu sais que les études c’est important quand même!":
+        "Hey ne soit pas grossier ! Tu sais que les études c’est important quand même !":
             jump _1_3A
 
         "C’est vrai que j’ai entendu dire que cette nouvelle proviseure adorait punir les élèves par pur plaisir.":
@@ -268,7 +268,7 @@ label start:
     label _1_3A:
         $ flag_1_3 = 0
 
-        G "*Pff… Tous les mêmes ces boomers.*"
+        G "*Pff... Tous les mêmes ces boomers.*"
 
         hide gabriel_angry
 
@@ -283,7 +283,7 @@ label start:
         show gabriel_flustered
         with mediumdissolve
 
-        G "C’est ça rigole mais en attendant la salle de retenue n’a jamais été aussi pleine!"
+        G "C’est ça rigole mais en attendant la salle de retenue n’a jamais été aussi pleine !"
 
         hide gabriel_flustered
 
@@ -334,7 +334,7 @@ label start:
 
         G "Mais tu as intérêt à être super sage à ce concert sinon ta mère va me tuer."
 
-        G "Papa t’es le meilleur ! Merci!"
+        G "Papa t’es le meilleur ! Merci !"
         "[Gabriel s’en va]"
 
         hide gabriel_normal
@@ -346,7 +346,7 @@ label start:
         show sarah_phone
 
         S "Salut Bob! Tout va bien ?
-            \nUn soucis avec Gabriel?"
+            \nUn soucis avec Gabriel ?"
 
         "Non non ne t’inquiète pas, c’est rien de grave.
             \nC’est juste que Gabriel m’a dit qu’il devait aller à un concert demain avec Loris et il est vraiment déçu."
@@ -368,7 +368,7 @@ label start:
 
         S "Tu es vraiment pas croyable.
             \nTu ne pourrais pas prendre mon parti pour une fois ?"
-        S "À chaque fois que tu en a l’opportunité, tu me rappelles pourquoi j’ai demandé le divorce c’est dingue!
+        S "À chaque fois que tu en a l’opportunité, tu me rappelles pourquoi j’ai demandé le divorce c’est dingue !
         Mon week-end, ma décision."
         S "Et dire oui tout le temps à ton fils ne fera pas de toi un meilleur père.
         Salut Bob, on se voit demain matin."
@@ -391,7 +391,7 @@ label start:
         \nQui ça peut bien être ?"
     "Depuis le temps que je n’y suis plus allé.
         \nCela fait longtemps que je n’ai rien posté en plus."
-    "Mmh... je pourrais parler du nouveau projet qu’on m’a confié!"
+    "Mmh... je pourrais parler du nouveau projet qu’on m’a confié !"
 
     "[Bob sur son fil Facebook]"
 
@@ -419,11 +419,11 @@ label start:
     with mediumdissolve
 
     G "Mais oui bien sûr… et toi tu pourrais ranger tous tes papiers qui trainent depuis des mois dans ton bureau ?
-        \nBientot il y en aura tellement que je pourrai même plus poser mon ordi dessus!"
+        \nBientot il y en aura tellement que je pourrai même plus poser mon ordi dessus !"
 
 
 
-    "Ça n’a rien à voir voyons… Allez, range-moi ça au plus vite!"
+    "Ça n’a rien à voir voyons... Allez, range-moi ça au plus vite !"
 
     hide gabriel_angry
 
@@ -480,7 +480,7 @@ label start:
 
     "Je vais essayer sur ce site"
     "[Bob télécharge le fichier]"
-    "Mmmh… La qualité est vraiment pas terrible…"
+    "Mmmh... La qualité est vraiment pas terrible..."
 
     $ has_malware = False
 
@@ -493,7 +493,7 @@ label start:
 
     label _1_6A:
         $ flag_1_6 = 0
-        "Bien, essayons celui-là"
+        "Bien, essayons celui-là."
 
         scene bg_computer_search_starwars
         with slowdissolve
@@ -539,9 +539,9 @@ label start:
                     scene bg_computer_starwars_second_link_with_exe
 
                     menu:
-                        "Je prefère retourner sur le premier site et effacer ce fichier":
+                        "Je prefère retourner sur le premier site et effacer ce fichier.":
                             jump _1_6A1B1A
-                        "Allez! Je démarre ce film":
+                        "Allez! Je démarre ce film.":
                             jump _1_6A1B1B
                     label _1_6A1B1A:
                         $ flag_1_6A1B1 = 0
