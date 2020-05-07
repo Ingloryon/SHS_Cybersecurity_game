@@ -21,7 +21,7 @@ image gabriel_nervous= im.FactorScale("gabriel_nervous.png", 0.25)
 image gabriel_normal= im.FactorScale("gabriel_normal.png", 0.25)
 image gabriel_sad= im.FactorScale("gabriel_sad.png", 0.25)
 image gabriel_shocked= im.FactorScale("gabriel_shocked.png", 0.25)
-image sarah_phone= im.FactorScale("bg_phone_icone.png", 0.75)
+image sarah_phone= im.FactorScale("bg_phone_icone.png", 0.25)
 #Scale Alice
 image alice_smile= im.FactorScale("alice_smile.png", 0.25)
 #Scale Andrew
@@ -343,7 +343,9 @@ label start:
         "[Compose le numéro de Sarah sur son portable]"
         "Salut Sarah, c’est moi."
 
-        show sarah_phone
+        show sarah_phone:
+            xalign 0.03
+            yalign 0.98
 
         S "Salut Bob! Tout va bien ?
             \nUn soucis avec Gabriel ?"
