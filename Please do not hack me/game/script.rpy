@@ -47,7 +47,12 @@ label start:
     scene bg_alarm
     with slowdissolve
 
+    play sound "audio/clock_ring.mp3"
+    play music "audio/base0.mp3"  fadeout 1.0 fadein 1.0
+
     "{i}*Drinnnnnnnnnnnnnng*{/i}"
+
+    stop sound
 
     "Mmmh... ?
         \nPfff et dire que j’ai déjà mis le réveil le plus tard possible..."
@@ -80,6 +85,8 @@ label start:
 
     scene bg_job
     with slowdissolve
+
+    play music "audio/joyeuse0.mp3" fadeout 1.0 fadein 1.0
 
     show parker_normal
     with mediumdissolve
@@ -130,6 +137,8 @@ label start:
 
 #-------------------------------------------------------------------------------
 
+    play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
+
     scene bg_job
     with slowdissolve
 
@@ -144,6 +153,8 @@ label start:
         les archives du dernier dossier que nous avons traité avec eux ?"
     "Et début semaine prochaine tu pourrais nous faire un récapitulatif
         des différentes filiales de Baker ainsi que leur situation sur le marché ?"
+
+    play music "audio/dispute0.mp3" fadeout 1.0 fadein 1.0
 
     Ad "Écoute Bob, je vais te le dire franchement, j’ai l’impression que tu me
         donnes souvent le sale boulot à faire."
@@ -163,6 +174,8 @@ label start:
         Ce weekend je vais réfléchir aux différentes tâches de la semaine prochaine et je vous propose qu’on reparle tous ensemble de leur répartition lundi matin."
     "Tout le monde est d’accord avec ça ?"
     hide andrew_normal
+
+    play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
 
     "Bien on dirait que tout le monde est d’accord.
     \nMême Andrew arrête d’objecter."
@@ -221,6 +234,8 @@ label start:
     label _1_2B:
         $ flag_1_2 = 1
 
+        play music "audio/intrigue0.mp3" fadeout 1.0 fadein 1.0
+
         hide andrew_normal
 
         "Cette histoire de compte m’a l’air vraiment étrange, je ferais mieux de vérifier tout ça."
@@ -238,6 +253,8 @@ label start:
         jump _1_2_done
 
     label _1_2_done:
+
+    play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
 
 #-------------------------------------------------------------------------------
 
@@ -312,6 +329,8 @@ label start:
     label _1_4A:
         $ flag_1_4 = 0
 
+        play music "audio/dispute0.mp3" fadeout 1.0 fadein 1.0
+
         "Demain tu iras chez elle point final.
             \nSi elle ne veut pas que tu ailles à ce concert c’est qu’elle a ses raisons"
 
@@ -368,6 +387,8 @@ label start:
 
         label _1_4B1_done:
 
+        play music "audio/dispute1.mp3" fadeout 1.0 fadein 1.0
+
         S "Tu es vraiment pas croyable.
             \nTu ne pourrais pas prendre mon parti pour une fois ?"
         S "À chaque fois que tu en a l’opportunité, tu me rappelles pourquoi j’ai demandé le divorce c’est dingue !
@@ -382,6 +403,7 @@ label start:
 
     label _1_4_done:
 
+    play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
 
 #-------------------------------------------------------------------------------
 
@@ -486,6 +508,8 @@ label start:
 
     $ has_malware = False
 
+    play music "audio/intrigue1.mp3" fadeout 1.0 fadein 1.0
+
     menu:
         "Je vais essayer de trouver un meilleur site.":
             jump _1_6A
@@ -528,6 +552,9 @@ label start:
             "[Bob a téléchargé le fichier]"
 
             label loop_1_6:
+
+                "Je devrais démarrer le film en cliquant sur le fichier"
+
                 if not(DisplayExeExtension or RunMovieExe):
                     scene bg_computer_starwars_second_link
                     show screen could_click_extension
@@ -573,6 +600,7 @@ label start:
         jump _1_6_done
     label _1_6_done:
 
+    play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
 
     scene bg_black
     with slowdissolve

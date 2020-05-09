@@ -1,28 +1,46 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 522, in script
-    if not(DisplayExeExtension):
-  File "game/script.rpy", line 522, in <module>
-    if not(DisplayExeExtension):
-NameError: name 'RunMovieExe' is not defined
+  File "game/script.rpy", line 159, in script
+    Ad "Écoute Bob, je vais te le dire franchement, j’ai l’impression que tu me
+IOError: Couldn't find file 'audio/dipsute0.mp3'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 522, in script
-    if not(DisplayExeExtension):
-  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\ast.py", line 1832, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 522, in <module>
-    if not(DisplayExeExtension):
-NameError: name 'RunMovieExe' is not defined
+  File "game/script.rpy", line 159, in script
+    Ad "Écoute Bob, je vais te le dire franchement, j’ai l’impression que tu me
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\character.py", line 591, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\display\core.py", line 3380, in interact_core
+    renpy.audio.audio.periodic()
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\audio\audio.py", line 1060, in periodic
+    six.reraise(exc[0], exc[1], exc[2])
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\audio\audio.py", line 1038, in periodic_thread_main
+    periodic_pass()
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\audio\audio.py", line 979, in periodic_pass
+    c.periodic()
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\audio\audio.py", line 457, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\audio\audio.py", line 73, in load
+    rv = renpy.loader.load(fn)
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\loader.py", line 576, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'audio/dipsute0.mp3'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Please do not hack me 1.0
-Sun May 03 12:46:30 2020
+Sat May 09 19:12:54 2020
