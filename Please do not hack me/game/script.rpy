@@ -613,9 +613,9 @@ label start:
     "[Fin Part I.]"
 
 
+    #---------------------------------------------------------PARTIE 2----------
 
-    "END OF SCRIPT"
-    "END OF SCRIPT"
+    
 
     return
 
