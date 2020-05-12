@@ -2,21 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 821: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    jump _2_3_alert
-    ^
+File "game/script.rpy", line 946: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Tiens il y a Andrew qui passe justement, je vais lui demander conseil."
+                                                                            ^
 
-File "game/script.rpy", line 826: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    jump _2_3_done
-    ^
-
-File "game/script.rpy", line 847: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    jump _2_3_done
-    ^
-
-File "game/script.rpy", line 857: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    jump _2_3_done
-    ^
+File "game/script.rpy", line 1004: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "facebookBob123"
+                    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue May 12 17:36:58 2020
+Tue May 12 20:07:09 2020

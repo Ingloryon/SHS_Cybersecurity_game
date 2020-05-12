@@ -943,10 +943,10 @@ label start:
     \nIl a publié pleins de spams publicitaires sur mon vrai mur pour appuyer l’hypothèse que je me suis fait piraté ! Je ne sais pas trop ce que je peux faire."
 
     menu:
-        "Tiens il y a Andrew qui passe justement, je vais lui demander conseil."
+        "Tiens il y a Andrew qui passe justement, je vais lui demander conseil.":
             jump _2_5A
 
-        "Je vais appeler Gabriel. Il est bien plus “connecté” que moi, il saura sûrement ce qu’il faut faire dans cette situation."
+        "Je vais appeler Gabriel. Il est bien plus “connecté” que moi, il saura sûrement ce qu’il faut faire dans cette situation.":
             jump _2_5B
 
     label _2_5A:
@@ -1001,13 +1001,13 @@ label start:
         "Alors qu’est-ce que je vais bien pouvoir mettre ?"
 
         menu:
-            "facebookBob123"
+            "facebookBob123":
                 jump _2_5B_1A
 
-            "FaCebooKBob951"
+            "FaCebooKBob951":
                 jump _2_5B_1B
 
-            "f@C3b0OK951bOb!"
+            "f@C3b0OK951bOb!":
                 jump _2_5B_1C
 
         label end_2_5B_1A:
