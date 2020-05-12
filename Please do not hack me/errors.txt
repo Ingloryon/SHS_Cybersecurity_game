@@ -2,7 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 667: indentation mismatch.
+File "game/script.rpy", line 821: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    jump _2_3_alert
+    ^
+
+File "game/script.rpy", line 826: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    jump _2_3_done
+    ^
+
+File "game/script.rpy", line 847: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    jump _2_3_done
+    ^
+
+File "game/script.rpy", line 857: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    jump _2_3_done
+    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Tue May 12 09:25:40 2020
+Tue May 12 17:36:58 2020
