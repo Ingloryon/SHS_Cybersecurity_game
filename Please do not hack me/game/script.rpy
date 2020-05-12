@@ -1012,15 +1012,29 @@ label start:
 
         label end_2_5B_1A:
 
-            jump _2_5_done
+            jump _2_5B_done
 
         label end_2_5B_1B:
 
-            jump _2_5_done
+            jump _2_5B_done
 
         label end_2_5B_1C:
 
-            jump _2_5_done
+            jump _2_5B_done
+
+    label _2_5B_end:
+
+        "Et maintenant, la question secrète: le nom de mon premier chat. Brave petit Gargamel, tu es vraiment la meilleure des sécurités !"
+        "Voilà, ça devrait faire l’affaire. Je vais noter ce nouveau mot de passe quelque part, sinon je risque de l’oublier."
+        "Aller il faut vraiment que je m’y mette maintenant, tout le monde doit déjà m’attendre pour la distribution des tâches du projet Baker..."
+
+        $ relation_gabriel=relation_gabriel+1
+        # A changé son mot de passe de Facebook -> met fin à futurs problèmes avec Facebook MAIS le joueur devra se rappeler le nouveau mdp à un moment de l’aventure
+
+    label _2_5_done:
+
+        scene bg_black
+        with slowdissolve
 
     #---------------------------------------------------------STOP Hugo
 
