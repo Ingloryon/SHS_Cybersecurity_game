@@ -1,4 +1,5 @@
 ﻿# The script of the game goes in this file.
+$ renpy.music.set_volume(0.5, .5, channel="music")
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
