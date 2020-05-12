@@ -11,6 +11,7 @@ define G = Character("Gabriel", color="#0099ff")
 define S = Character("Sarah", color="#6600ff")
 define S_shout = Character("Sarah", color="#6600ff",what_size=54)
 define P = Character("Mr.Parker", color="#660033")
+define M = Character("Marc", color="#660033")
 
 #Scale Gabriel
 image gabriel_angry= im.FactorScale("gabriel_angry.png", 0.25)
@@ -743,6 +744,37 @@ label start:
     #---------------------------------------------------------STOP Yannick
 
     #---------------------------------------------------------START Hugo
+    play music "audio/intrigue0.mp3" fadeout 1.0 fadein 1.0
+
+    "Hé, salut Marc !"
+    M "Tiens Bob ! Comment ça va aujourd’hui ?"
+    "Bien, bien. Je retourne à mon bureau pour démarrer ma journée de travail !"
+    M "Décidément, toujours à aller discuter à droite à gauche toi ! *rire* Je rigole, tu travailles bien plus que moi hahaha ! Dis donc, qu’est-ce que ça donne le hack de ton Facebook ? Tu as pu résoudre le problème ? "
+    "Le hack de mon Facebook ?"
+    M "Bah oui ! J’ai vu ta publication."
+
+    show bg_phone_publication
+    with slowdissolve
+
+    M "En tout cas, tu as bien fait de le signaler ! J’espère que ça ne te causera pas trop de soucis, des pourris ces hackeurs !"
+
+    hide bg_phone_publication
+
+    M "Bon, je dois y aller, je suis en retard. À plus Bob !"
+
+    hide marc
+
+    "C’est quoi cette histoire de compte piraté ? Ce n’est pas moi qui ai publié ce post. Et Marc avait bien l’air d’être convaincu qu’il venait de moi. Ça ne doit pas être le seul. Je vais aller regarder tout ça d’un peu plus prêt."
+
+    show bg_phone_publication
+    with slowdissolve
+
+    "Effectivement, je peux comprendre qu’ils pensent que ce soit moi. Même nom, mêmes photos, mêmes infos personnelles...
+    \nCe compte est presque entièrement identique au mien. Comment a-t-il pu avoir accès à toutes ces informations ? Et merde, on dirait que le hackeur a pu se connecter à mon véritable compte…
+    \nIl a publié pleins de spams publicitaires sur mon vrai mur pour appuyer l’hypothèse que je me suis fait piraté ! Je ne sais pas trop ce que je peux faire."
+
+    menu:
+
 
     #---------------------------------------------------------STOP Hugo
 
