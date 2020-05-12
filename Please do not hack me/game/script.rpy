@@ -943,8 +943,34 @@ label start:
     \nIl a publié pleins de spams publicitaires sur mon vrai mur pour appuyer l’hypothèse que je me suis fait piraté ! Je ne sais pas trop ce que je peux faire."
 
     menu:
+        "Tiens il y a Andrew qui passe justement, je vais lui demander conseil."
+            jump _2_5A
 
+        "Je vais appeler Gabriel. Il est bien plus “connecté” que moi, il saura sûrement ce qu’il faut faire dans cette situation."
+            jump _2_5B
 
+    label _2_5A:
+        $ flag_2_5 = 0
+
+        show andrew_normal
+        with mediumdissolve
+
+        "Andrew ! J’ai besoin de ton aide ! Apparemment quelqu’un a créé un faux profil Facebook quasiment identique au mien, et il essaie de faire croire que mon compte actuel a été hacké."
+        "Et je crois qu’il a aussi eu accès à mon véritable compte... Qu’est-ce que je peux faire à ton avis ?"
+        A "C’est gentil de me demander conseil pour une fois Bob. Je suis désolé, mais c’est déjà presque l’heure du meeting Baker. Je ne voudrais pas arriver en retard pour un projet si important, et je pense que toi non plus.
+        \nTu devrais laisser tes problèmes personnels pour le moment et t’en occuper ce soir. On va tous avoir besoin de toi pour définir le planning de tâches. C’est toi le chef de projet après tout."
+        "Je vois, tu as surement raison. Aller je vais au meeting, à tout de suite."
+
+        hide andrew_normal
+
+        "Décidément il est vraiment odieux ce type. Il peut travailler aussi bien qu’il veut, je n’arriverai jamais à le supporter. Je me demande si je n’arriverais pas à le faire muter dans une autre équipe."
+
+        $ relation_andrew=relation_andrew-1
+        #[mdp Facebook non changé]
+        jump _2_5_done
+
+    label _2_5B:
+        $ flag_2_5 = 1
     #---------------------------------------------------------STOP Hugo
 
     #---------------------------------------------------------START Guillaume
