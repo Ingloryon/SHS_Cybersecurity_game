@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 410: Line is indented, but the preceding play music statement statement does not expect a block. Please check this line's indentation.
-    scene bg_computer_fb
-    ^
+File "game/script.rpy", line 667: indentation mismatch.
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat May 09 19:11:46 2020
+Tue May 12 09:25:40 2020

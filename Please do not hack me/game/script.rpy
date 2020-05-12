@@ -9,6 +9,7 @@ define Al = Character("Alice", color="#99ff33")
 define Ad = Character("Andrew", color="#cc9900")
 define G = Character("Gabriel", color="#0099ff")
 define S = Character("Sarah", color="#6600ff")
+define S_shout = Character("Sarah", color="#6600ff",what_size=54)
 define P = Character("Mr.Parker", color="#660033")
 
 #Scale Gabriel
@@ -22,6 +23,7 @@ image gabriel_normal= im.FactorScale("gabriel_normal.png", 0.25)
 image gabriel_sad= im.FactorScale("gabriel_sad.png", 0.25)
 image gabriel_shocked= im.FactorScale("gabriel_shocked.png", 0.25)
 image sarah_phone= im.FactorScale("bg_phone_icone.png", 0.25)
+image sarah_normal= im.FactorScale("Sarah_normal.png", 0.25)
 #Scale Alice
 image alice_smile= im.FactorScale("alice_smile.png", 0.25)
 #Scale Andrew
@@ -615,7 +617,126 @@ label start:
 
     #---------------------------------------------------------PARTIE 2----------
 
-    
+    play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
+
+    scene bg_blue_sky
+    with slowdissolve
+
+    "Ce beau week-end touche bientôt à sa fin, il est temps que j’aille récupérer Gabriel chez sa mère."
+    "C’est parti !"
+
+    scene bg_black
+    with mediumdissolve
+    "[Une demie-heure plus tard…]"
+
+    scene bg_blue_sky
+    with mediumdissolve
+
+    show sarah_normal
+
+    "Bonjour Sarah ! Comment vas-tu ? Vous avez passé un bon week-end ?"
+    S "Salut Bob ! Bien et toi ? Oui oui, très bien merci et toi ?"
+    "Bien, bien."
+
+    menu:
+        "Je voulais m’excuser pour l’autre jour, ça ne se reproduira plus. Tu sais, je fais de mon mieux pour que tout se passe bien entre toi, Gabriel et moi mais parfois je suis simplement maladroit.":
+            jump _2_1A
+        "Gabriel n’a pas été trop désagréable ? Je sais qu’il peut faire la tête pendant des heures quand il n’a pas ce qu’il veut.":
+            jump _2_1B
+    label _2_1A:
+        $ flag_2_1A=0
+
+        S "Je sais Bob… C’est oublié. Je suis désolée aussi, ma réaction était excessive."
+
+        $ relation_sarah=relation_sarah+1
+
+        jump _2_1_done
+    label _2_1B:
+        $ flag_2_1B=0
+
+        S "Non, tout s’est très bien passé figure-toi."
+
+        $ relation_sarah=relation_sarah-1
+
+        jump _2_1_done
+    label _2_1_done:
+
+
+    S "Gabriel ton père est là !"
+
+    "Je vais voir s’il a besoin d’aide pour ses affaires, je reviens."
+
+    hide sarah_normal
+    show sarah_normal:
+        xalign 0.15
+        yalign 0.8
+    with mediumdissolve
+
+    play music "audio/joyeuse2.mp3" fadeout 1.0 fadein 1.0
+
+    show gabriel_happy:
+        xalign 0.8
+        yalign 0.8
+    with mediumdissolve
+
+    G "Salut Papa ! Je suis prêt, on peut y aller !"
+    "Salut mon grand ! Super, c’est parti alors. Au revoir Sarah, passe une bonne soirée."
+    S "Au revoir Bob. Bisous mon coeur."
+    G "Maman, je t’ai déjà dit que j’aimais pas quand tu m’appelles comme ça."
+    S "Ah oui pardon, ça m’a échappé. Au revoir Gabriel, sois sage !"
+
+    scene bg_car
+    with slowdissolve
+
+    show gabriel_happy
+    with slowdissolve
+
+    "Alors, qu’est ce que tu as fait de beau ce week-end ?"
+    G "Oh tu sais pas grand chose. J’ai fait mes devoirs, et j’ai un peu traîné. Et Maman a fait des lasagnes. Ah si ! J’ai joué à un nouveau jeu sur la console. Ça s’appelle “Mega war IV”, tu connais ?"
+
+    menu:
+        "Non, jamais entendu parler. C’est un jeu de guerre c’est ça ?":
+            jump _2_2A
+        "Ah non, pas un jeu de guerre ! En plus, tu es trop jeune pour ça et il paraît que les joueurs de ces jeux ont tendance à devenir violents !":
+            jump _2_2B
+
+    label _2_2A:
+        $ flag_2_2A = 0
+
+        G "Oui c’est ça. C’est un jeu coopératif, les effets sont super bien faits."
+        "Je n’aime pas trop que tu joues à des jeux de guerre. Il y a pleins de jeux sympas pour les jeunes sur la console, pourquoi tu choisis ceux-là ?"
+        G "J’ai pleins de copains qui y jouent, et ils en parlent tout le temps à l’école. Du coup, ça me permet d’en discuter avec eux. Et puis c’est pas réel, c’est qu’un jeu."
+        "Tu sais, faire quelque chose pour être comme les autres, c’est jamais une bonne idée. Réfléchis-y ! Si tu veux, on regarde ensemble pour te trouver un nouveau jeu plus sympa et plus adapté à ton âge. Et je te l’offre."
+        G "Ah bah si tu me l’offres, ça me va ! Et puis comme ça, je le montrerai à mes copains, et c’est eux qui voudront faire comme moi !"
+        "Tu comprends vite mon fils !"
+
+        $ relation_gabriel=relation_gabriel+1
+
+        jump _2_2_done
+    label _2_2B:
+        $ flag_2_2B = 1
+
+        play music "audio/dispute1.mp3" fadeout 1.0 fadein 1.0
+
+        "Ah non, pas un jeu de guerre ! En plus, tu es trop jeune pour ça et il paraît que les joueurs de ces jeux ont tendance à devenir violents !"
+
+        hide gabriel_happy
+        show gabriel_angry
+
+        G "Vous êtes pénibles avec maman ! C’est bon je suis grand et c’est qu’un jeu ! Et c’est des rumeurs ton truc là."
+        G "Je suis sûr que c’est des parents pénibles qui ont créé cette rumeur pour pas que leurs enfants jouent aux jeux vidéos. Si tu te renseignais un peu, tu verrais qu’il y a pleins d'études qui montrent qu’il n’y a aucun lien."
+        "Bon écoute, c’est simple, tu n’as plus le droit de jouer à ce jeu."
+        G "C’est injuste !"
+        "C’est pour ton bien, Gabriel. En plus il fait beau, tu n’as qu’à aller voir tes copains ou profiter de l’extérieur."
+
+        $ relation_gabriel=relation_gabriel-1
+
+        jump _2_2_done
+    label _2_2_done:
+
+    scene bg_black
+    with mediumdissolve
+
 
     return
 
