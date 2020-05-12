@@ -3,7 +3,6 @@ $ renpy.music.set_volume(0.5, .5, channel="music")
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-# COucou
 define B = Character("Bob", color="#ff6633")
 define B_shout = Character("Bob", color="#ff6633",what_size=54)
 define Al = Character("Alice", color="#99ff33")
