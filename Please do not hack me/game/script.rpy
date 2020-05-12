@@ -740,6 +740,175 @@ label start:
 
     #---------------------------------------------------------START Yannick
 
+    play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
+
+    "Il ne faut pas que je traîne, je ne peux pas me permettre d'arriver en retard avec ce nouveau projet."
+    "Tout le monde doit être sur le qui-vive."
+    "Je crois que je n'ai rien oublié, je peux y aller."
+    "Je serai même en avance comme ça."
+    "Salut Gabriel, passe une bonne journée."
+
+    scene bg_job
+    with slowdissolve
+
+    "Effectivement, je suis bien arrivé en avance."
+    "C'est cool, pour une fois je vais avoir le temps de regarder mes mails avant d'attaquer ma journée."
+
+    #scene bank?
+    scene bg_computer_mail #En attendant
+    with mediumdissolve
+
+    "Alors quoi de neuf dans la boite aujourd'hui ?"
+    "Pub, pub, notifications facebook. Rien d'intéressant pour le moment."
+
+    play music "audio/intrigue0.mp3" fadeout 1.0 fadein 1.0
+
+    "Tiens, pourquoi il est déjà marqué comme lu ce mail ?"
+    "C’est bizarre, aurais-je cliqué dessus par inadvertance en me connectant ?"
+    "Tiens donc... et comme par hasard un mail de ma banque juste après."
+    "Tentative de connexion depuis un nouvel appareil ? Je n’aime pas ça du tout... "
+    "Bon aller calme toi Bob et garde la tête froide, ça a un bon en-tête d'e-mail frauduleux."
+    "Je me rappelle qu’on avait fait un mini briefing sur les tentatives de phishing il y a quelques années."
+    "Bon qu’est-ce que je fais du coup ? "
+
+    menu:
+        "Je suis certain que c’est un spam, je vais directement le mettre dans la corbeille, comme ça aucun risque.":
+            jump _2_3A
+
+        "Je vais commencer par l’ouvrir, normalement ça risque pas trop.":
+            jump _2_3B
+
+        # Possibilité de choix et d'interaction en même temps ?!
+        #[Si le joueur découvre le bouton pour accéder à la corbeille]:
+        #   jump _2_3C
+
+    label _2_3A:
+        $ flag_2_3 = 0
+        "Aller hop, adieu vilain petit poisson."
+        "Faut pas me prendre pour un pigeon non plus."
+        jump _2_3_done
+
+    label _2_3B:
+        $ flag_2_3 = 1
+        #scene bg_bank_connect_mail
+
+        "Je sais pas si je deviens parano, mais j’ai l’impression qu’il n’est pas comme d’habitude."
+        "Alors… “Nous avons remarqué une connexion depuis un appareil inhabituel… Blablabla, veuillez vous connecter sur le site pour confirmer qu’il s’agit bien de vous.”"
+
+        menu:
+            "Je vais cliquer sur le lien, le début de l’URL a l’air de correspondre à celle de ma banque.":
+                jump _2_3B_1A
+
+            "Je devrais essayer de retrouver moi-même le lien en naviguant depuis mon moteur de recherche.":
+                jump _2_3B_1B
+
+        label _2_3B_1A:
+            $ flag_2_3B_1 = 0
+            #scene bg_bank_connect
+
+            "Veuillez entrer vos identifiants…"
+
+            menu:
+                "Le site est exactement le même que celui de ma banque, j’entre mes identifiants.":
+                    jump _2_3B_1A_1A
+
+                "Le site ressemble à s’y méprendre, mais ça ressemble bien trop à du phishing, je m’arrête là.":
+                    jump _2_3B_1A_1B
+
+            label _2_3B_1A_1A:
+                $ flag_2_3B_1A_1 = 0
+                "Alors, qu’est-ce donc que cette alerte ? "
+                jump _2_3_alert
+
+            label _2_3B_1A_1B:
+                $ flag_2_3B_1A_1 = 1
+                "Faut pas me prendre pour un pigeon non plus."
+                jump _2_3_done
+
+        label _2_3B_1B:
+            $ flag_2_3B_1 = 1
+            #scene bg_search_bank
+
+            "Alors, voyons voir."
+            "Se connecter…"
+
+            #scene bg_bank_connect
+
+            "Mes alertes..."
+            "On dirait que je suis arrivé à l’URL exacte du mail."
+
+        label _2_3_alert:
+            "Ce qui veut dire que ce n’était pas un spam, et que quelqu’un s’est bel et bien connecté à mon compte !"
+            "Ça date d’hier, et ils me disent que la connexion s’est faite dans la région."
+            "Impossible, je ne me suis pas connecté sur mon compte depuis un bon moment. Le système aurait-il eu un dysfonctionnement ?"
+            "Ou alors, est-ce que ça pourrait être Sarah qui a été vérifier quelque chose ? Elle doit encore avoir les identifiants, vu qu’on faisait compte commun…"
+            "Elle doit être au boulot elle aussi, je l'appellerai ce soir, sans faute."
+            "Dans tous les cas, il va falloir que je tire ça au clair rapidement."
+            jump _2_3_done
+
+    label _2_3C:
+        $ flag_2_3 = 2
+        #scene bg_corbeille_mail
+
+        "Non mais attends, qu’est-ce que c’est que ce bazard ?!?"
+        "On dirait que quelqu’un s’est connecté à la plupart de mes comptes ! Il a même commencé à changer les mots de passe de certains !"
+        "Il faut que je fasse quelque chose au plus vite…"
+        "Mais quoi ?"
+        jump _2_3_done
+
+    label _2_3_done:
+
+    play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
+
+    scene bg_job
+    with mediumdissolve
+
+    menu:
+        "Tiens, Alice est arrivée. Je vais aller lui dire bonjour, ça nous permettra de discuter un moment.":
+            jump _2_4A
+
+        "Je viens de voir Monsieur Parker passer. Je vais lui montrer qu’il a bien fait de se tourner vers moi pour le projet Baker.":
+            jump _2_4B
+
+    label _2_4A:
+        $ flag_2_4 = 0
+
+        show alice_smile
+
+        "Salut Alice ! Ça va ? Tu as passé un bon week-end ?"
+        Al "Hé Bob ! Oui super, et toi ?"
+        "Bien aussi ! J’étais tout seul, Gabriel était chez sa mère. "
+        "Le week-end est passé à une vitesse folle !"
+        Al "C’est souvent comme ça haha, surtout vu le beau temps qu’on a eu !"
+
+
+
+        jump _2_4_done
+
+    label _2_4B:
+        $ flag_2_4 = 1
+
+        show parker_normal
+
+        "Bonjour Monsieur Parker, comment allez-vous ?"
+        P "Bonjour Bob ! Très bien et toi ? "
+        "Bien, je tenais encore à vous remercier de m’avoir mis sur ce projet."
+        "Je vais faire un débrief avec l’équipe ce matin et répartir les tâches pour la semaine à venir !"
+        "J’ai commencé à débroussailler ce week-end et je compte m’investir à fond !"
+        P "Je suis heureux de l’entendre ! "
+        P "Et je ne doute pas que j’aie fait le bon choix en vous mettant sur ce projet. "
+        P "Vous voir motivé comme cela me confirme que j’avais raison !"
+        "Merci Monsieur Parker. "
+        "Je vous tiens au courant des avancées du projet. "
+        "Passez une bonne journée !"
+        P "Merci Bob, pareillement !"
+        jump _2_4_done
+
+    label _2_4_done:
+
+    scene bg_corridor
+    with mediumdissolve
+
     #---------------------------------------------------------STOP Yannick
 
     #---------------------------------------------------------START Hugo
