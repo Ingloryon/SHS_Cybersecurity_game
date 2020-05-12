@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 879, in script
-    A "Hé Bob ! Oui super, et toi ?"
-Exception: Sayer 'A' is not defined.
+  File "game/script.rpy", line 1016, in script
+    jump _2_5B_1C
+ScriptError: could not find label '_2_5B_1C'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 879, in script
-    A "Hé Bob ! Oui super, et toi ?"
-  File "C:\Users\yanni\renpy-7.3.5-sdk\renpy\ast.py", line 678, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\yanni\renpy-7.3.5-sdk\renpy\ast.py", line 576, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
-Exception: Sayer 'A' is not defined.
+  File "game/script.rpy", line 1016, in script
+    jump _2_5B_1C
+  File "D:\Users\Hugo\Downloads\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
+    rv = renpy.game.script.lookup(target)
+  File "D:\Users\Hugo\Downloads\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label '_2_5B_1C'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 Please do not hack me 1.0
-Tue May 12 17:49:35 2020
+Tue May 12 20:26:18 2020

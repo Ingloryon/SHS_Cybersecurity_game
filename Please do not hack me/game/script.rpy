@@ -916,6 +916,9 @@ label start:
     play music "audio/intrigue0.mp3" fadeout 1.0 fadein 1.0
 
     "Hé, salut Marc !"
+    show marc
+    with mediumdissolve
+
     M "Tiens Bob ! Comment ça va aujourd’hui ?"
     "Bien, bien. Je retourne à mon bureau pour démarrer ma journée de travail !"
     M "Décidément, toujours à aller discuter à droite à gauche toi ! *rire* Je rigole, tu travailles bien plus que moi hahaha ! Dis donc, qu’est-ce que ça donne le hack de ton Facebook ? Tu as pu résoudre le problème ? "
@@ -938,9 +941,10 @@ label start:
     show bg_phone_publication
     with slowdissolve
 
-    "Effectivement, je peux comprendre qu’ils pensent que ce soit moi. Même nom, mêmes photos, mêmes infos personnelles...
-    \nCe compte est presque entièrement identique au mien. Comment a-t-il pu avoir accès à toutes ces informations ? Et merde, on dirait que le hackeur a pu se connecter à mon véritable compte…
-    \nIl a publié pleins de spams publicitaires sur mon vrai mur pour appuyer l’hypothèse que je me suis fait piraté ! Je ne sais pas trop ce que je peux faire."
+    "Effectivement, je peux comprendre qu’ils pensent que ce soit moi. Même nom, mêmes photos, mêmes infos personnelles... Ce compte est presque entièrement identique au mien. Comment a-t-il pu avoir accès à toutes ces informations ?"
+    "Et merde, on dirait que le hackeur a pu se connecter à mon véritable compte... Il a publié pleins de spams publicitaires sur mon vrai mur pour appuyer l’hypothèse que je me suis fait piraté ! Je ne sais pas trop ce que je peux faire."
+
+    hide bg_phone_publication
 
     menu:
         "Tiens il y a Andrew qui passe justement, je vais lui demander conseil.":
@@ -955,10 +959,10 @@ label start:
         show andrew_normal
         with mediumdissolve
 
-        "Andrew ! J’ai besoin de ton aide ! Apparemment quelqu’un a créé un faux profil Facebook quasiment identique au mien, et il essaie de faire croire que mon compte actuel a été hacké.
-        \nEt je crois qu’il a aussi eu accès à mon véritable compte... Qu’est-ce que je peux faire à ton avis ?"
-        A "C’est gentil de me demander conseil pour une fois Bob. Je suis désolé, mais c’est déjà presque l’heure du meeting Baker. Je ne voudrais pas arriver en retard pour un projet si important, et je pense que toi non plus.
-        \nTu devrais laisser tes problèmes personnels pour le moment et t’en occuper ce soir. On va tous avoir besoin de toi pour définir le planning de tâches. C’est toi le chef de projet après tout."
+        "Andrew ! J’ai besoin de ton aide ! Apparemment quelqu’un a créé un faux profil Facebook quasiment identique au mien, et il essaie de faire croire que mon compte actuel a été hacké."
+        "Et je crois qu’il a aussi eu accès à mon véritable compte... Qu’est-ce que je peux faire à ton avis ?"
+        Ad "C’est gentil de me demander conseil pour une fois Bob. Je suis désolé, mais c’est déjà presque l’heure du meeting Baker. Je ne voudrais pas arriver en retard pour un projet si important, et je pense que toi non plus."
+        Ad "Tu devrais laisser tes problèmes personnels pour le moment et t’en occuper ce soir. On va tous avoir besoin de toi pour définir le planning de tâches. C’est toi le chef de projet après tout."
         "Je vois, tu as surement raison. Aller je vais au meeting, à tout de suite."
 
         hide andrew_normal
@@ -966,13 +970,14 @@ label start:
         "Décidément il est vraiment odieux ce type. Il peut travailler aussi bien qu’il veut, je n’arriverai jamais à le supporter. Je me demande si je n’arriverais pas à le faire muter dans une autre équipe."
 
         $ relation_andrew=relation_andrew-1
-        #[mdp Facebook non changé]
         jump _2_5_done
 
     label _2_5B:
         $ flag_2_5 = 1
 
-        show bg_phone_icone
+        show sarah_phone:
+            xalign 0.03
+            yalign 0.98
         with slowdissolve
 
         "Allô Gabriel ? Ça va mon grand ?"
@@ -1010,19 +1015,19 @@ label start:
             "f@C3b0OK951bOb!":
                 jump _2_5B_1C
 
-        label end_2_5B_1A:
-
+        label _2_5B_1A:
+            $ flag_2_5B_1 = 0
             jump _2_5B_done
 
-        label end_2_5B_1B:
-
+        label _2_5B_1B:
+            $ flag_2_5B_1 = 1
             jump _2_5B_done
 
-        label end_2_5B_1C:
-
+        label _2_5B_1C:
+            $ flag_2_5B_1 = 2
             jump _2_5B_done
 
-    label _2_5B_end:
+        label _2_5B_done:
 
         "Et maintenant, la question secrète: le nom de mon premier chat. Brave petit Gargamel, tu es vraiment la meilleure des sécurités !"
         "Voilà, ça devrait faire l’affaire. Je vais noter ce nouveau mot de passe quelque part, sinon je risque de l’oublier."
@@ -1030,6 +1035,7 @@ label start:
 
         $ relation_gabriel=relation_gabriel+1
         # A changé son mot de passe de Facebook -> met fin à futurs problèmes avec Facebook MAIS le joueur devra se rappeler le nouveau mdp à un moment de l’aventure
+        jump _2_5_done
 
     label _2_5_done:
 
