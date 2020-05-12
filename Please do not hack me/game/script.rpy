@@ -955,8 +955,8 @@ label start:
         show andrew_normal
         with mediumdissolve
 
-        "Andrew ! J’ai besoin de ton aide ! Apparemment quelqu’un a créé un faux profil Facebook quasiment identique au mien, et il essaie de faire croire que mon compte actuel a été hacké."
-        "Et je crois qu’il a aussi eu accès à mon véritable compte... Qu’est-ce que je peux faire à ton avis ?"
+        "Andrew ! J’ai besoin de ton aide ! Apparemment quelqu’un a créé un faux profil Facebook quasiment identique au mien, et il essaie de faire croire que mon compte actuel a été hacké.
+        \nEt je crois qu’il a aussi eu accès à mon véritable compte... Qu’est-ce que je peux faire à ton avis ?"
         A "C’est gentil de me demander conseil pour une fois Bob. Je suis désolé, mais c’est déjà presque l’heure du meeting Baker. Je ne voudrais pas arriver en retard pour un projet si important, et je pense que toi non plus.
         \nTu devrais laisser tes problèmes personnels pour le moment et t’en occuper ce soir. On va tous avoir besoin de toi pour définir le planning de tâches. C’est toi le chef de projet après tout."
         "Je vois, tu as surement raison. Aller je vais au meeting, à tout de suite."
@@ -971,6 +971,57 @@ label start:
 
     label _2_5B:
         $ flag_2_5 = 1
+
+        show bg_phone_icone
+        with slowdissolve
+
+        "Allô Gabriel ? Ça va mon grand ?"
+        G "Salut Papa ! Euh...oui, ça va et toi ? Pourquoi est-ce que tu m’appelles maintenant ?"
+        "J’ai un problème avec mon profil facebook. Et j’aurais besoin de ton aide."
+        G "Okay. Je suis en pause mais je reprends dans 10 minutes, qu’est-ce qu’il se passe ?"
+        "Apparemment quelqu’un a créé un nouveau profil quasiment identique au mien, et il essaie de faire croire que mon compte actuel a été hacké.
+        \nEt je crois qu’il a aussi eu accès à mon vrai compte... Tout le monde croit que c’est moi qui ai signalé le hack, alors que pas du tout ! Qu’est-ce que je peux faire à ton avis ?"
+        G "Oula, c’est embêtant. C’est arrivé à un de mes copains y a pas longtemps, et son père est informaticien. Apparemment, il y a plusieurs choses que tu peux faire."
+        "Vas-y dis moi tout !"
+        G "Tu as de la chance, sur Facebook je crois que tu ne peux pas changer ton mot de passe sans répondre à ta question secrète. Du coup, commence par changer ton mot de passe par sûreté.
+        \nTu pourrais également activer l'authentification à deux facteurs. Une fois que tu auras sécurisé ton compte, tu devrais signaler le faux à Facebook."
+        "Ça marche, je vais commencer par changer le mot de passe du coup. Je verrai ce soir pour le reste. Merci mille fois Gabriel, tu me sors une épine du pieds !"
+        G "De rien papa, aller je te laisse à tes mots de passe, je dois y aller. À ce soir !"
+
+        hide bg_phone_icone
+
+        "Ok, changer mon mot de passe Facebook, ça devrait pas être sorcier."
+
+        play music "audio/mini_jeu0.mp3" fadeout 1.0 fadein 1.0
+
+        show bg_phone_changer_mdp
+        with slowdissolve
+
+        "Tiens d’ailleurs, c’est vrai que je devrais faire attention, j’utilise un peu toujours les mêmes mots de passe... Je vais en inventer un nouveau cette fois."
+        "Alors qu’est-ce que je vais bien pouvoir mettre ?"
+
+        menu:
+            "facebookBob123"
+                jump _2_5B_1A
+
+            "FaCebooKBob951"
+                jump _2_5B_1B
+
+            "f@C3b0OK951bOb!"
+                jump _2_5B_1C
+
+        label end_2_5B_1A:
+
+            jump _2_5_done
+
+        label end_2_5B_1B:
+
+            jump _2_5_done
+
+        label end_2_5B_1C:
+
+            jump _2_5_done
+
     #---------------------------------------------------------STOP Hugo
 
     #---------------------------------------------------------START Guillaume
