@@ -755,6 +755,157 @@ label start:
     #---------------------------------------------------------STOP Thomas
 
     #---------------------------------------------------------START Mateo
+    #------------------------------------------------------CHOIX_1--------------------------------------------------------
+    #Graphique ordi 20:30
+
+    menu:
+        " Je vais essayer de me détendre et de me coucher tôt pour réattaquer du bon pied demain. Après la journée que j’ai passé, je n’ai pas le courage de m‘en occuper ce soir":
+            jump _2_6A
+        "Je vais appeler M. Parker pour voir s’il ne peut pas me libérer ma journée de demain. Il faut que je m’occupe de mes soucis persos.":
+            jump _2_6B
+        "Tiens, et si j’appelais Alice ? C’est toujours agréable de discuter avec elle. Aller je me lance !":
+            jump _2_6C
+    label _2_6A:
+        $ flag_2_6=0
+
+        #[pas fatigué le lendemain]
+        #Aller directement à la fin du chapitre
+
+        jump _2_6_done
+    label _2_6B:
+        $ flag_2_6=1
+
+        #Icône du téléphone
+        #Musique sonnerie
+
+        "[Votre correspondant n’est pas joignable. Veuillez réessayer plus tard.]"
+
+        "Ça ne répond pas. Bon, tant pis. Je vais faire autre chose."
+
+        jump _2_6_done
+    label _2_6_done:
+
+
+
+_2_6C {
+B : Tiens, et si j’appelais Alice ? C’est toujours agréable de discuter avec elle.
+Aller je me lance !
+Icône du téléphone
+Musique sonnerie
+“Dring…
+Dring…
+Dring…”
+
+Musique joyeuse
+
+Al : Allô Bob ?
+Mais que me vaut cet honneur ?
+B : Bonsoir Alice !
+Rien de spécial, j’avais juste envie de t’appeler.
+Al : C’est gentil ça !
+Puisque que c’est toi qui appelle, c’est toi qui décide de quoi on parle !
+B : Hahaha, ça me va !
+
+	_2_6C_1A {
+B : Je peux te parler de mon nouveau sujet favori haha ! Cette histoire de compte   facebook me prend la tête !
+
+Al : Je comprends que ça t’angoisse Bob !
+Mais déstresse, et essaie de trouver des solutions.
+Rester sans rien faire va uniquement faire monter tes angoisses.
+B : Tu n’as pas tort…
+Mais je n’ai aucune idée de quoi faire !
+Tu me connais je suis nul avec ces trucs là !
+Al : Il me semble que tu peux demander à Facebook de clôturer le faux compte.
+Je suis sûre que tu peux trouver des solutions, fais-toi confiance !
+Ca doit pas être si sorcier que ça !
+B : Oui c’est vrai. Bon, je vais essayer d’être plus positif alors !
+Al: C’est ça que je veux entendre !
+B : Bon allez j’arrête de t’embêter avec mes problèmes, parlons d’autre chose !
+Al : Aucun soucis haha ! On discute de ce que tu veux !
+Black screen : “ 30 minutes plus tard…”
+Graphique Alice joyeuse
+Al : Je vais raccrocher, il se fait tard.
+J’ai passé un très bon moment avec toi Bob merci !
+B : Pareil pour moi. Merci d’avoir répondue présente.
+On se voit au bureau !
+Al : Oui, à demain !
+} end_2_6C_1A
+	_2_6C_1B {
+B : Je peux te décrire à quelqu’un point je t’ai trouvé ravissante aujourd’hui ?
+Graphique Alice happy
+Al : Hihi, Bob arrêteee. Tu vas réussir à me gêner.
+B : Bon d’accord, j’arrête.
+Mais je me suis rendu compte qu’on se voyait uniquement au bureau.
+Ca pourrait être sympa qu’on aille se faire un ciné ou un restau un de ces jours non ?  Tu serais partante ?
+Al : Oui bien sûr, avec plaisir !
+B : La semaine prochaine tu pourrais ? Jeudi soir par exemple ?
+Al : Oui jeudi soir je suis libre ! Je note ça dans mon agenda !
+B : Je manquerai pas de te le rappeler sinon ! C’est un des avantages à bosser ensemble !
+Black screen : “ 30 minutes plus tard…”
+Graphique Alice joyeuse
+Al : Bon allez, je vais raccrocher, c’est qu’il commence à se faire tard avec tes bêtises.
+J’ai passé un très bon moment avec toi Bob, merci !
+B : Pareil pour moi. Merci à toi d’avoir décroché !
+Je t’embrasse, on se voit au bureau.
+Al : Oui, à demain !
+
+	} end_2_6C_1B
+[Améliore la relation avec Alice]
+Musique intrigue
+} end_2_6C
+
+_2_6D {
+B : Je me demande qui peut bien être derrière mon problème sur facebook. Je vais essayer de creuser un peu.
+
+#Graphique ordinateur maison (recherche Internet)
+
+B : Je trouve un paquet de sites en lien avec ma recherche, mais jusqu’à maintenant ils ne m’apprennent rien d’intéressant…
+L’informatique c’est un vrai métier moi je vous le dis.
+Allez, j’essaye encore celui-là et après je laisse tomber.
+
+#Afficher page : https://www.243tech.com/retrouver-la-personne-qui-vous-espionne-facebook/
+
+
+B : Ah tiens.
+Celui-là m’a l’air intéressant.
+Ils disent de regarder les photos publiées sur le faux-compte et de consulter la liste d’amis.
+Apparemment ça permet d’obtenir des informations sur le hacker.
+C’est à ma portée, je vais le faire tout de suite.
+
+Graphique ordinateur maison (Facebook)
+
+B : Bon, je n’ai rien appris de très intéressant.
+Je vais retourner voir ce qu’ils conseillent de faire après ça
+
+#Afficher page : https://www.243tech.com/retrouver-la-personne-qui-vous-espionne-facebook/
+
+
+Ensuite, ils disent d’essayer de changer le mot de passe et de suivre plusieurs étapes.
+Ca m’a l’être d’être un peu plus long et compliqué à faire.
+Je ne sais pas si je vais me lancer là dedans tout de suite, voyons déjà ce que j’ai d’autre à faire.
+
+} end_2_6D
+
+if (_2_3B_1B) {
+_2_6E {
+B : Vu ce que j’ai vu ce matin dans ma boîte mail, je vais me dépêcher d’appeler la banque.
+Je vais le faire tout de suite.
+Icône du téléphone
+Musique sonnerie
+“Dring…
+Dring…
+Dring…
+Votre banque est fermée pour le moment.
+Nous sommes ouverts du lundi au vendredi, de 8h à 18h et le samedi de 8h à 12h.
+Merci de nous rappeler ultérieurement.
+Biiiiip.”
+C’est vrai qu’il est déjà tard.
+Il faut que je réessaye d’appeler au plus vite demain.
+
+} end_2_6E
+} end_2_6
+
+
 
     #---------------------------------------------------------STOP Mateo
 
