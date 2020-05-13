@@ -72,8 +72,8 @@ label start:
     scene bg_living_room
     with slowdissolve
 
-    "-Ok je suis prêt-"
-    "-Je n’ai pas l’impression d’avoir entendu le réveil de Gabriel, je vais aller rapidement vérifier qu’il est réveillé.-"
+    "Ok je suis prêt"
+    "Je n’ai pas l’impression d’avoir entendu le réveil de Gabriel, je vais aller rapidement vérifier qu’il est réveillé."
     B_shout "Gabriel ! N'oublie pas que tu dois être à l’arrêt de bus dans moins de 20 minutes !"
     B_shout "Eh Gabriel tu es réveillé ?"
 
