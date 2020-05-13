@@ -1276,9 +1276,9 @@ label start:
     "Gabriel est remonté dans sa chambre. Qu’est-ce que je devrais faire en premier ?"
 
     #------------------------------------------------------CHOIX_1--------------
-    $ flag_2_7=-1#need to initialize this here to allow _2_7 to reuse choices in _2_6
-    $ flag_2_8=-1#need to initialize this here to allow _2_8 to reuse choices in _2_7
-    $ flag_2_9=-1#need to initialize this here to allow _2_9 to reuse choices in _2_8
+    $ flag_2_7=-1 #need to initialize this here to allow _2_7 to reuse choices in _2_6
+    $ flag_2_8=-1 #need to initialize this here to allow _2_8 to reuse choices in _2_7
+    $ flag_2_9=-1 #need to initialize this here to allow _2_9 to reuse choices in _2_8
 
     menu:
         " Je vais essayer de me détendre et de me coucher tôt pour réattaquer du bon pied demain. Après la journée que j’ai passé, je n’ai pas le courage de m‘en occuper ce soir":
@@ -1304,11 +1304,11 @@ label start:
     label _2_6B_nondestructive:
 
         #Icône du téléphone
-        #Musique sonnerie
+        play sound "audio/phone_ring.mp3"
         "Dring…"
         "\nDring…"
         "\n\nDring…"
-        #Stop Musique sonnerie
+        stop sound
 
         "Votre correspondant n’est pas joignable. Veuillez réessayer plus tard."
 
@@ -1320,13 +1320,12 @@ label start:
     label _2_6C_nondestructive:
 
         #Icône du téléphone
-        #Musique sonnerie
+        play sound "audio/phone_ring.mp3"
         "Dring…"
         "\nDring…"
         "\n\nDring…"
-        #Stop Musique sonnerie
-
-        #Musique joyeuse
+        stop sound
+        play music "audio/joyeuse0.mp3" fadeout 1.0 fadein 1.0
 
         Al "Allô Bob ? Mais que me vaut cet honneur ?"
         "Bonsoir Alice ! Rien de spécial, j’avais juste envie de t’appeler."
@@ -1380,13 +1379,15 @@ label start:
 
         $ relation_alice=relation_alice+1
 
+        play music "audio/intrigue1.mp3" fadeout 1.0 fadein 1.0
+
         jump _2_6_done
 
     label _2_6D:
         $ flag_2_6=3
     label _2_6D_nondestructive:
 
-        #Musique intrigue
+        play music "audio/intrigue1.mp3" fadeout 1.0 fadein 1.0
 
         #Graphique ordinateur maison (recherche Internet)
 
@@ -1394,7 +1395,6 @@ label start:
         "L’informatique c’est un vrai métier moi je vous le dis. Allez, j’essaye encore celui-là et après je laisse tomber."
 
         #Afficher page : https://www.243tech.com/retrouver-la-personne-qui-vous-espionne-facebook/
-
 
         "Ah tiens. Celui-là m’a l’air intéressant. Ils disent de regarder les photos publiées sur le faux-compte et de consulter la liste d’amis."
         "Apparemment ça permet d’obtenir des informations sur le hacker. C’est à ma portée, je vais le faire tout de suite."
@@ -1417,11 +1417,11 @@ label start:
 
         "Vu ce que j’ai vu ce matin dans ma boîte mail, je vais me dépêcher d’appeler la banque. Je vais le faire tout de suite."
         #Icône du téléphone
-        #Musique sonnerie
+        play sound "audio/phone_ring.mp3"
         "Dring…"
         "\nDring…"
         "\n\nDring…"
-        #Stop Musique sonnerie
+        stop sound
         VS "Votre banque est fermée pour le moment. Nous sommes ouverts du lundi au vendredi, de 8h à 18h et le samedi de 8h à 12h. Merci de nous rappeler ultérieurement."
 
         "C’est vrai qu’il est déjà tard. Il faut que je réessaye d’appeler au plus vite demain."
@@ -1470,12 +1470,12 @@ label start:
             $ flag_2_7=2
 
             #Icône du téléphone
-            #Musique sonnerie
+            play sound "audio/phone_ring.mp3"
             "Dring…"
             "\nDring…"
             "\n\nDring…"
-            #Stop Musique sonnerie
-            #Musique dispute
+            stop sound
+            play music "audio/dispute1.mp3" fadeout 1.0 fadein 1.0
 
             P "Bob ? Tout va bien ?"
             "Bonsoir M. Parker. Je suis désolé de vous appeler si tard mais j’aurais vraiment besoin de prendre ma journée de demain… J’ai quelques ennuis personnels."
@@ -1489,7 +1489,7 @@ label start:
             P "Je pensais que vous aviez compris l’ampleur de ce travail mais apparemment ce n’est pas le cas."
             P "Bonne soirée Bob, je vous attends au bureau demain."
 
-            #Musique de intrigue
+            play music "audio/intrigue1.mp3" fadeout 1.0 fadein 1.0
 
             "J’ai intérêt à assurer au boulot demain. M.Parker avait l’air remonté."
             "Mais quelle idée j’ai eu de l’appeler pour lui demander un congé à cette heure-ci…"
@@ -1500,13 +1500,13 @@ label start:
         label _2_7D:
             $ flag_2_7=3
 
-            jump _2_6C_nondestructive#redirect to the first dialogue
+            jump _2_6C_nondestructive #redirect to the first dialogue
 
             #jump _2_7_done
         label _2_7E:
             $ flag_2_7=4
 
-            jump _2_6D_nondestructive#redirect to the first dialogue
+            jump _2_6D_nondestructive #redirect to the first dialogue
 
             #jump _2_7_done
         label _2_7F:
@@ -1526,9 +1526,6 @@ label start:
             "Je vais aller vérifier dans mon répertoire si un de mes numéros se terminent par ces deux derniers chiffres."
             "En soit le hacker aurait pu utiliser un faux numéro, mais c’est peu probable."
             "Ce qui est bien possible par contre que le hacker ne fasse absolument pas partie de mon entourage... Mais bon je n’ai rien à perdre à vérifier !."
-
-            #Graphique principal maison
-
             "Vu le peu de numéros que j’ai dans mon portable c’est pas gagné…"
             "Gabriel… Non."
             "Sarah… Non."
@@ -1586,27 +1583,29 @@ label start:
         label _2_8B:
             $ flag_2_8=1
 
-            jump _2_6D_nondestructive#redirect to the second dialogue
+            jump _2_6D_nondestructive #redirect to the second dialogue
 
             #jump _2_8_done
         label _2_8C:
             $ flag_2_8=2
 
-            jump _2_7F_nondestructive#redirect to the second dialogue
+            jump _2_7F_nondestructive #redirect to the second dialogue
 
             #jump _2_8_done
         label _2_8D:
             $ flag_2_8=3
 
-            jump _2_7G_nondestructive#redirect to the second dialogue
+            jump _2_7G_nondestructive #redirect to the second dialogue
 
             #jump _2_8_done
         label _2_8_done:
     #------------------------------------------------------CHOIX_4--------------
 
-    #Graphique ordi 00:45
-
     if flag_2_6!=0  and flag_2_7!=0 and flag_2_8!=0 and flag_2_9==-1 :
+
+        show bg_computer_0045
+        with slowdissolve
+
         menu:
             "J’ai abusé sur l’heure… Je vais être crevé demain, au lit.":
                 jump _2_9A
@@ -1641,9 +1640,8 @@ label start:
 
     #[très fatigué le lendemain]
 
+    play sound "audio/snore.mp3"
     scene bg_black
-    #Ronflements ?
-
 
     "END OF SCRIPT"
     "END OF SCRIPT"
