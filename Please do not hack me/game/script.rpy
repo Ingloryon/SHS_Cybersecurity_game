@@ -27,6 +27,7 @@ image sarah_phone= im.FactorScale("bg_phone_icone.png", 0.25)
 image sarah_normal= im.FactorScale("Sarah_normal.png", 0.25)
 #Scale Alice
 image alice_smile= im.FactorScale("alice_smile.png", 0.25)
+image alice_neutre = im.FactorScale("alice_neutre.png", 0.25)
 #Scale Andrew
 image andrew_normal= im.FactorScale("andrew_normal.png", 0.25)
 #Scale Parker
@@ -772,6 +773,10 @@ label start:
     "Je me rappelle qu’on avait fait un mini briefing sur les tentatives de phishing il y a quelques années."
     "Bon qu’est-ce que je fais du coup ? "
 
+    # Déclaration des flags sinon la variable n'est pas créée dans certains choix
+    $ flag_2_3B_1A_1 = -1
+    $ flag_2_3B_1 = -1
+
     menu:
         "Je suis certain que c’est un spam, je vais directement le mettre dans la corbeille, comme ça aucun risque.":
             jump _2_3A
@@ -891,7 +896,7 @@ label start:
 
             "J’ai vu un truc inquiétant dans ma boîte mail, et je souhaiterais t’en parler.":
                 jump _2_4A_1C
-                
+
         label _2_4A_1A:
             $ flag_2_4A_1 = 0
 
@@ -905,7 +910,7 @@ label start:
             "C’était juste pour une fois, je ne le fais pas d’habitude donc bon, ça devrait aller !"
             Al "Méfie-toi Bob, je ne veux pas faire ma rabat-joie, mais c’est tellement vite arrivé ! "
             Al "Et quand tu as un de ces trucs sur ta machine, après tu peux être bien embêté !"
-            jump _2_4A_done
+            jump _2_4A_1_done
 
         label _2_4A_1B:
             $ flag_2_4A_1 = 1
@@ -920,16 +925,60 @@ label start:
             Al "Après, je pense aussi que c’est ton projet et que si tu estimes qu’Andrew doit faire un certain boulot, et bien c’est sûrement la bonne solution."
             Al "Peut être aussi qu’il n’a pas eu l’attitude qui t’aurais donné envie de l’aider ou de lui faire confiance."
             Al "Ton choix sera le bon Bob, tu fais du super boulot dans cette boîte. "
-            jump _2_4A_done
+            jump _2_4A_1_done
 
         label _2_4A_1C:
             $ flag_2_4A_1 = 2
 
             "J’ai vu un mail marqué comme lu, alors que j’étais persuadé de ne jamais l’avoir ouvert."
-            jump _2_4A_done
 
-        label _2_4A_done:
+            if flag_2_3 == 0 or flag_2_3B_1A_1 == 1:
+                "Et puis je reçois des e-mails de phishing franchement bien faits."
+            elif flag_2_3B_1 == 1:
+                "Et surtout, on dirait que quelqu’un s’est connecté à mon compte sur le site de ma banque…"
+                "C’est probablement Sarah qui avait besoin de vérifier quelque chose, mais ça m'inquiète."
+                "Et si ce n’était pas elle ? Elle me tient au courant lorsqu’elle se connecte normalement."
 
+            "C’est bizarre non ?"
+            "Enfin, soit ma boîte mail débloque, soit je perds la tête."
+            "Tu crois que je devrais aller me faire dépister pour Alzheimer ?"
+
+            hide alice_smile
+            #show Alice_rire
+
+            Al "*rire*"
+            Al "Mais non Bob ! Tu n’as pas Alzheimer ! Arrête de dire des bêtises !"
+            Al "Tu as une bien meilleure mémoire que moi, si un de nous deux doit consulter, ce n’est pas toi !"
+
+            #hide Alice_rire
+            show alice_neutre
+
+            Al "Par contre pour ta boîte mail, je me ferais un peu plus de soucis. "
+            Al "Un mail ne se lit jamais tout seul ! Gabriel a accès à tes mails ?"
+            "Non, non, il a sa propre adresse, et il ne connaît pas mon mot de passe. "
+            "Enfin je crois en tout cas… je lui ai peut être donné un jour mais ca devait être il y a longtemps. "
+            "Dans tous les cas ça m’étonnerait qu’il s’y soit connecté sans m’en parler."
+            Al "D’accord. "
+            Al "C’est possible que tu l’aies lu sans t’en rendre compte, mais si ça t’arrive à nouveau, tu devrais demander à quelqu’un qui s’y connaît !"
+
+            if flag_2_3B_1 == 1:
+                Al "Et concernant ta banque, c’est encore bien plus inquiétant. "
+                Al "Tu devrais essayer de les appeler dans la journée pour leur demander conseil."
+
+            jump _2_4A_1_done
+
+        label _2_4A_1_done:
+
+        "Merci Alice !"
+        "Comme d’habitude, tu es toujours de bon conseil. "
+        "Tu sais, je suis content que tu ne sois jamais bien loin !"
+        "Passe une bonne journée, on se voit plus tard !"
+        Al "C’est toujours avec plaisir ! "
+        Al "Repasse me voir quand tu veux !"
+        Al "Courage pour ton projet, tu vas assurer !"
+        "Merci, toi aussi, tu assures ! "
+        "Allez j’y vais, à plus tard !"
+        
         jump _2_4_done
 
     label _2_4B:
