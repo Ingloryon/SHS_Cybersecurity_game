@@ -882,7 +882,53 @@ label start:
         "Le week-end est passé à une vitesse folle !"
         Al "C’est souvent comme ça haha, surtout vu le beau temps qu’on a eu !"
 
+        menu:
+            "J’en ai profité pour voir le dernier Star Wars, depuis le temps que j’en avais envie !":
+                jump _2_4A_1A
 
+            "Pendant que tu es là, je voulais te parler d’Andrew.":
+                jump _2_4A_1B
+
+            "J’ai vu un truc inquiétant dans ma boîte mail, et je souhaiterais t’en parler.":
+                jump _2_4A_1C
+                
+        label _2_4A_1A:
+            $ flag_2_4A_1 = 0
+
+            "Et je n’ai pas été déçu, il est vraiment super !"
+            Al "Dis-moi rien, je ne l’ai pas encore vu !"
+            Al "Tu pourrais me le prêter ? "
+            Al "Tu l’as en DVD ? "
+            Al "Je meurs d’envie de le voir aussi !"
+            "Ah non, je n’ai pas le DVD, je l’ai téléchargé."
+            Al "Oh, tu devrais faire attention avec ça, c’est vite fait d’attraper une saleté sur ces sites !"
+            "C’était juste pour une fois, je ne le fais pas d’habitude donc bon, ça devrait aller !"
+            Al "Méfie-toi Bob, je ne veux pas faire ma rabat-joie, mais c’est tellement vite arrivé ! "
+            Al "Et quand tu as un de ces trucs sur ta machine, après tu peux être bien embêté !"
+            jump _2_4A_done
+
+        label _2_4A_1B:
+            $ flag_2_4A_1 = 1
+
+            Al "Dis-moi donc ! Je suis toujours heureuse de pouvoir t’éclairer si je le peux !"
+            "Ça fait déjà plusieurs fois qu’il se plaint que je lui donne du sale boulot."
+            "Il voudrait que je lui donne plus de responsabilités, afin qu’il puisse se faire davantage remarquer par la direction. "
+            "Qu’est-ce que tu en penses toi ? Je devrais lui laisser plus de tâches conséquentes ?"
+            Al "Effectivement, c’est épineux comme question…"
+            Al "Je peux comprendre Andrew, ça fait un moment qu’il essaye de monter dans la hiérarchie sans trop de succès."
+            Al "Je pense que c’est important que tout le monde ait sa chance."
+            Al "Après, je pense aussi que c’est ton projet et que si tu estimes qu’Andrew doit faire un certain boulot, et bien c’est sûrement la bonne solution."
+            Al "Peut être aussi qu’il n’a pas eu l’attitude qui t’aurais donné envie de l’aider ou de lui faire confiance."
+            Al "Ton choix sera le bon Bob, tu fais du super boulot dans cette boîte. "
+            jump _2_4A_done
+
+        label _2_4A_1C:
+            $ flag_2_4A_1 = 2
+
+            "J’ai vu un mail marqué comme lu, alors que j’étais persuadé de ne jamais l’avoir ouvert."
+            jump _2_4A_done
+
+        label _2_4A_done:
 
         jump _2_4_done
 
