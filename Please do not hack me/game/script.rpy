@@ -741,9 +741,6 @@ label start:
     scene bg_black
     with mediumdissolve
 
-
-    #---------------------------------------------------------START Yannick
-
     scene bg_alarm
     with mediumdissolve
 
@@ -1024,9 +1021,6 @@ label start:
     scene bg_corridor
     with mediumdissolve
 
-    #---------------------------------------------------------STOP Yannick
-
-    #---------------------------------------------------------START Hugo
     play music "audio/intrigue0.mp3" fadeout 1.0 fadein 1.0
 
     "Hé, salut Marc !"
@@ -1174,9 +1168,6 @@ label start:
         scene bg_black
         with slowdissolve
 
-    #---------------------------------------------------------STOP Hugo
-    #---------------------------------------------------------START Guillaume
-
     play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
 
     show bg_living_room
@@ -1186,18 +1177,105 @@ label start:
     "Ça va vraiment être du gros boulot ce projet Baker."
     "Salut Gabriel ! Je suis rentré !"
 
-    #---------------------------------------------------------STOP Guillaume
+    if flag_2_5 == 1:
+        G "Salut Papa ! Alors tu as eu droit à des nouvelles farces de ton hacker ?"
+        G "Tu as bien changé ton mot de passe Facebook ?"
 
-    #---------------------------------------------------------START Thomas
+        "Oui, oui, merci encore pour tes conseils, ça m’a beaucoup aidé."
+        "Et non pas de nouvelles, j’espère que mon nouveau mot de passe aidera à ce que cette mauvaise blague prenne fin."
 
-    #---------------------------------------------------------STOP Thomas
+        G "Mais oui, ça va aller !"
+        G "Tu sais que même moi j‘ai cru que c’était toi sur le nouveau compte !"
 
-    #---------------------------------------------------------START Mateo
+        "C’est qu’il se débrouille bien ce lascar… "
+        "Je suis inquiet. J’ai l’impression que quelqu’un essaye de me jouer des tours en ce moment… "
+
+        G "Mais non ! Bon allez je vais dans ma chambre, à tout à l’heure !"
+
+    else:
+        G "Salut Papa !"
+
+        "Comment ça va ? Tu as passé une bonne journée ?"
+
+        G "Oui et toi ?"
+
+        play music "audio/intrigue0.mp3" fadeout 1.0 fadein 1.0
+
+        "Une journée surprenante… Dans le mauvais sens."
+        "J’ai eu un problème avec mon profil facebook."
+
+        G "Ah bon ? Qu’est-ce qui t’es arrivé ?"
+
+        "Apparemment quelqu’un a créé un nouveau profil quasiment identique au mien, et il essaie de faire croire que mon compte actuel a été hacké."
+        "Et je crois qu’il a aussi eu accès à mon vrai compte... Tout le monde croit que c’est moi qui ai signalé le hack, alors que pas du tout !"
+        "Qu’est-ce que je peux faire à ton avis ?"
+        G "Oula, c’est embêtant. C’est arrivé à un de mes copains y a pas longtemps, et son père est informaticien. Apparemment, il y a plusieurs choses que tu peux faire."
+        "Vas-y dis moi tout !"
+        G "Tu as de la chance, sur Facebook je crois que tu ne peux pas changer ton mot de passe sans répondre à ta question secrète."
+        G "Du coup, commence par changer ton mot de passe par sûreté."
+        G "Tu pourrais également activer l'authentification à deux facteurs. Finalement, une fois que tu auras sécurisé ton compte, tu devrais signaler le faux à Facebook."
+        "Ça marche, je vais commencer par changer le mot de passe du coup."
+        "Merci mille fois Gabriel, tu me sors une épine du pieds !"
+
+        G "De rien papa, aller je te laisse à tes mots de passe, je vais dans ma chambre."
+
+        "Ok, changer mon mot de passe Facebook, ça devrait pas être sorcier."
+
+        play music "audio/mini_jeu0.mp3" fadeout 1.0 fadein 1.0
+
+        show bg_phone_changer_mdp
+        with slowdissolve
+
+        "Tiens d’ailleurs, c’est vrai que je devrais faire attention, j’utilise un peu toujours les mêmes mots de passe..."
+        "Je vais en inventer un nouveau cette fois."
+        "Alors qu’est-ce que je vais bien pouvoir mettre ?"
+
+        menu:
+            "facebookBob123":
+                jump _2_5B_1A_bis
+
+            "FaCebooKBob951":
+                jump _2_5B_1B_bis
+
+            "f@C3b0OK951bOb!":
+                jump _2_5B_1C_bis
+
+        label _2_5B_1A_bis:
+            $ flag_2_5B_1 = 0
+            jump _2_5B_done_bis
+
+        label _2_5B_1B_bis:
+            $ flag_2_5B_1 = 1
+            jump _2_5B_done_bis
+
+        label _2_5B_1C_bis:
+            $ flag_2_5B_1 = 2
+            jump _2_5B_done_bis
+
+        label _2_5B_done_bis:
+
+        "Et maintenant, la question secrète: le nom de mon premier chat."
+        "Brave petit Gargamel, tu es vraiment la meilleure des sécurités !"
+        "Voilà, ça devrait faire l’affaire."
+        "Je vais noter ce nouveau mot de passe quelque part, sinon je risque de l’oublier."
+
+        hide bg_phone_changer_mdp
+        with slowdissolve
+
+        # A changé son mot de passe de Facebook -> met fin à futurs problèmes avec Facebook MAIS le joueur devra se rappeler le nouveau mdp à un moment de l’aventure
+
+    "Je vais commencer par faire le repas pour Gabriel comme ça après je ne serai plus embêté pour régler mes problèmes."
+
+    "[Après le repas]"
+
+    show bg_living_room
+    with slowdissolve
+
+    play music "audio/intrigue1.mp3" fadeout 1.0 fadein 1.0
+
+    "Gabriel est remonté dans sa chambre. Qu’est-ce que je devrais faire en premier ?"
+
     #------------------------------------------------------CHOIX_1--------------
-
-    scene bg_black #can be removed when the previous chapter will be written
-    $ flag_2_3B_1=0 #MUST BE REMOVED when the previous chapter will be written
-
     $ flag_2_7=-1#need to initialize this here to allow _2_7 to reuse choices in _2_6
     $ flag_2_8=-1#need to initialize this here to allow _2_8 to reuse choices in _2_7
     $ flag_2_9=-1#need to initialize this here to allow _2_9 to reuse choices in _2_8
@@ -1229,7 +1307,9 @@ label start:
 
         #Icône du téléphone
         #Musique sonnerie
-        "[Dring…\nDring…\nDring…]"
+        "Dring…"
+        "Dring…"
+        "Dring…"
         #Stop Musique sonnerie
 
         "[Votre correspondant n’est pas joignable. Veuillez réessayer plus tard.]"
@@ -1243,7 +1323,9 @@ label start:
 
         #Icône du téléphone
         #Musique sonnerie
-        "[Dring…\nDring…\nDring…]"
+        "Dring…"
+        "Dring…"
+        "Dring…"
         #Stop Musique sonnerie
 
         #Musique joyeuse
@@ -1550,10 +1632,6 @@ label start:
     "END OF SCRIPT"
     "END OF SCRIPT"
 
-
-
-    #---------------------------------------------------------STOP Mateo
-
     return
 
     screen could_click_extension:
@@ -1568,4 +1646,3 @@ label start:
             idle "movie_avi_exe.png"
             hover "movie_avi_exe.png"
             action [SetVariable("RunMovieExe", True), Hide("could_click_extension"), Jump("end_loop_1_6")]
-
