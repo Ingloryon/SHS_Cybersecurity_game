@@ -58,25 +58,26 @@ label start:
 
     stop sound
 
-    "Mmmh... ?
-        \nPfff et dire que j’ai déjà mis le réveil le plus tard possible..."
-    "Faut vraiment que je pense à me coucher plus tôt.
-        \nBon aller pas le temps de trainer, petite douche et c’est parti."
+    "Mmmh... ?"
+    "Pfff et dire que j’ai déjà mis le réveil le plus tard possible..."
+    "Faut vraiment que je pense à me coucher plus tôt."
+    "Bon aller pas le temps de trainer, petite douche et c’est parti."
 
     scene bg_living_room
     with slowdissolve
 
-    "Ok je suis prêt
-        \nJ’ai pas l’impression d’avoir entendu le réveil de Gabriel, je vais aller rapidement vérifier qu’il est réveillé."
+    "-Ok je suis prêt-"
+    "-Je n’ai pas l’impression d’avoir entendu le réveil de Gabriel, je vais aller rapidement vérifier qu’il est réveillé.-"
     B_shout "Gabriel ! N'oublie pas que tu dois être à l’arrêt de bus dans moins de 20 minutes !"
     B_shout "Eh Gabriel tu es réveillé ?"
 
     show gabriel_normal
     with mediumdissolve
-    G "Ouais ouais, c’est bon t’inquiète. Je serai au bus à l’heure, je prend juste une douche j’ai pas envie de petit déjeuner ce matin."
+    G "Ouais ouais, c’est bon t’inquiète."
+    G "Je serai au bus à l’heure, je prend juste une douche j’ai pas envie de petit déjeuner ce matin."
 
-    "Bon ça marche.
-        \nD’ailleurs ca te dirait qu’on se mate un film ce soir pour fêter la fin de la semaine ?
+    "Bon ça marche."
+    "D’ailleurs ca te dirait qu’on se mate un film ce soir pour fêter la fin de la semaine ?
         \nJe pensais télécharger le dernier Star Wars."
 
     G "Heu ouais pourquoi pas mais je devais peut-être voir Loris ce soir. Je te redis."
@@ -99,15 +100,14 @@ label start:
 
     "Merci Monsieur Parker."
 
-    P "Du coup, je pensais vous assigner toi et ton équipe sur le nouveau projet
-        \nBaker qui débute la semaine prochaine."
+    P "Du coup, je pensais vous assigner toi et ton équipe sur le nouveau projet Baker qui débute la semaine prochaine."
     P "Je te laisse informer ton équipe et terminer le débriefing du projet
         \nJohnson aujourd’hui."
     P "Si tu gères ce nouveau projet comme le précédent je pense que j’en toucherai deux mots au prochain conseil de direction."
 
     "Merci de me confier ce projet, on m’a dit qu’il était très ambitieux."
 
-    P "Oui en effet, mais je pense que tu as les compétences pour mener ce projet à bien."
+    P "Oui en effet, mais je pense que tu as les compétences pour le mener à bien."
     hide parker_normal
 
 #-------------------------------------------------------------------------------
@@ -117,8 +117,8 @@ label start:
 
     show alice_smile
     with mediumdissolve
-    Al "Hey hey, salut Bob! Comment tu vas ?
-        \nAlors comme ça il parait que tu vas être assigné sur le projet Baker ?"
+    Al "Hey hey, salut Bob! Comment tu vas ?"
+    al "Alors comme ça il parait que tu vas être assigné sur le projet Baker ?"
 
     "Mais attends comment tu sais déjà ça ? "
 
@@ -132,11 +132,11 @@ label start:
 
     "Oh mince, tu aurais voulu bosser sur le dossier Baker ?"
 
-    Al "Bien sûr que non, je suis bien contente pour toi, tu le mérites ce projet.
-        \nAllez, trêve de plaisanteries, j’ai du pain sur la planche !"
+    Al "Bien sûr que non, je suis bien contente pour toi, tu le mérites ce projet."
+    Al "Allez, trêve de plaisanteries, j’ai du pain sur la planche !"
 
-    "Oula oui tu as raison, il faut que je me dépêche aussi sinon l’équipe va m’attendre !
-        \nÀ plus tard Alice !"
+    "Oula oui tu as raison, il faut que je me dépêche aussi sinon l’équipe va m’attendre !"
+    "À plus tard Alice !"
     hide alice_smile
 
 #-------------------------------------------------------------------------------
@@ -165,24 +165,24 @@ label start:
     Ad "Je trouve pas ça très productif de ta part et j’aimerais que tu me donnes
         un peu plus de responsabilités sur le projet de la semaine prochaine."
 
-    "...
-        \nAndrew ce n’est pas la première fois que tu te plains des tâches qui te sont assignées."
+    "..."
+    "Andrew ce n’est pas la première fois que tu te plains des tâches qui te sont assignées."
     "La dernière fois qu’on en a parlé tu m’as déjà fait comprendre que tu voulais plus de responsabilités."
 
     "Tu es très compétent mais je ne vais pas non plus te donner l’organisation du dossier, c’est mon boulot de faire ça."
 
-    Ad "Bob, je te demande pas ton boulot. Laisse moi juste l’opportunité de faire du travail qui sera remarqué.
-        On a tous envie d’avoir une partie du mérite attribué au projet, je pense que les autres sont d’accord non ?"
+    Ad "Bob, je ne te demande pas ton boulot. Laisse moi juste l’opportunité de faire du travail qui sera remarqué."
+    Ad "On a tous envie d’avoir une partie du mérite attribué au projet, je pense que les autres sont d’accord non ?"
 
-    "Bon, bon.
-        Ce weekend je vais réfléchir aux différentes tâches de la semaine prochaine et je vous propose qu’on reparle tous ensemble de leur répartition lundi matin."
+    "Bon, bon."
+    "Ce weekend je vais réfléchir aux différentes tâches de la semaine prochaine et je vous propose qu’on reparle tous ensemble de leur répartition lundi matin."
     "Tout le monde est d’accord avec ça ?"
     hide andrew_normal
 
     play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
 
-    "Bien on dirait que tout le monde est d’accord.
-    \nMême Andrew arrête d’objecter."
+    "-Bien on dirait que tout le monde est d’accord.-"
+    "-Même Andrew arrête d’objecter.-"
 
     menu:
         "Il m’énerve à toujours vouloir se faire remarquer et remettre en cause mes décisions.":
@@ -199,7 +199,7 @@ label start:
     label _1_1B:
         $ flag_1_1 = 1
 
-        "Je devrais peut être demander à Alice ce qu’elle en pense."
+        "-Je devrais peut être demander à Alice ce qu’elle en pense.-"
 
         jump _1_1_done
 
@@ -213,13 +213,14 @@ label start:
 
     "[La boîte mail est pleine de spams et de tentatives de connexions au compte Roll20]"
 
-    "Tiens, quelqu’un a cherché à se connecter à mon compte Roll20 ?
-        \nJe ne me souviens même plus à quoi ce compte pouvait bien servir."
+    "Tiens, quelqu’un a cherché à se connecter à mon compte Roll20 ?"
+    "Je ne me souviens même plus à quoi ce compte pouvait bien servir."
 
     show andrew_normal
     with mediumdissolve
 
-    Ad "Bob, j’ai trouvé des informations intéressantes sur la compagnie Baker. Tu peux venir voir ?"
+    Ad "Bob, j’ai trouvé des informations intéressantes sur la compagnie Baker."
+    Ad "Tu peux venir voir ?"
 
     menu:
         "Oh tu as quand même été chercher les archives au final ? C’est sympa, je viens regarder ça avec toi !":
@@ -244,15 +245,14 @@ label start:
 
         "Cette histoire de compte m’a l’air vraiment étrange, je ferais mieux de vérifier tout ça."
 
-        "[Bob tape Roll20 dans barre recherche, et va sur le site]"
-
         scene bg_computer_roll20
         with slowdissolve
 
-        "Qu’est-ce que j’avais bien pu mettre comme identifiants ?
-            \nMmmh, probablement un de ceux que je mets un peu partout."
-        "...\nAhah, c'était ça, parfait."
-        "Je vais supprimer mon compte, je l’utiliserai sans doute plus jamais et ça résoudra le problème par la même occasion."
+        "Qu’est-ce que j’avais bien pu mettre comme identifiants ?"
+        "Mmmh, probablement un de ceux que je mets un peu partout."
+        "..."
+        "Ahah, c'était ça, parfait."
+        "Je vais supprimer mon compte, je ne l’utiliserai sans doute plus jamais et ça résoudra le problème par la même occasion."
 
         jump _1_2_done
 
@@ -276,8 +276,8 @@ label start:
     show gabriel_angry
     with mediumdissolve
 
-    G "Comme d’habitude, avec cette grognasse de proviseure, même si je ne fais rien c’est toujours de ma faute.
-        \nJ’en ai marre."
+    G "Comme d’habitude, avec cette grognasse de proviseure, même si je ne fais rien c’est toujours de ma faute."
+    G "J’en ai marre."
 
     menu:
         "Hey ne soit pas grossier ! Tu sais que les études c’est important quand même !":
@@ -335,8 +335,8 @@ label start:
 
         play music "audio/dispute0.mp3" fadeout 1.0 fadein 1.0
 
-        "Demain tu iras chez elle point final.
-            \nSi elle ne veut pas que tu ailles à ce concert c’est qu’elle a ses raisons"
+        "Demain tu iras chez elle point final."
+        "Si elle ne veut pas que tu ailles à ce concert c’est qu’elle a ses raisons"
 
         hide gabriel_normal
         show gabriel_angry
@@ -373,8 +373,8 @@ label start:
         S "Salut Bob! Tout va bien ?
             \nUn soucis avec Gabriel ?"
 
-        "Non non ne t’inquiète pas, c’est rien de grave.
-            \nC’est juste que Gabriel m’a dit qu’il devait aller à un concert demain avec Loris et il est vraiment déçu."
+        "Non non ne t’inquiète pas, c’est rien de grave."
+        "C’est juste que Gabriel m’a dit qu’il devait aller à un concert demain avec Loris et il est vraiment déçu."
 
         menu:
             "Je me disais qu’on pourrait peut être faire une exception pour ce week-end et qu’il pourrait rester chez moi un jour de plus qu’est ce que tu en penses ?":
@@ -393,17 +393,17 @@ label start:
 
         play music "audio/dispute1.mp3" fadeout 1.0 fadein 1.0
 
-        S "Tu es vraiment pas croyable.
-            \nTu ne pourrais pas prendre mon parti pour une fois ?"
-        S "À chaque fois que tu en a l’opportunité, tu me rappelles pourquoi j’ai demandé le divorce c’est dingue !
-        Mon week-end, ma décision."
-        S "Et dire oui tout le temps à ton fils ne fera pas de toi un meilleur père.
-        Salut Bob, on se voit demain matin."
+        S "Tu es vraiment pas croyable."
+        S "Tu ne pourrais pas prendre mon parti pour une fois ?"
+        S "À chaque fois que tu en a l’opportunité, tu me rappelles pourquoi j’ai demandé le divorce c’est dingue !"
+        S "Mon week-end, ma décision."
+        S "Et dire oui tout le temps à ton fils ne fera pas de toi un meilleur père."
+        S "Salut, on se voit demain matin."
         "[Sarah raccroche]"
 
 
         $ relation_gabriel=relation_gabriel+1
-        $ relation_sarah=relation_sarah-1
+        $ relation_sarah=relation_sarah-2
 
     label _1_4_done:
 
@@ -417,16 +417,13 @@ label start:
     "[Une notification apparaît]"
     "Une nouvelle demande d’ami sur Facebook ?
         \nQui ça peut bien être ?"
-    "Depuis le temps que je n’y suis plus allé.
-        \nCela fait longtemps que je n’ai rien posté en plus."
+    "Cela fait longtemps que je n’ai rien posté en plus."
     "Mmh... je pourrais parler du nouveau projet qu’on m’a confié !"
-
-    "[Bob sur son fil Facebook]"
 
     scene bg_computer_fb_posting
     with slowdissolve
 
-    "Super journée, je commence à bosser sur un nouveau projet très cool et important au boulot, affaire à suivre... ;)"
+    "\"Super journée, je commence à bosser sur un nouveau projet très cool et important au boulot, affaire à suivre... ;)\""
 
     "Voilà pas mal, j’imagine déjà la tête d’Andrew quand il va lire ça."
 
@@ -438,25 +435,23 @@ label start:
     show gabriel_normal
     with mediumdissolve
 
-    "Hey Gab!
-        \nJ’ai vu que ta chambre était loin d’être rangée alors que je te l’ai demandé plusieurs fois déjà, tu pourrais faire un effort s’il te plaît ?"
+    "Hey Gab!"
+    "J’ai vu que ta chambre était loin d’être rangée alors que je te l’ai demandé plusieurs fois déjà, tu pourrais faire un effort s’il te plaît ?"
 
 
     hide gabriel_normal
     show gabriel_angry
     with mediumdissolve
 
-    G "Mais oui bien sûr… et toi tu pourrais ranger tous tes papiers qui trainent depuis des mois dans ton bureau ?
-        \nBientot il y en aura tellement que je pourrai même plus poser mon ordi dessus !"
-
-
+    G "Mais oui bien sûr… et toi tu pourrais ranger tous tes papiers qui trainent depuis des mois dans ton bureau ?"
+    G "Bientot il y en aura tellement que je pourrai même plus poser mon ordi dessus !"
 
     "Ça n’a rien à voir voyons... Allez, range-moi ça au plus vite !"
 
     hide gabriel_angry
 
-    "C’est vrai que j’ai un peu délaissé le rangement de mon bureau avec tout le travail que j’ai ces derniers temps.
-    Je vais aller ranger ça vite fait bien fait comme ça, ça motivera Gabriel à ranger sa chambre."
+    "C’est vrai que j’ai un peu délaissé le rangement de mon bureau avec tout le travail que j’ai ces derniers temps."
+    "Je vais aller ranger ça vite fait bien fait comme ça, ça motivera Gabriel à ranger sa chambre."
 
     scene bg_desk_messy
     with slowdissolve
@@ -484,8 +479,8 @@ label start:
     scene bg_desk
     with slowdissolve
 
-    "Voilà qui est fait, ce n’était pas si long après tout.
-        \nJe me regarderai bien un film maintenant que tout est rangé, ça fait un moment que j’attends de voir le dernier Star Wars."
+    "Voilà qui est fait, ce n’était pas si long après tout."
+    "Je me regarderai bien un film maintenant que tout est rangé, ça fait un moment que j’attends de voir le dernier Star Wars."
 
     "On dirait que Gabriel est sorti, il a du aller voir Loris.
         \nBon tant pis, il aurait pu me prévenir quand même..."
@@ -495,19 +490,16 @@ label start:
 
     "Voyons, si j’arrive à le télécharger."
 
-    "[Bob tape sur le moteur de recherche]"
-
     scene bg_computer_search_starwars
     with slowdissolve
 
     "[Téléchargement gratuit dernier Star Wars]"
-    "[Bob clique sur le premier lien]"
 
     scene bg_computer_starwars_first_link
     with slowdissolve
 
     "Je vais essayer sur ce site"
-    "[Bob télécharge le fichier]"
+    "[Télécharge le fichier]"
     "Mmmh... La qualité est vraiment pas terrible..."
 
     $ has_malware = False
@@ -553,7 +545,7 @@ label start:
             scene bg_computer_starwars_second_link
             with mediumdissolve
 
-            "[Bob a téléchargé le fichier]"
+            "[Télécharge le fichier]"
 
             label loop_1_6:
 
@@ -587,7 +579,8 @@ label start:
                 "[Bob lance le film (qui ne démarre pas)]"
                 "Pourquoi le film ne se lance-t-il pas ?"
                 "[Bob clique plusieurs fois sur le fichier]"
-                "Ah enfin, ce n’était pas trop tôt. Et cette fois la qualité est au rendez-vous !"
+                "Ah enfin, ce n’était pas trop tôt."
+                "Et cette fois la qualité est au rendez-vous !"
 
                 $ has_malware= True
 
@@ -614,7 +607,7 @@ label start:
         \nOuh il est déjà tard, je devrais aller me coucher."
 
 
-    "[Fin Part I.]"
+    "[Fin du chapitre I]"
 
 
     #---------------------------------------------------------PARTIE 2----------
@@ -978,7 +971,7 @@ label start:
         Al "Courage pour ton projet, tu vas assurer !"
         "Merci, toi aussi, tu assures ! "
         "Allez j’y vais, à plus tard !"
-        
+
         jump _2_4_done
 
     label _2_4B:
@@ -1138,8 +1131,16 @@ label start:
         with slowdissolve
 
     #---------------------------------------------------------STOP Hugo
-
     #---------------------------------------------------------START Guillaume
+
+    play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
+
+    show bg_living_room
+    with slowdissolve
+
+    "Pfiou, impossible de dégager ne serait-ce que 15 minutes de la journée."
+    "Ça va vraiment être du gros boulot ce projet Baker."
+    "Salut Gabriel ! Je suis rentré !"
 
     #---------------------------------------------------------STOP Guillaume
 
