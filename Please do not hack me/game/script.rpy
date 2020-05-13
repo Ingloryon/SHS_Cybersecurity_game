@@ -165,8 +165,8 @@ label start:
     Ad "Je trouve pas ça très productif de ta part et j’aimerais que tu me donnes
         un peu plus de responsabilités sur le projet de la semaine prochaine."
 
-    "...
-        \nAndrew ce n’est pas la première fois que tu te plains des tâches qui te sont assignées."
+    "..."
+    "Andrew ce n’est pas la première fois que tu te plains des tâches qui te sont assignées."
     "La dernière fois qu’on en a parlé tu m’as déjà fait comprendre que tu voulais plus de responsabilités."
 
     "Tu es très compétent mais je ne vais pas non plus te donner l’organisation du dossier, c’est mon boulot de faire ça."
@@ -487,7 +487,7 @@ label start:
     "Voilà qui est fait, ce n’était pas si long après tout.
         \nJe me regarderai bien un film maintenant que tout est rangé, ça fait un moment que j’attends de voir le dernier Star Wars."
 
-    "On dirait que Gabriel est sorti, il a du aller voir Loris.
+    "On dirait que Gabriel est sorti, il a dû aller voir Loris.
         \nBon tant pis, il aurait pu me prévenir quand même..."
 
     scene bg_computer_google
@@ -742,7 +742,15 @@ label start:
 
     #---------------------------------------------------------START Yannick
 
+    scene bg_alarm
+    with mediumdissolve
+
+    play sound "audio/clock_ring.mp3"
     play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
+
+    "{i}*Drinnnnnnnnnnnnnng*{/i}"
+
+    stop sound
 
     "Il ne faut pas que je traîne, je ne peux pas me permettre d'arriver en retard avec ce nouveau projet."
     "Tout le monde doit être sur le qui-vive."
@@ -756,7 +764,7 @@ label start:
     "Effectivement, je suis bien arrivé en avance."
     "C'est cool, pour une fois je vais avoir le temps de regarder mes mails avant d'attaquer ma journée."
 
-    #scene bank?
+    #scene bg_computer_trash
     scene bg_computer_mail #En attendant
     with mediumdissolve
 
@@ -796,7 +804,8 @@ label start:
 
     label _2_3B:
         $ flag_2_3 = 1
-        #scene bg_bank_connect_mail
+        #scene bg_computer_tentative_connexion
+        #with mediumdissolve
 
         "Je sais pas si je deviens parano, mais j’ai l’impression qu’il n’est pas comme d’habitude."
         "Alors… “Nous avons remarqué une connexion depuis un appareil inhabituel… Blablabla, veuillez vous connecter sur le site pour confirmer qu’il s’agit bien de vous.”"
@@ -810,7 +819,8 @@ label start:
 
         label _2_3B_1A:
             $ flag_2_3B_1 = 0
-            #scene bg_bank_connect
+            scene bg_login_bank
+            with mediumdissolve
 
             "Veuillez entrer vos identifiants…"
 
@@ -823,7 +833,7 @@ label start:
 
             label _2_3B_1A_1A:
                 $ flag_2_3B_1A_1 = 0
-                "Alors, qu’est-ce donc que cette alerte ? "
+                "Tiens, je reçois une alerte."
                 jump _2_3_alert
 
             label _2_3B_1A_1B:
@@ -833,12 +843,14 @@ label start:
 
         label _2_3B_1B:
             $ flag_2_3B_1 = 1
-            #scene bg_search_bank
+            scene bg_search_bank
+            with mediumdissolve
 
             "Alors, voyons voir."
             "Se connecter…"
 
-            #scene bg_bank_connect
+            scene bg_login_bank
+            with mediumdissolve
 
             "Mes alertes..."
             "On dirait que je suis arrivé à l’URL exacte du mail."
@@ -854,7 +866,8 @@ label start:
 
     label _2_3C:
         $ flag_2_3 = 2
-        #scene bg_corbeille_mail
+        scene bg_computer_tentative_connexion
+        with mediumdissolve
 
         "Non mais attends, qu’est-ce que c’est que ce bazard ?!?"
         "On dirait que quelqu’un s’est connecté à la plupart de mes comptes ! Il a même commencé à changer les mots de passe de certains !"
@@ -978,7 +991,7 @@ label start:
         Al "Courage pour ton projet, tu vas assurer !"
         "Merci, toi aussi, tu assures ! "
         "Allez j’y vais, à plus tard !"
-        
+
         jump _2_4_done
 
     label _2_4B:
