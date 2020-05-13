@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 1435, in script
+    if _2_6!=0  and _2_7!=0 and flag_2_8==-1 :
+  File "game/script.rpy", line 1435, in <module>
+    if _2_6!=0  and _2_7!=0 and flag_2_8==-1 :
+NameError: name '_2_6' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 1435, in script
+    if _2_6!=0  and _2_7!=0 and flag_2_8==-1 :
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\ast.py", line 1832, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\python.py", line 2059, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\match\Documents\SHS_JeuVideo\SHS_Cybersecurity_game\renpy-7.3.5-sdk\renpy\python.py", line 2052, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 1435, in <module>
+    if _2_6!=0  and _2_7!=0 and flag_2_8==-1 :
+NameError: name '_2_6' is not defined
+
+Windows-8-6.2.9200
+Ren'Py 7.3.5.606
+Please do not hack me 1.0
+Wed May 13 14:31:17 2020

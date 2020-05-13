@@ -119,7 +119,7 @@ label start:
     show alice_smile
     with mediumdissolve
     Al "Hey hey, salut Bob! Comment tu vas ?"
-    al "Alors comme ça il parait que tu vas être assigné sur le projet Baker ?"
+    Al "Alors comme ça il parait que tu vas être assigné sur le projet Baker ?"
 
     "Mais attends comment tu sais déjà ça ? "
 
@@ -1327,7 +1327,7 @@ label start:
                 jump _2_7B
             "Je vais réessayer d’appeler M. Parker. J’ai vraiment besoin d’avoir ma journée de demain de libre pour m’occuper de tout ce que j’ai à régler."if flag_2_6==1:
                 jump _2_7C
-            "Tiens et si j’appelais Alice ? C’est toujours agréable de discuter avec elle." if flag 2_6!=2:
+            "Tiens et si j’appelais Alice ? C’est toujours agréable de discuter avec elle." if flag_2_6!=2:
                 jump _2_7D
             "Je me demande qui peut bien être derrière mon problème sur facebook. Je vais essayer de creuser un peu." if flag_2_6!=3:
                 jump _2_7_E
@@ -1432,7 +1432,7 @@ label start:
 
     #Graphique ordi 23:30
 
-    if _2_6!=0  and _2_7!=0 and flag_2_8==-1 :
+    if flag_2_6!=0  and flag_2_7!=0 and flag_2_8==-1 :
         menu:
             "C’est l’heure d’aller me coucher, je ne veux pas être trop fatigué demain.":
                 jump _2_8A
@@ -1471,7 +1471,7 @@ label start:
 
     #Graphique ordi 00:45
 
-    if _2_6!=0  and _2_7!=0 and _2_8!=0 and flag_2_9==-1 :
+    if flag_2_6!=0  and flag_2_7!=0 and flag_2_8!=0 and flag_2_9==-1 :
         menu:
             "J’ai abusé sur l’heure… Je vais être crevé demain, au lit.":
                 jump _2_9A
@@ -1513,7 +1513,7 @@ label start:
     #[très fatigué le lendemain]
 
     scene bg_black
-    Ronflements ?
+    #Ronflements ?
 
 
     "END OF SCRIPT"
