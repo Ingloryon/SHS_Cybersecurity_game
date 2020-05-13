@@ -119,7 +119,7 @@ label start:
     show alice_smile
     with mediumdissolve
     Al "Hey hey, salut Bob! Comment tu vas ?"
-    Al "Alors comme ça il parait que tu vas être assigné sur le projet Baker ?"
+    al "Alors comme ça il parait que tu vas être assigné sur le projet Baker ?"
 
     "Mais attends comment tu sais déjà ça ? "
 
@@ -631,8 +631,8 @@ label start:
     show sarah_normal
 
     "Bonjour Sarah ! Comment vas-tu ? Vous avez passé un bon week-end ?"
-    S "Salut Bob ! Bien et toi ? Oui oui, très bien merci et toi ?"
-    "Bien, bien."
+    S "Salut Bob ! Bien et toi ? Un plûtot bon weekend oui."
+    "D'accord, tant mieux."
 
     menu:
         "Je voulais m’excuser pour l’autre jour, ça ne se reproduira plus. Tu sais, je fais de mon mieux pour que tout se passe bien entre toi, Gabriel et moi mais parfois je suis simplement maladroit.":
@@ -658,7 +658,7 @@ label start:
     label _2_1_done:
 
 
-    S "Gabriel ton père est là !"
+    S_shout "Gabriel ton père est là !"
 
     "Je vais voir s’il a besoin d’aide pour ses affaires, je reviens."
 
@@ -676,7 +676,8 @@ label start:
     with mediumdissolve
 
     G "Salut Papa ! Je suis prêt, on peut y aller !"
-    "Salut mon grand ! Super, c’est parti alors. Au revoir Sarah, passe une bonne soirée."
+    "Salut mon grand ! Super, c’est parti alors."
+    "Au revoir Sarah, passe une bonne soirée."
     S "Au revoir Bob. Bisous mon coeur."
     G "Maman, je t’ai déjà dit que j’aimais pas quand tu m’appelles comme ça."
     S "Ah oui pardon, ça m’a échappé. Au revoir Gabriel, sois sage !"
@@ -688,7 +689,9 @@ label start:
     with slowdissolve
 
     "Alors, qu’est ce que tu as fait de beau ce week-end ?"
-    G "Oh tu sais pas grand chose. J’ai fait mes devoirs, et j’ai un peu traîné. Et Maman a fait des lasagnes. Ah si ! J’ai joué à un nouveau jeu sur la console. Ça s’appelle “Mega war IV”, tu connais ?"
+    G "Oh tu sais pas grand chose."
+    "J’ai fait mes devoirs, et j’ai un peu traîné. Et Maman a fait des lasagnes."
+    "Ah si ! J’ai joué à un nouveau jeu sur la console. Ça s’appelle “Mega war IV”, tu connais ?"
 
     menu:
         "Non, jamais entendu parler. C’est un jeu de guerre c’est ça ?":
@@ -700,10 +703,14 @@ label start:
         $ flag_2_2A = 0
 
         G "Oui c’est ça. C’est un jeu coopératif, les effets sont super bien faits."
-        "Je n’aime pas trop que tu joues à des jeux de guerre. Il y a pleins de jeux sympas pour les jeunes sur la console, pourquoi tu choisis ceux-là ?"
-        G "J’ai pleins de copains qui y jouent, et ils en parlent tout le temps à l’école. Du coup, ça me permet d’en discuter avec eux. Et puis c’est pas réel, c’est qu’un jeu."
-        "Tu sais, faire quelque chose pour être comme les autres, c’est jamais une bonne idée. Réfléchis-y ! Si tu veux, on regarde ensemble pour te trouver un nouveau jeu plus sympa et plus adapté à ton âge. Et je te l’offre."
-        G "Ah bah si tu me l’offres, ça me va ! Et puis comme ça, je le montrerai à mes copains, et c’est eux qui voudront faire comme moi !"
+        "Je n’aime pas trop que tu joues à des jeux de guerre."
+        "Il y a pleins de jeux sympas pour les jeunes sur la console, pourquoi tu choisis ceux-là ?"
+        G "J’ai pleins de copains qui y jouent, et ils en parlent tout le temps à l’école. Du coup, ça me permet d’en discuter avec eux."
+        G "Et puis c’est pas réel, c’est qu’un jeu."
+        "Tu sais, faire quelque chose pour être comme les autres, c’est jamais une bonne idée. Réfléchis-y !"
+        "Si tu veux, on regarde ensemble pour te trouver un nouveau jeu plus sympa et plus adapté à ton âge. Et je te l’offre."
+        G "Ah bah si tu me l’offres, ça me va !"
+        G "Et puis comme ça, je le montrerai à mes copains, et c’est eux qui voudront faire comme moi !"
         "Tu comprends vite mon fils !"
 
         $ relation_gabriel=relation_gabriel+1
@@ -720,7 +727,8 @@ label start:
         show gabriel_angry
 
         G "Vous êtes pénibles avec maman ! C’est bon je suis grand et c’est qu’un jeu ! Et c’est des rumeurs ton truc là."
-        G "Je suis sûr que c’est des parents pénibles qui ont créé cette rumeur pour pas que leurs enfants jouent aux jeux vidéos. Si tu te renseignais un peu, tu verrais qu’il y a pleins d'études qui montrent qu’il n’y a aucun lien."
+        G "Je suis sûr que c’est des parents pénibles qui ont créé cette rumeur pour pas que leurs enfants jouent aux jeux vidéos."
+        G "Si tu te renseignais un peu, tu verrais qu’il y a pleins d'études qui montrent qu’il n’y a aucun lien."
         "Bon écoute, c’est simple, tu n’as plus le droit de jouer à ce jeu."
         G "C’est injuste !"
         "C’est pour ton bien, Gabriel. En plus il fait beau, tu n’as qu’à aller voir tes copains ou profiter de l’extérieur."
@@ -748,6 +756,10 @@ label start:
 
     "Il ne faut pas que je traîne, je ne peux pas me permettre d'arriver en retard avec ce nouveau projet."
     "Tout le monde doit être sur le qui-vive."
+
+    scene bg_living_room
+    with slowdissolve
+
     "Je crois que je n'ai rien oublié, je peux y aller."
     "Je serai même en avance comme ça."
     "Salut Gabriel, passe une bonne journée."
@@ -755,7 +767,7 @@ label start:
     scene bg_job
     with slowdissolve
 
-    "Effectivement, je suis bien arrivé en avance."
+    "Effectivement, je suis arrivé bien en avance."
     "C'est cool, pour une fois je vais avoir le temps de regarder mes mails avant d'attaquer ma journée."
 
     #scene bg_computer_trash
@@ -802,7 +814,7 @@ label start:
         #with mediumdissolve
 
         "Je sais pas si je deviens parano, mais j’ai l’impression qu’il n’est pas comme d’habitude."
-        "Alors… “Nous avons remarqué une connexion depuis un appareil inhabituel… Blablabla, veuillez vous connecter sur le site pour confirmer qu’il s’agit bien de vous.”"
+        "Alors… “Nous avons remarqué une connexion depuis un appareil inhabituel, blablabla, veuillez vous connecter sur le site pour confirmer qu’il s’agit bien de vous.”"
 
         menu:
             "Je vais cliquer sur le lien, le début de l’URL a l’air de correspondre à celle de ma banque.":
@@ -1023,7 +1035,8 @@ label start:
 
     M "Tiens Bob ! Comment ça va aujourd’hui ?"
     "Bien, bien. Je retourne à mon bureau pour démarrer ma journée de travail !"
-    M "Décidément, toujours à aller discuter à droite à gauche toi ! *rire* Je rigole, tu travailles bien plus que moi hahaha ! Dis donc, qu’est-ce que ça donne le hack de ton Facebook ? Tu as pu résoudre le problème ? "
+    M "Décidément, toujours à aller discuter à droite à gauche toi ! *rire* Je rigole, tu travailles bien plus que moi hahaha !"
+    M "Dis donc, qu’est-ce que ça donne le hack de ton Facebook ? Tu as pu résoudre le problème ? "
     "Le hack de mon Facebook ?"
     M "Bah oui ! J’ai vu ta publication."
 
@@ -1038,13 +1051,18 @@ label start:
 
     hide marc
 
-    "C’est quoi cette histoire de compte piraté ? Ce n’est pas moi qui ai publié ce post. Et Marc avait bien l’air d’être convaincu qu’il venait de moi. Ça ne doit pas être le seul. Je vais aller regarder tout ça d’un peu plus prêt."
+    "C’est quoi cette histoire de compte piraté ? Ce n’est pas moi qui ai publié ce post."
+    "Et Marc avait bien l’air d’être convaincu qu’il venait de moi. Ça ne doit pas être le seul."
+    "Je vais aller regarder tout ça d’un peu plus prêt."
 
     show bg_phone_publication
     with slowdissolve
 
-    "Effectivement, je peux comprendre qu’ils pensent que ce soit moi. Même nom, mêmes photos, mêmes infos personnelles... Ce compte est presque entièrement identique au mien. Comment a-t-il pu avoir accès à toutes ces informations ?"
-    "Et merde, on dirait que le hackeur a pu se connecter à mon véritable compte... Il a publié pleins de spams publicitaires sur mon vrai mur pour appuyer l’hypothèse que je me suis fait piraté ! Je ne sais pas trop ce que je peux faire."
+    "Effectivement, je peux comprendre qu’ils pensent que ce soit moi. Même nom, mêmes photos, mêmes infos personnelles... Ce compte est presque entièrement identique au mien."
+    "Comment a-t-il pu avoir accès à toutes ces informations ?"
+    "Et merde, on dirait que le hackeur a pu se connecter à mon véritable compte..."
+    "Il a publié pleins de spams publicitaires sur mon vrai mur pour appuyer l’hypothèse que je me suis fait piraté !"
+    "Je ne sais pas trop ce que je peux faire."
 
     hide bg_phone_publication
 
@@ -1061,15 +1079,21 @@ label start:
         show andrew_normal
         with mediumdissolve
 
-        "Andrew ! J’ai besoin de ton aide ! Apparemment quelqu’un a créé un faux profil Facebook quasiment identique au mien, et il essaie de faire croire que mon compte actuel a été hacké."
-        "Et je crois qu’il a aussi eu accès à mon véritable compte... Qu’est-ce que je peux faire à ton avis ?"
-        Ad "C’est gentil de me demander conseil pour une fois Bob. Je suis désolé, mais c’est déjà presque l’heure du meeting Baker. Je ne voudrais pas arriver en retard pour un projet si important, et je pense que toi non plus."
-        Ad "Tu devrais laisser tes problèmes personnels pour le moment et t’en occuper ce soir. On va tous avoir besoin de toi pour définir le planning de tâches. C’est toi le chef de projet après tout."
-        "Je vois, tu as surement raison. Aller je vais au meeting, à tout de suite."
+        "Andrew ! J’ai besoin de ton aide !"
+        "Apparemment quelqu’un a créé un faux profil Facebook quasiment identique au mien, et il essaie de faire croire que mon compte actuel a été hacké."
+        "Et je crois qu’il a aussi eu accès à mon véritable compte..."
+        "Qu’est-ce que je peux faire à ton avis ?"
+        Ad "C’est gentil de me demander conseil pour une fois Bob."
+        Ad "Je suis désolé, mais c’est déjà presque l’heure du meeting Baker. Je ne voudrais pas arriver en retard pour un projet si important, et je pense que toi non plus."
+        Ad "Tu devrais laisser tes problèmes personnels pour le moment et t’en occuper ce soir."
+        Ad "On va tous avoir besoin de toi pour définir le planning de tâches. C’est toi le chef de projet après tout."
+        "Je vois, tu as raison. Je vais aller au meeting, à tout de suite."
 
         hide andrew_normal
 
-        "Décidément il est vraiment odieux ce type. Il peut travailler aussi bien qu’il veut, je n’arriverai jamais à le supporter. Je me demande si je n’arriverais pas à le faire muter dans une autre équipe."
+        "-Décidément il est vraiment odieux ce type.-"
+        "-Il peut travailler aussi bien qu’il veut, je n’arriverai jamais à le supporter.-"
+        "-Je me demande si je n’arriverais pas à le faire muter dans une autre équipe.-"
 
         $ relation_andrew=relation_andrew-1
         jump _2_5_done
@@ -1086,16 +1110,19 @@ label start:
         G "Salut Papa ! Euh...oui, ça va et toi ? Pourquoi est-ce que tu m’appelles maintenant ?"
         "J’ai un problème avec mon profil facebook. Et j’aurais besoin de ton aide."
         G "Okay. Je suis en pause mais je reprends dans 10 minutes, qu’est-ce qu’il se passe ?"
-        "Apparemment quelqu’un a créé un nouveau profil quasiment identique au mien, et il essaie de faire croire que mon compte actuel a été hacké.
-        \nEt je crois qu’il a aussi eu accès à mon vrai compte... Tout le monde croit que c’est moi qui ai signalé le hack, alors que pas du tout ! Qu’est-ce que je peux faire à ton avis ?"
+        "Apparemment quelqu’un a créé un nouveau profil quasiment identique au mien, et il essaie de faire croire que mon compte actuel a été hacké."
+        "Et je crois qu’il a aussi eu accès à mon vrai compte... Tout le monde croit que c’est moi qui ai signalé le hack, alors que pas du tout !"
+        "Qu’est-ce que je peux faire à ton avis ?"
         G "Oula, c’est embêtant. C’est arrivé à un de mes copains y a pas longtemps, et son père est informaticien. Apparemment, il y a plusieurs choses que tu peux faire."
         "Vas-y dis moi tout !"
-        G "Tu as de la chance, sur Facebook je crois que tu ne peux pas changer ton mot de passe sans répondre à ta question secrète. Du coup, commence par changer ton mot de passe par sûreté.
-        \nTu pourrais également activer l'authentification à deux facteurs. Une fois que tu auras sécurisé ton compte, tu devrais signaler le faux à Facebook."
-        "Ça marche, je vais commencer par changer le mot de passe du coup. Je verrai ce soir pour le reste. Merci mille fois Gabriel, tu me sors une épine du pieds !"
+        G "Tu as de la chance, sur Facebook je crois que tu ne peux pas changer ton mot de passe sans répondre à ta question secrète."
+        G "Du coup, commence par changer ton mot de passe par sûreté."
+        G "Tu pourrais également activer l'authentification à deux facteurs. Finalement, une fois que tu auras sécurisé ton compte, tu devrais signaler le faux à Facebook."
+        "Ça marche, je vais commencer par changer le mot de passe du coup. Je verrai ce soir pour le reste."
+        "Merci mille fois Gabriel, tu me sors une épine du pieds !"
         G "De rien papa, aller je te laisse à tes mots de passe, je dois y aller. À ce soir !"
 
-        hide bg_phone_icone
+        hide sarah_phone
 
         "Ok, changer mon mot de passe Facebook, ça devrait pas être sorcier."
 
@@ -1104,7 +1131,8 @@ label start:
         show bg_phone_changer_mdp
         with slowdissolve
 
-        "Tiens d’ailleurs, c’est vrai que je devrais faire attention, j’utilise un peu toujours les mêmes mots de passe... Je vais en inventer un nouveau cette fois."
+        "Tiens d’ailleurs, c’est vrai que je devrais faire attention, j’utilise un peu toujours les mêmes mots de passe..."
+        "Je vais en inventer un nouveau cette fois."
         "Alors qu’est-ce que je vais bien pouvoir mettre ?"
 
         menu:
@@ -1131,8 +1159,10 @@ label start:
 
         label _2_5B_done:
 
-        "Et maintenant, la question secrète: le nom de mon premier chat. Brave petit Gargamel, tu es vraiment la meilleure des sécurités !"
-        "Voilà, ça devrait faire l’affaire. Je vais noter ce nouveau mot de passe quelque part, sinon je risque de l’oublier."
+        "Et maintenant, la question secrète: le nom de mon premier chat."
+        "Brave petit Gargamel, tu es vraiment la meilleure des sécurités !"
+        "Voilà, ça devrait faire l’affaire."
+        "Je vais noter ce nouveau mot de passe quelque part, sinon je risque de l’oublier."
         "Aller il faut vraiment que je m’y mette maintenant, tout le monde doit déjà m’attendre pour la distribution des tâches du projet Baker..."
 
         $ relation_gabriel=relation_gabriel+1
@@ -1524,7 +1554,6 @@ label start:
 
     #---------------------------------------------------------STOP Mateo
 
-
     return
 
     screen could_click_extension:
@@ -1539,3 +1568,4 @@ label start:
             idle "movie_avi_exe.png"
             hover "movie_avi_exe.png"
             action [SetVariable("RunMovieExe", True), Hide("could_click_extension"), Jump("end_loop_1_6")]
+
