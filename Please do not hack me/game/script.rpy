@@ -1169,8 +1169,8 @@ label start:
 
     label _2_5_done:
 
-        scene bg_black
-        with slowdissolve
+    scene bg_black
+    with slowdissolve
 
     play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
 
@@ -1180,6 +1180,9 @@ label start:
     "Pfiou, impossible de dégager ne serait-ce que 15 minutes de la journée."
     "Ça va vraiment être du gros boulot ce projet Baker."
     "Salut Gabriel ! Je suis rentré !"
+
+    show gabriel_normal
+    with mediumdissolve
 
     if flag_2_5 == 1:
         G "Salut Papa ! Alors tu as eu droit à des nouvelles farces de ton hacker ?"
@@ -1196,6 +1199,9 @@ label start:
 
         G "Mais non ! Bon allez je vais dans ma chambre, à tout à l’heure !"
 
+        hide gabriel_normal
+        with mediumdissolve
+        
     else:
         G "Salut Papa !"
 
@@ -1222,6 +1228,9 @@ label start:
         "Merci mille fois Gabriel, tu me sors une épine du pieds !"
 
         G "De rien papa, aller je te laisse à tes mots de passe, je vais dans ma chambre."
+
+        hide gabriel_normal
+        with mediumdissolve
 
         "Ok, changer mon mot de passe Facebook, ça devrait pas être sorcier."
 
@@ -1307,7 +1316,10 @@ label start:
         $ flag_2_6=1
     label _2_6B_nondestructive:
 
-        #Icône du téléphone
+        show sarah_phone:
+            xalign 0.03
+            yalign 0.98
+
         play sound "audio/phone_ring.mp3"
         "Dring…"
         "\nDring…"
