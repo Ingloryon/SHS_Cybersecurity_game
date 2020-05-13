@@ -1623,21 +1623,15 @@ label start:
         label _2_9B:
             $ flag_2_9=1
 
-            jump _2_6D_nondestructive#redirect to the second dialogue
-
-            #jump _2_9_done
+            jump _2_9_done
         label _2_9C:
             $ flag_2_9=2
 
-            jump _2_7F_nondestructive#redirect to the second dialogue
-
-            #jump _2_9_done
+            jump _2_9_done
         label _2_9D:
             $ flag_2_9=3
 
-            jump _2_7G_nondestructive#redirect to the second dialogue
-
-            #jump _2_9_done
+            jump _2_9_done
         label _2_9_done:
 
     if flag_2_9>0:
