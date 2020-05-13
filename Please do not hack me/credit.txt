@@ -11,11 +11,10 @@ Office: Author = "fredericomeyer", link: "https://pixabay.com/illustrations/offi
 Voiture: Author = "MikesPhotos", link: "https://pixabay.com/photos/car-interior-vehicle-auto-1882686/"
 Ciel: Author = "Simon", link: "https://pixabay.com/photos/sky-clouds-atmosphere-air-oxygen-1441936/"
 
+Merci à Charlotte Blanc d'avoir aidé à la rédaction des dialogues du jeu.
+Merci également à Hugo Stache de nous avoir aiguillé dans le processus de développement.
 
 Musiques:
-
-https://www.auboutdufil.com/index.php?mood=suspense
-
 Base 
 
 	Tender Remains par Myuu
@@ -105,11 +104,6 @@ Autre
 		Source: https://www.youtube.com/channel/UCjpsqeJxRUqIBSl0tVSlCog
 		Licence: https://creativecommons.org/licenses/by/3.0/deed.fr
 		Téléchargement (4MB): https://auboutdufil.com/?id=545
-
-
-
-ATTENTION : toutes à crédits obligatoires mais usage commercial possible et gratuites et libres de droit
-
 
 
 
