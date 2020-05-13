@@ -49,6 +49,11 @@ label start:
     $ relation_sarah=0
     $ relation_parker=0
 
+    scene disclaimer
+    with slowdissolve
+
+    $ renpy.pause ()
+
     scene bg_alarm
     with slowdissolve
 
@@ -1643,8 +1648,7 @@ label start:
     play sound "audio/snore.mp3"
     scene bg_black
 
-    "END OF SCRIPT"
-    "END OF SCRIPT"
+    "Fin de la demo. Nous espérons qu'elle vous aura plu et à bientôt pour la suite des aventures de Bob !"
     "END OF SCRIPT"
 
     return
