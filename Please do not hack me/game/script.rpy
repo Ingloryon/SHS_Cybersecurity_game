@@ -772,8 +772,7 @@ label start:
     "Effectivement, je suis arrivé bien en avance."
     "C'est cool, pour une fois je vais avoir le temps de regarder mes mails avant d'attaquer ma journée."
 
-    #scene bg_computer_trash
-    scene bg_computer_mail #En attendant
+    scene bg_computer_mail_alerte
     with mediumdissolve
 
     "Alors quoi de neuf dans la boite aujourd'hui ?"
@@ -812,8 +811,8 @@ label start:
 
     label _2_3B:
         $ flag_2_3 = 1
-        #scene bg_computer_tentative_connexion
-        #with mediumdissolve
+        scene bg_computer_mail_bank
+        with mediumdissolve
 
         "Je sais pas si je deviens parano, mais j’ai l’impression qu’il n’est pas comme d’habitude."
         "Alors… “Nous avons remarqué une connexion depuis un appareil inhabituel, blablabla, veuillez vous connecter sur le site pour confirmer qu’il s’agit bien de vous.”"
@@ -900,7 +899,7 @@ label start:
     label _2_4A:
         $ flag_2_4 = 0
 
-        show alice_smile
+        show alice_neutre
 
         "Salut Alice ! Ça va ? Tu as passé un bon week-end ?"
         Al "Hé Bob ! Oui super, et toi ?"
@@ -964,14 +963,14 @@ label start:
             "Enfin, soit ma boîte mail débloque, soit je perds la tête."
             "Tu crois que je devrais aller me faire dépister pour Alzheimer ?"
 
-            hide alice_smile
-            #show Alice_rire
+            hide alice_neutre
+            show alice_smile
 
             Al "*rire*"
             Al "Mais non Bob ! Tu n’as pas Alzheimer ! Arrête de dire des bêtises !"
             Al "Tu as une bien meilleure mémoire que moi, si un de nous deux doit consulter, ce n’est pas toi !"
 
-            #hide Alice_rire
+            hide alice_smile
             show alice_neutre
 
             Al "Par contre pour ta boîte mail, je me ferais un peu plus de soucis. "
