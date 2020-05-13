@@ -161,7 +161,7 @@ label start:
 
     Ad "Écoute Bob, je vais te le dire franchement, j’ai l’impression que tu me
         donnes souvent le sale boulot à faire."
-    Ad "Je trouve pas ca très productif de ta part et j’aimerais que tu me donnes
+    Ad "Je trouve pas ça très productif de ta part et j’aimerais que tu me donnes
         un peu plus de responsabilités sur le projet de la semaine prochaine."
 
     "...
@@ -354,7 +354,7 @@ label start:
     label _1_4B:
         $ flag_1_4 = 1
 
-        G "Mais tu as intérêt à être super sage à ce concert sinon ta mère va me tuer."
+        "Mais tu as intérêt à être super sage à ce concert sinon ta mère va me tuer."
 
         G "Papa t’es le meilleur ! Merci !"
         "[Gabriel s’en va]"
