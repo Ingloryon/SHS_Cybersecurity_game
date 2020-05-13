@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 577: expected python_expression
-    elif:
-        ^
+File "game/script.rpy", line 946: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Tiens il y a Andrew qui passe justement, je vais lui demander conseil."
+                                                                            ^
+
+File "game/script.rpy", line 1004: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "facebookBob123"
+                    ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun May 03 14:16:28 2020
+Tue May 12 20:07:09 2020
