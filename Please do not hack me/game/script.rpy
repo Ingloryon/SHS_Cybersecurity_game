@@ -11,6 +11,8 @@ define G = Character("Gabriel", color="#0099ff")
 define S = Character("Sarah", color="#6600ff")
 define S_shout = Character("Sarah", color="#6600ff",what_size=54)
 define P = Character("Mr.Parker", color="#660033")
+define M = Character("Marc", color="#006633")
+define VS = Character("Voix de synthèse", color="#FFFFFF")
 
 #Scale Gabriel
 image gabriel_angry= im.FactorScale("gabriel_angry.png", 0.25)
@@ -740,9 +742,208 @@ label start:
 
     #---------------------------------------------------------START Yannick
 
+    play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
+
+    "Il ne faut pas que je traîne, je ne peux pas me permettre d'arriver en retard avec ce nouveau projet."
+    "Tout le monde doit être sur le qui-vive."
+    "Je crois que je n'ai rien oublié, je peux y aller."
+    "Je serai même en avance comme ça."
+    "Salut Gabriel, passe une bonne journée."
+
+    scene bg_job
+    with slowdissolve
+
+    "Effectivement, je suis bien arrivé en avance."
+    "C'est cool, pour une fois je vais avoir le temps de regarder mes mails avant d'attaquer ma journée."
+
+    #scene bank?
+    scene bg_computer_mail #En attendant
+    with mediumdissolve
+
+    "Alors quoi de neuf dans la boite aujourd'hui ?"
+    "Pub, pub, notifications facebook. Rien d'intéressant pour le moment."
+
+    play music "audio/intrigue0.mp3" fadeout 1.0 fadein 1.0
+
+    "Tiens, pourquoi il est déjà marqué comme lu ce mail ?"
+    "C’est bizarre, aurais-je cliqué dessus par inadvertance en me connectant ?"
+    "Tiens donc... et comme par hasard un mail de ma banque juste après."
+    "Tentative de connexion depuis un nouvel appareil ? Je n’aime pas ça du tout... "
+    "Bon aller calme toi Bob et garde la tête froide, ça a un bon en-tête d'e-mail frauduleux."
+    "Je me rappelle qu’on avait fait un mini briefing sur les tentatives de phishing il y a quelques années."
+    "Bon qu’est-ce que je fais du coup ? "
+
+    menu:
+        "Je suis certain que c’est un spam, je vais directement le mettre dans la corbeille, comme ça aucun risque.":
+            jump _2_3A
+
+        "Je vais commencer par l’ouvrir, normalement ça risque pas trop.":
+            jump _2_3B
+
+        # Possibilité de choix et d'interaction en même temps ?!
+        #[Si le joueur découvre le bouton pour accéder à la corbeille]:
+        #   jump _2_3C
+
+    label _2_3A:
+        $ flag_2_3 = 0
+        "Aller hop, adieu vilain petit poisson."
+        "Faut pas me prendre pour un pigeon non plus."
+        jump _2_3_done
+
+    label _2_3B:
+        $ flag_2_3 = 1
+        #scene bg_bank_connect_mail
+
+        "Je sais pas si je deviens parano, mais j’ai l’impression qu’il n’est pas comme d’habitude."
+        "Alors… “Nous avons remarqué une connexion depuis un appareil inhabituel… Blablabla, veuillez vous connecter sur le site pour confirmer qu’il s’agit bien de vous.”"
+
+        menu:
+            "Je vais cliquer sur le lien, le début de l’URL a l’air de correspondre à celle de ma banque.":
+                jump _2_3B_1A
+
+            "Je devrais essayer de retrouver moi-même le lien en naviguant depuis mon moteur de recherche.":
+                jump _2_3B_1B
+
+        label _2_3B_1A:
+            $ flag_2_3B_1 = 0
+            #scene bg_bank_connect
+
+            "Veuillez entrer vos identifiants…"
+
+            menu:
+                "Le site est exactement le même que celui de ma banque, j’entre mes identifiants.":
+                    jump _2_3B_1A_1A
+
+                "Le site ressemble à s’y méprendre, mais ça ressemble bien trop à du phishing, je m’arrête là.":
+                    jump _2_3B_1A_1B
+
+            label _2_3B_1A_1A:
+                $ flag_2_3B_1A_1 = 0
+                "Alors, qu’est-ce donc que cette alerte ? "
+                jump _2_3_alert
+
+            label _2_3B_1A_1B:
+                $ flag_2_3B_1A_1 = 1
+                "Faut pas me prendre pour un pigeon non plus."
+                jump _2_3_done
+
+        label _2_3B_1B:
+            $ flag_2_3B_1 = 1
+            #scene bg_search_bank
+
+            "Alors, voyons voir."
+            "Se connecter…"
+
+            #scene bg_bank_connect
+
+            "Mes alertes..."
+            "On dirait que je suis arrivé à l’URL exacte du mail."
+
+        label _2_3_alert:
+            "Ce qui veut dire que ce n’était pas un spam, et que quelqu’un s’est bel et bien connecté à mon compte !"
+            "Ça date d’hier, et ils me disent que la connexion s’est faite dans la région."
+            "Impossible, je ne me suis pas connecté sur mon compte depuis un bon moment. Le système aurait-il eu un dysfonctionnement ?"
+            "Ou alors, est-ce que ça pourrait être Sarah qui a été vérifier quelque chose ? Elle doit encore avoir les identifiants, vu qu’on faisait compte commun…"
+            "Elle doit être au boulot elle aussi, je l'appellerai ce soir, sans faute."
+            "Dans tous les cas, il va falloir que je tire ça au clair rapidement."
+            jump _2_3_done
+
+    label _2_3C:
+        $ flag_2_3 = 2
+        #scene bg_corbeille_mail
+
+        "Non mais attends, qu’est-ce que c’est que ce bazard ?!?"
+        "On dirait que quelqu’un s’est connecté à la plupart de mes comptes ! Il a même commencé à changer les mots de passe de certains !"
+        "Il faut que je fasse quelque chose au plus vite…"
+        "Mais quoi ?"
+        jump _2_3_done
+
+    label _2_3_done:
+
+    play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
+
+    scene bg_job
+    with mediumdissolve
+
+    menu:
+        "Tiens, Alice est arrivée. Je vais aller lui dire bonjour, ça nous permettra de discuter un moment.":
+            jump _2_4A
+
+        "Je viens de voir Monsieur Parker passer. Je vais lui montrer qu’il a bien fait de se tourner vers moi pour le projet Baker.":
+            jump _2_4B
+
+    label _2_4A:
+        $ flag_2_4 = 0
+
+        show alice_smile
+
+        "Salut Alice ! Ça va ? Tu as passé un bon week-end ?"
+        Al "Hé Bob ! Oui super, et toi ?"
+        "Bien aussi ! J’étais tout seul, Gabriel était chez sa mère. "
+        "Le week-end est passé à une vitesse folle !"
+        Al "C’est souvent comme ça haha, surtout vu le beau temps qu’on a eu !"
+
+
+
+        jump _2_4_done
+
+    label _2_4B:
+        $ flag_2_4 = 1
+
+        show parker_normal
+
+        "Bonjour Monsieur Parker, comment allez-vous ?"
+        P "Bonjour Bob ! Très bien et toi ? "
+        "Bien, je tenais encore à vous remercier de m’avoir mis sur ce projet."
+        "Je vais faire un débrief avec l’équipe ce matin et répartir les tâches pour la semaine à venir !"
+        "J’ai commencé à débroussailler ce week-end et je compte m’investir à fond !"
+        P "Je suis heureux de l’entendre ! "
+        P "Et je ne doute pas que j’aie fait le bon choix en vous mettant sur ce projet. "
+        P "Vous voir motivé comme cela me confirme que j’avais raison !"
+        "Merci Monsieur Parker. "
+        "Je vous tiens au courant des avancées du projet. "
+        "Passez une bonne journée !"
+        P "Merci Bob, pareillement !"
+        jump _2_4_done
+
+    label _2_4_done:
+
+    scene bg_corridor
+    with mediumdissolve
+
     #---------------------------------------------------------STOP Yannick
 
     #---------------------------------------------------------START Hugo
+    play music "audio/intrigue0.mp3" fadeout 1.0 fadein 1.0
+
+    "Hé, salut Marc !"
+    M "Tiens Bob ! Comment ça va aujourd’hui ?"
+    "Bien, bien. Je retourne à mon bureau pour démarrer ma journée de travail !"
+    M "Décidément, toujours à aller discuter à droite à gauche toi ! *rire* Je rigole, tu travailles bien plus que moi hahaha ! Dis donc, qu’est-ce que ça donne le hack de ton Facebook ? Tu as pu résoudre le problème ? "
+    "Le hack de mon Facebook ?"
+    M "Bah oui ! J’ai vu ta publication."
+
+    show bg_phone_publication
+    with slowdissolve
+
+    M "En tout cas, tu as bien fait de le signaler ! J’espère que ça ne te causera pas trop de soucis, des pourris ces hackeurs !"
+
+    hide bg_phone_publication
+
+    M "Bon, je dois y aller, je suis en retard. À plus Bob !"
+
+    hide marc
+
+    "C’est quoi cette histoire de compte piraté ? Ce n’est pas moi qui ai publié ce post. Et Marc avait bien l’air d’être convaincu qu’il venait de moi. Ça ne doit pas être le seul. Je vais aller regarder tout ça d’un peu plus prêt."
+
+    show bg_phone_publication
+    with slowdissolve
+
+    "Effectivement, je peux comprendre qu’ils pensent que ce soit moi. Même nom, mêmes photos, mêmes infos personnelles...
+    \nCe compte est presque entièrement identique au mien. Comment a-t-il pu avoir accès à toutes ces informations ? Et merde, on dirait que le hackeur a pu se connecter à mon véritable compte…
+    \nIl a publié pleins de spams publicitaires sur mon vrai mur pour appuyer l’hypothèse que je me suis fait piraté ! Je ne sais pas trop ce que je peux faire."
+
+
 
     #---------------------------------------------------------STOP Hugo
 
@@ -755,7 +956,15 @@ label start:
     #---------------------------------------------------------STOP Thomas
 
     #---------------------------------------------------------START Mateo
-    #------------------------------------------------------CHOIX_1--------------------------------------------------------
+    #------------------------------------------------------CHOIX_1--------------
+
+    scene bg_black #can be removed when the previous chapter will be written
+    $ flag_2_3B_1=0 #MUST BE REMOVED when the previous chapter will be written
+
+    $ flag_2_7=-1#need to initialize this here to allow _2_7 to reuse choices in _2_6
+    $ flag_2_8=-1#need to initialize this here to allow _2_8 to reuse choices in _2_7
+    $ flag_2_9=-1#need to initialize this here to allow _2_9 to reuse choices in _2_8
+
     #Graphique ordi 20:30
 
     menu:
@@ -765,8 +974,13 @@ label start:
             jump _2_6B
         "Tiens, et si j’appelais Alice ? C’est toujours agréable de discuter avec elle. Aller je me lance !":
             jump _2_6C
+        "Je me demande qui peut bien être derrière mon problème sur facebook. Je vais essayer de creuser un peu.":
+            jump _2_6D
+        "Vu ce que j’ai vu ce matin dans ma boîte mail, je vais me dépêcher d’appeler la banque. Je vais le faire tout de suite." if flag_2_3B_1==1:
+            jump _2_6E
     label _2_6A:
         $ flag_2_6=0
+    label _2_6A_nondestructive:
 
         #[pas fatigué le lendemain]
         #Aller directement à la fin du chapitre
@@ -774,136 +988,330 @@ label start:
         jump _2_6_done
     label _2_6B:
         $ flag_2_6=1
+    label _2_6B_nondestructive:
 
         #Icône du téléphone
         #Musique sonnerie
+        "[Dring…\nDring…\nDring…]"
+        #Stop Musique sonnerie
 
         "[Votre correspondant n’est pas joignable. Veuillez réessayer plus tard.]"
 
         "Ça ne répond pas. Bon, tant pis. Je vais faire autre chose."
 
         jump _2_6_done
+    label _2_6C:
+        $ flag_2_6=2
+    label _2_6C_nondestructive:
+
+        #Icône du téléphone
+        #Musique sonnerie
+        "[Dring…\nDring…\nDring…]"
+        #Stop Musique sonnerie
+
+        #Musique joyeuse
+
+        Al "Allô Bob ? Mais que me vaut cet honneur ?"
+        "Bonsoir Alice ! Rien de spécial, j’avais juste envie de t’appeler."
+        Al "C’est gentil ça ! Puisque que c’est toi qui appelle, c’est toi qui décide de quoi on parle !"
+        "Hahaha, ça me va !"
+
+        menu:
+            "Je peux te parler de mon nouveau sujet favori haha ! Cette histoire de compte   facebook me prend la tête !":
+                jump _2_6C_1A
+            "Je peux te décrire à quelqu’un point je t’ai trouvé ravissante aujourd’hui ?":
+                jump _2_6C_1B
+
+        label _2_6C_1A:
+            $ flag_2_6C_1=0
+
+            Al "Je comprends que ça t’angoisse Bob ! Mais déstresse, et essaie de trouver des solutions. Rester sans rien faire va uniquement faire monter tes angoisses."
+            "Tu n’as pas tort… Mais je n’ai aucune idée de quoi faire ! Tu me connais je suis nul avec ces trucs là !"
+            Al "Il me semble que tu peux demander à Facebook de clôturer le faux compte. Je suis sûre que tu peux trouver des solutions, fais-toi confiance! Ca doit pas être si sorcier que ça !"
+            "Oui c’est vrai. Bon, je vais essayer d’être plus positif alors !"
+            Al "C’est ça que je veux entendre !"
+            "Bon allez j’arrête de t’embêter avec mes problèmes, parlons d’autre chose !"
+            Al "Aucun soucis haha ! On discute de ce que tu veux !"
+            #Black screen
+            "[30 minutes de discussion plus tard…]"
+            Al "Je vais raccrocher, il se fait tard. J’ai passé un très bon moment avec toi Bob merci !"
+            "Pareil pour moi. Merci d’avoir répondue présente. On se voit au bureau !"
+            Al "Oui, à demain !"
+
+            jump _2_6C_1_done
+        label _2_6C_1B:
+            $ flag_2_6C_1=1
+
+            Al "Hihi, Bob arrêteee. Tu vas réussir à me gêner."
+            "Bon d’accord, j’arrête. Mais je me suis rendu compte qu’on se voyait uniquement au bureau. Ça pourrait être sympa qu’on aille se faire un ciné ou un restau un de ces jours non ?  Tu serais partante ?"
+            Al "Oui bien sûr, avec plaisir !"
+            "La semaine prochaine tu pourrais ? Jeudi soir par exemple ?"
+            Al "Oui jeudi soir je suis libre ! Je note ça dans mon agenda !"
+            "Je manquerai pas de te le rappeler sinon ! C’est un des avantages à bosser ensemble !"
+            #Black screen
+            "[30 minutes de discussion plus tard…]"
+            Al "Bon allez, je vais raccrocher, c’est qu’il commence à se faire tard avec tes bêtises. J’ai passé un très bon moment avec toi Bob, merci !"
+            "Pareil pour moi. Merci à toi d’avoir décroché ! Je t’embrasse, on se voit au bureau."
+            Al "Oui, à demain !"
+
+            jump _2_6C_1_done
+        label _2_6C_1_done:
+
+        $ relation_alice=relation_alice+1
+
+        jump _2_6_done
+
+    label _2_6D:
+        $ flag_2_6=3
+    label _2_6D_nondestructive:
+
+        #Musique intrigue
+
+        #Graphique ordinateur maison (recherche Internet)
+
+        "Je trouve un paquet de sites en lien avec ma recherche, mais jusqu’à maintenant ils ne m’apprennent rien d’intéressant…"
+        "L’informatique c’est un vrai métier moi je vous le dis. Allez, j’essaye encore celui-là et après je laisse tomber."
+
+        #Afficher page : https://www.243tech.com/retrouver-la-personne-qui-vous-espionne-facebook/
+
+
+        "Ah tiens. Celui-là m’a l’air intéressant. Ils disent de regarder les photos publiées sur le faux-compte et de consulter la liste d’amis."
+        "Apparemment ça permet d’obtenir des informations sur le hacker. C’est à ma portée, je vais le faire tout de suite."
+
+        #Graphique ordinateur maison (Facebook)
+
+        "Bon, je n’ai rien appris de très intéressant. Je vais retourner voir ce qu’ils conseillent de faire après ça"
+
+        #Afficher page : https://www.243tech.com/retrouver-la-personne-qui-vous-espionne-facebook/
+
+
+        "Ensuite, ils disent d’essayer de changer le mot de passe et de suivre plusieurs étapes. Ca m’a l’être d’être un peu plus long et compliqué à faire."
+        "Je ne sais pas si je vais me lancer là dedans tout de suite, voyons déjà ce que j’ai d’autre à faire."
+
+
+        jump _2_6_done
+    label _2_6E:
+        $ flag_2_6=4
+    label _2_6E_nondestructive:
+
+        "Vu ce que j’ai vu ce matin dans ma boîte mail, je vais me dépêcher d’appeler la banque. Je vais le faire tout de suite."
+        #Icône du téléphone
+        #Musique sonnerie
+        "[Dring…\nDring…\nDring…]"
+        #Stop Musique sonnerie
+        VS "Votre banque est fermée pour le moment. Nous sommes ouverts du lundi au vendredi, de 8h à 18h et le samedi de 8h à 12h. Merci de nous rappeler ultérieurement."
+
+        "C’est vrai qu’il est déjà tard. Il faut que je réessaye d’appeler au plus vite demain."
+
+        jump _2_6_done
     label _2_6_done:
 
+    #------------------------------------------------------CHOIX_2--------------
+
+    if flag_2_6!=0 and flag_2_7==-1:
+
+        #Graphique ordi 21:30
+        "Il est déjà 21h30 ?! Le temps a filé sans que je m’en rende compte… Je ne sais pas ce que je devrais faire vu l’heure qu’il est…"
+
+        menu:
+            "Je vais aller me coucher maintenant. Je m’occuperai du reste demain quand je serai plus en forme.":
+                jump _2_7A
+            "Je vais appeler M. Parker pour voir s’il ne peut pas me libérer ma journée de demain. Il faut que je m’occupe de mes soucis persos." if flag_2_6!=1:
+                jump _2_7B
+            "Je vais réessayer d’appeler M. Parker. J’ai vraiment besoin d’avoir ma journée de demain de libre pour m’occuper de tout ce que j’ai à régler."if flag_2_6==1:
+                jump _2_7C
+            "Tiens et si j’appelais Alice ? C’est toujours agréable de discuter avec elle." if flag 2_6!=2:
+                jump _2_7D
+            "Je me demande qui peut bien être derrière mon problème sur facebook. Je vais essayer de creuser un peu." if flag_2_6!=3:
+                jump _2_7_E
+            "Je vais poursuivre ma piste pour trouver l’identité du hacker. Ca va me prendre du temps mais ça peut marcher. Je vais tenter le coup.":
+                jump _2_7F
+            "Je vais chercher sur Internet comment demander la fermeture de ce faux compte.":
+                jump _2_7G
+        label _2_7A:
+            $ flag_2_7=0
+
+            #[pas fatigué le lendemain]
+            #(Aller directement à la fin du chapitre)
+
+            jump _2_7_done
+        label _2_7B:
+            $ flag_2_7=1
+
+            jump _2_6B_nondestructive#redirect to the first dialogue
+
+            #jump _2_7_done
+        label _2_7C:
+            $ flag_2_7=2
+
+            #Icône du téléphone
+            #Musique sonnerie
+            "[Dring…\nDring…\nDring…]"
+            #Stop Musique sonnerie
+            #Musique dispute
+
+            P "Bob ? Tout va bien ?"
+            "Bonsoir M. Parker. Je suis désolé de vous appeler si tard mais j’aurais vraiment besoin de prendre ma journée de demain… J’ai quelques ennuis personnels."
+            P "Vous m’appelez à bientôt 22h pour me demander un jour de congé ?\n...\nEt vous me le demandez au moment ou je vous confie un des plus gros projets de l’année ?"
+            "Je sais ça tombe mal…"
+            P "En plus, vous connaissez le règlement ! Vous devez me prévenir au moins une semaine à l’avance pour prendre des congés. La veille au soir, ce n‘est pas possible Bob."
+            P "Surtout lorsque je vous confie un projet comme celui-là. Je pensais que vous aviez compris l’ampleur de ce travail mais apparemment ce n’est pas le cas."
+            P "Bonne soirée Bob, je vous attends au bureau demain."
+
+            #Musique de intrigue
+
+            "J’ai intérêt à assurer au boulot demain. M.Parker avait l’air remonté. Mais quelle idée j’ai eu de l’appeler pour lui demander un congé à cette heure-ci…"
+            "Je vais devoir régler mes problèmes perso tout seul et faire avec le boulot."
+            $ relation_parker=relation_parker-1
+
+            jump _2_7_done
+        label _2_7D:
+            $ flag_2_7=3
+
+            jump _2_6C_nondestructive#redirect to the first dialogue
+
+            #jump _2_7_done
+        label _2_7E:
+            $ flag_2_7=4
+
+            jump _2_6D_nondestructive#redirect to the first dialogue
+
+            #jump _2_7_done
+        label _2_7F:
+            $ flag_2_7=5
+        label _2_7F_nondestructive:
+
+            #Afficher page : https://www.243tech.com/retrouver-la-personne-qui-vous-espionne-facebook/
+
+            "Du coup pour la dernière étape ils disent d’essayer de changer le mot de passe."
+            "Ils précisent que je n’arriverai pas à changer le mot de passe du faux-compte étant donné que je ne le connais pas, mais qu’essayer de le changer est suffisant. C’est pas très clair, mais bon je vais continuer."
+            "Apparemment je dois aller sur le faux-profil et copier le nom d’utilisateur dans la barre d’adresse. Mmmm… C’est fait."
+            "Puis se déconnecter de facebook et coller le nom d’utilisateur dans se connecter et cliquer sur “Mot de passe oublié“. Jusque-là, rien de sorcier."
+            "Et là il me propose de recevoir le code de réinitialisation du mot de passe et je dois cliquer sur “Envoyer un SMS”. Ok, voilà j’ai fini."
+            "Ahhh je vois, maintenant j’ai les deux derniers chiffres du numéro de la personne qui m’a hackée. Je vais aller vérifier dans mon répertoire si un de mes numéros se terminent par ces deux derniers chiffres."
+            "En soit le hacker aurait pu utiliser un faux numéro, mais c’est peu probable. C’est aussi possible que le hacker ne fasse absolument pas partie de mon entourage mais bon je n’ai rien à perdre."
+
+            #Graphique principal maison
+
+            "Bon vu le peu de numéros que j’ai dans mon portable c’est pas gagné…"
+            "Gabriel… Non."
+            "Sarah… Non."
+            "Alice… Non."
+            "Parker… Non plus."
+            "Il faut vraiment que je me mette à la technologie. Il y a un numéro qui m’aurait été bien utile tiens…"
+            "Celui d’Andrew. Je ne le sens pas ce gars-là."
+            "En plus il est drôlement doué avec les machines, contrairement à moi. Je devrais essayer d’obtenir son numéro."
+
+            jump _2_7_done
+        label _2_7G:
+            $ flag_2_7=6
+        label _2_7G_nondestructive:
+
+            "Je vais lancer une recherche Internet avec un peu de chance je vais trouver ce que je cherche sans trop galérer. Ce site m’a l’air pas mal."
+
+            #Afficher page : https://www.facebook.com/help/306643639690823?helpref=uf_permalink
+            #+ voir images à la fin du doc
+
+            "La procédure pour fermer un compte m’a l’air claire. Je vais prendre mon temps pour être sûr de ne pas me tromper.\n..."
+            "faire défiler images à la fin du doc ? Voilà et maintenant j’appuie sur confirmer. À priori un rapport m’a été envoyé par mail et ma demande a été transmise aux gérants du site. Parfait."
+
+            jump _2_7_done
+        label _2_7_done:
+
+        "Que l’heure tourne vite… Plus de 23h déjà… Il est trop tard pour passer des appels maintenant."
 
 
-_2_6C {
-B : Tiens, et si j’appelais Alice ? C’est toujours agréable de discuter avec elle.
-Aller je me lance !
-Icône du téléphone
-Musique sonnerie
-“Dring…
-Dring…
-Dring…”
+    #------------------------------------------------------CHOIX_3--------------
 
-Musique joyeuse
+    #Graphique ordi 23:30
 
-Al : Allô Bob ?
-Mais que me vaut cet honneur ?
-B : Bonsoir Alice !
-Rien de spécial, j’avais juste envie de t’appeler.
-Al : C’est gentil ça !
-Puisque que c’est toi qui appelle, c’est toi qui décide de quoi on parle !
-B : Hahaha, ça me va !
+    if _2_6!=0  and _2_7!=0 and flag_2_8==-1 :
+        menu:
+            "C’est l’heure d’aller me coucher, je ne veux pas être trop fatigué demain.":
+                jump _2_8A
+            "Je me demande qui peut bien être derrière mon problème sur facebook. Je vais essayer de creuser un peu." if flag_2_6!=3 and flag_2_7!=4:
+                jump _2_8B
+            "Je vais poursuivre ma piste pour trouver l’identité du hacker. Ca va me prendre du temps mais ça peut marcher. Je vais tenter le coup." if flag_2_7!=5:
+                jump _2_8C
+            "Je vais chercher sur Internet comment demander la fermeture de ce faux compte." if flag_2_8!=6:
+                jump _2_8D
+        label _2_8A:
+            $ flag_2_8=0
 
-	_2_6C_1A {
-B : Je peux te parler de mon nouveau sujet favori haha ! Cette histoire de compte   facebook me prend la tête !
+            #[fatigué le lendemain]
 
-Al : Je comprends que ça t’angoisse Bob !
-Mais déstresse, et essaie de trouver des solutions.
-Rester sans rien faire va uniquement faire monter tes angoisses.
-B : Tu n’as pas tort…
-Mais je n’ai aucune idée de quoi faire !
-Tu me connais je suis nul avec ces trucs là !
-Al : Il me semble que tu peux demander à Facebook de clôturer le faux compte.
-Je suis sûre que tu peux trouver des solutions, fais-toi confiance !
-Ca doit pas être si sorcier que ça !
-B : Oui c’est vrai. Bon, je vais essayer d’être plus positif alors !
-Al: C’est ça que je veux entendre !
-B : Bon allez j’arrête de t’embêter avec mes problèmes, parlons d’autre chose !
-Al : Aucun soucis haha ! On discute de ce que tu veux !
-Black screen : “ 30 minutes plus tard…”
-Graphique Alice joyeuse
-Al : Je vais raccrocher, il se fait tard.
-J’ai passé un très bon moment avec toi Bob merci !
-B : Pareil pour moi. Merci d’avoir répondue présente.
-On se voit au bureau !
-Al : Oui, à demain !
-} end_2_6C_1A
-	_2_6C_1B {
-B : Je peux te décrire à quelqu’un point je t’ai trouvé ravissante aujourd’hui ?
-Graphique Alice happy
-Al : Hihi, Bob arrêteee. Tu vas réussir à me gêner.
-B : Bon d’accord, j’arrête.
-Mais je me suis rendu compte qu’on se voyait uniquement au bureau.
-Ca pourrait être sympa qu’on aille se faire un ciné ou un restau un de ces jours non ?  Tu serais partante ?
-Al : Oui bien sûr, avec plaisir !
-B : La semaine prochaine tu pourrais ? Jeudi soir par exemple ?
-Al : Oui jeudi soir je suis libre ! Je note ça dans mon agenda !
-B : Je manquerai pas de te le rappeler sinon ! C’est un des avantages à bosser ensemble !
-Black screen : “ 30 minutes plus tard…”
-Graphique Alice joyeuse
-Al : Bon allez, je vais raccrocher, c’est qu’il commence à se faire tard avec tes bêtises.
-J’ai passé un très bon moment avec toi Bob, merci !
-B : Pareil pour moi. Merci à toi d’avoir décroché !
-Je t’embrasse, on se voit au bureau.
-Al : Oui, à demain !
+            jump _2_8_done
+        label _2_8B:
+            $ flag_2_8=1
 
-	} end_2_6C_1B
-[Améliore la relation avec Alice]
-Musique intrigue
-} end_2_6C
+            jump _2_6D_nondestructive#redirect to the second dialogue
 
-_2_6D {
-B : Je me demande qui peut bien être derrière mon problème sur facebook. Je vais essayer de creuser un peu.
+            #jump _2_8_done
+        label _2_8C:
+            $ flag_2_8=2
 
-#Graphique ordinateur maison (recherche Internet)
+            jump _2_7F_nondestructive#redirect to the second dialogue
 
-B : Je trouve un paquet de sites en lien avec ma recherche, mais jusqu’à maintenant ils ne m’apprennent rien d’intéressant…
-L’informatique c’est un vrai métier moi je vous le dis.
-Allez, j’essaye encore celui-là et après je laisse tomber.
+            #jump _2_8_done
+        label _2_8D:
+            $ flag_2_8=3
 
-#Afficher page : https://www.243tech.com/retrouver-la-personne-qui-vous-espionne-facebook/
+            jump _2_7G_nondestructive#redirect to the second dialogue
 
+            #jump _2_8_done
+        label _2_8_done:
+    #------------------------------------------------------CHOIX_4--------------
 
-B : Ah tiens.
-Celui-là m’a l’air intéressant.
-Ils disent de regarder les photos publiées sur le faux-compte et de consulter la liste d’amis.
-Apparemment ça permet d’obtenir des informations sur le hacker.
-C’est à ma portée, je vais le faire tout de suite.
+    #Graphique ordi 00:45
 
-Graphique ordinateur maison (Facebook)
+    if _2_6!=0  and _2_7!=0 and _2_8!=0 and flag_2_9==-1 :
+        menu:
+            "J’ai abusé sur l’heure… Je vais être crevé demain, au lit.":
+                jump _2_9A
+            "Je me demande qui peut bien être derrière mon problème sur facebook. Je vais essayer de creuser un peu." if flag_2_6!=3 and flag_2_7!=4 and flag_2_8!=1:
+                jump _2_9B
+            "Je vais poursuivre ma piste pour trouver l’identité du hacker. Ca va me prendre du temps mais ça peut marcher. Je vais tenter le coup." if flag_2_7!=5 and flag_2_8!=2:
+                jump _2_9C
+            "Je vais chercher sur Internet comment demander la fermeture de ce faux compte." if flag_2_7!=6 and flag_2_8!=3:
+                jump _2_9D
+        label _2_9A:
+            $ flag_2_9=0
 
-B : Bon, je n’ai rien appris de très intéressant.
-Je vais retourner voir ce qu’ils conseillent de faire après ça
+            jump _2_9_done
+        label _2_9B:
+            $ flag_2_9=1
 
-#Afficher page : https://www.243tech.com/retrouver-la-personne-qui-vous-espionne-facebook/
+            jump _2_6D_nondestructive#redirect to the second dialogue
+
+            #jump _2_9_done
+        label _2_9C:
+            $ flag_2_9=2
+
+            jump _2_7F_nondestructive#redirect to the second dialogue
+
+            #jump _2_9_done
+        label _2_9D:
+            $ flag_2_9=3
+
+            jump _2_7G_nondestructive#redirect to the second dialogue
+
+            #jump _2_9_done
+        label _2_9_done:
+
+    if flag_2_9>0:
+        "Qu’est-ce que je voulais faire déjà….\nJe me sens tellement fatigué d’un coup..."
+        "Il faut que je….\n…"
+        #[ne met pas de réveil]
+
+    #[très fatigué le lendemain]
+
+    scene bg_black
+    Ronflements ?
 
 
-Ensuite, ils disent d’essayer de changer le mot de passe et de suivre plusieurs étapes.
-Ca m’a l’être d’être un peu plus long et compliqué à faire.
-Je ne sais pas si je vais me lancer là dedans tout de suite, voyons déjà ce que j’ai d’autre à faire.
-
-} end_2_6D
-
-if (_2_3B_1B) {
-_2_6E {
-B : Vu ce que j’ai vu ce matin dans ma boîte mail, je vais me dépêcher d’appeler la banque.
-Je vais le faire tout de suite.
-Icône du téléphone
-Musique sonnerie
-“Dring…
-Dring…
-Dring…
-Votre banque est fermée pour le moment.
-Nous sommes ouverts du lundi au vendredi, de 8h à 18h et le samedi de 8h à 12h.
-Merci de nous rappeler ultérieurement.
-Biiiiip.”
-C’est vrai qu’il est déjà tard.
-Il faut que je réessaye d’appeler au plus vite demain.
-
-} end_2_6E
-} end_2_6
+    "END OF SCRIPT"
+    "END OF SCRIPT"
+    "END OF SCRIPT"
 
 
 
