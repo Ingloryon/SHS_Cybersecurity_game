@@ -119,7 +119,7 @@ label start:
     show alice_smile
     with mediumdissolve
     Al "Hey hey, salut Bob! Comment tu vas ?"
-    al "Alors comme ça il parait que tu vas être assigné sur le projet Baker ?"
+    Al "Alors comme ça il parait que tu vas être assigné sur le projet Baker ?"
 
     "Mais attends comment tu sais déjà ça ? "
 
