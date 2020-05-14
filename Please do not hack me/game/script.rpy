@@ -1634,7 +1634,7 @@ label start:
                 jump _2_8B
             "Je vais poursuivre ma piste pour trouver l’identité du hacker. Ca va me prendre du temps mais ça peut marcher. Je vais tenter le coup." if flag_2_7!=5 and (flag_2_6==3 or flag_2_7==4):
                 jump _2_8C
-            "Je vais chercher sur Internet comment demander la fermeture de ce faux compte." if flag_2_8!=6:
+            "Je vais chercher sur Internet comment demander la fermeture de ce faux compte." if flag_2_7!=6:
                 jump _2_8D
         label _2_8A:
             $ flag_2_8=0
