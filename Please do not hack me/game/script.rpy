@@ -1718,6 +1718,8 @@ label start:
     "Fin de la demo. Nous espérons qu'elle vous aura plu et à bientôt pour la suite des aventures de Bob !"
     "END OF SCRIPT"
 
+    stop sound
+
     return
 
     screen could_click_extension:
