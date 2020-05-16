@@ -12,7 +12,7 @@ Voiture: Author = "MikesPhotos", link: "https://pixabay.com/photos/car-interior-
 Ciel: Author = "Simon", link: "https://pixabay.com/photos/sky-clouds-atmosphere-air-oxygen-1441936/"
 
 Merci à Charlotte Blanc d'avoir aidé à la rédaction des dialogues du jeu.
-Merci également à Hugo Stache de nous avoir aiguillé dans le processus de développement.
+Merci également à Hugo "Stache" Hueber de nous avoir aiguillé dans le processus de développement.
 
 Musiques:
 Base 

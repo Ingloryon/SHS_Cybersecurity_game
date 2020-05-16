@@ -772,8 +772,7 @@ label start:
     "Effectivement, je suis arrivé bien en avance."
     "C'est cool, pour une fois je vais avoir le temps de regarder mes mails avant d'attaquer ma journée."
 
-    #scene bg_computer_trash
-    scene bg_computer_mail #En attendant
+    scene bg_computer_mail_alerte
     with mediumdissolve
 
     "Alors quoi de neuf dans la boite aujourd'hui ?"
@@ -812,8 +811,8 @@ label start:
 
     label _2_3B:
         $ flag_2_3 = 1
-        #scene bg_computer_tentative_connexion
-        #with mediumdissolve
+        scene bg_computer_mail_bank
+        with mediumdissolve
 
         "Je sais pas si je deviens parano, mais j’ai l’impression qu’il n’est pas comme d’habitude."
         "Alors… “Nous avons remarqué une connexion depuis un appareil inhabituel, blablabla, veuillez vous connecter sur le site pour confirmer qu’il s’agit bien de vous.”"
@@ -900,7 +899,7 @@ label start:
     label _2_4A:
         $ flag_2_4 = 0
 
-        show alice_smile
+        show alice_neutre
 
         "Salut Alice ! Ça va ? Tu as passé un bon week-end ?"
         Al "Hé Bob ! Oui super, et toi ?"
@@ -964,14 +963,14 @@ label start:
             "Enfin, soit ma boîte mail débloque, soit je perds la tête."
             "Tu crois que je devrais aller me faire dépister pour Alzheimer ?"
 
-            hide alice_smile
-            #show Alice_rire
+            hide alice_neutre
+            show alice_smile
 
             Al "*rire*"
             Al "Mais non Bob ! Tu n’as pas Alzheimer ! Arrête de dire des bêtises !"
             Al "Tu as une bien meilleure mémoire que moi, si un de nous deux doit consulter, ce n’est pas toi !"
 
-            #hide Alice_rire
+            hide alice_smile
             show alice_neutre
 
             Al "Par contre pour ta boîte mail, je me ferais un peu plus de soucis. "
@@ -1170,8 +1169,8 @@ label start:
 
     label _2_5_done:
 
-        scene bg_black
-        with slowdissolve
+    scene bg_black
+    with slowdissolve
 
     play music "audio/base0.mp3" fadeout 1.0 fadein 1.0
 
@@ -1181,6 +1180,9 @@ label start:
     "Pfiou, impossible de dégager ne serait-ce que 15 minutes de la journée."
     "Ça va vraiment être du gros boulot ce projet Baker."
     "Salut Gabriel ! Je suis rentré !"
+
+    show gabriel_normal
+    with mediumdissolve
 
     if flag_2_5 == 1:
         G "Salut Papa ! Alors tu as eu droit à des nouvelles farces de ton hacker ?"
@@ -1196,6 +1198,9 @@ label start:
         "Je suis inquiet. J’ai l’impression que quelqu’un essaye de me jouer des tours en ce moment… "
 
         G "Mais non ! Bon allez je vais dans ma chambre, à tout à l’heure !"
+
+        hide gabriel_normal
+        with mediumdissolve
 
     else:
         G "Salut Papa !"
@@ -1223,6 +1228,9 @@ label start:
         "Merci mille fois Gabriel, tu me sors une épine du pied !"
 
         G "De rien papa, allez je te laisse à tes mots de passe, je vais dans ma chambre."
+
+        hide gabriel_normal
+        with mediumdissolve
 
         "Ok, changer mon mot de passe Facebook, ça devrait pas être sorcier."
 
@@ -1271,14 +1279,20 @@ label start:
 
     "Je vais commencer par faire le repas pour Gabriel comme ça après je ne serai plus embêté pour régler mes problèmes."
 
-    "[Après le repas]"
-
-    show bg_computer_2030
+    scene bg_black
     with slowdissolve
+
+    "[Après le repas]"
 
     play music "audio/intrigue1.mp3" fadeout 1.0 fadein 1.0
 
+    scene bg_living_room
+    with slowdissolve
+
     "Gabriel est remonté dans sa chambre. Qu’est-ce que je devrais faire en premier ?"
+
+    scene bg_computer_2030
+    with mediumdissolve
 
     #------------------------------------------------------CHOIX_1--------------
     $ flag_2_7=-1 #need to initialize this here to allow _2_7 to reuse choices in _2_6
@@ -1300,7 +1314,6 @@ label start:
         $ flag_2_6=0
     label _2_6A_nondestructive:
 
-        #[pas fatigué le lendemain]
         #Aller directement à la fin du chapitre
 
         jump _2_6_done
@@ -1308,27 +1321,39 @@ label start:
         $ flag_2_6=1
     label _2_6B_nondestructive:
 
-        #Icône du téléphone
+        show sarah_phone:
+            xalign 0.03
+            yalign 0.98
+        with slowdissolve
+
         play sound "audio/phone_ring.mp3"
+
         "Dring…"
         "\nDring…"
         "\n\nDring…"
+
         stop sound
 
         "Votre correspondant n’est pas joignable. Veuillez réessayer plus tard."
 
         "Ça ne répond pas. Bon, tant pis. Je vais faire autre chose."
+        hide sarah_phone
 
         jump _2_6_done
     label _2_6C:
         $ flag_2_6=2
     label _2_6C_nondestructive:
+        show sarah_phone:
+            xalign 0.03
+            yalign 0.98
+        with slowdissolve
 
-        #Icône du téléphone
         play sound "audio/phone_ring.mp3"
+
         "Dring…"
         "\nDring…"
         "\n\nDring…"
+
         stop sound
         play music "audio/joyeuse0.mp3" fadeout 1.0 fadein 1.0
 
@@ -1384,6 +1409,8 @@ label start:
 
         $ relation_alice=relation_alice+1
 
+        hide sarah_phone
+
         play music "audio/intrigue1.mp3" fadeout 1.0 fadein 1.0
 
         jump _2_6_done
@@ -1395,21 +1422,28 @@ label start:
         play music "audio/intrigue1.mp3" fadeout 1.0 fadein 1.0
 
         #Graphique ordinateur maison (recherche Internet)
+        scene bg_computer_search_hack
+        with mediumdissolve
 
         "Je trouve un paquet de sites en lien avec ma recherche, mais jusqu’à maintenant ils ne m’apprennent rien d’intéressant…"
         "L’informatique c’est un vrai métier moi je vous le dis. Allez, j’essaye encore celui-là et après je laisse tomber."
 
         #Afficher page : https://www.243tech.com/retrouver-la-personne-qui-vous-espionne-facebook/
+        scene bg_computer_site_hack_2030
+        with mediumdissolve
 
         "Ah tiens. Celui-là m’a l’air intéressant. Ils disent de regarder les photos publiées sur le faux-compte et de consulter la liste d’amis."
         "Apparemment ça permet d’obtenir des informations sur le hacker. C’est à ma portée, je vais le faire tout de suite."
 
         #Graphique ordinateur maison (Facebook)
+        scene bg_computer_facebook_2030
+        with mediumdissolve
 
         "Bon, je n’ai rien appris de très intéressant. Je vais retourner voir ce qu’ils conseillent de faire après ça"
 
         #Afficher page : https://www.243tech.com/retrouver-la-personne-qui-vous-espionne-facebook/
-
+        scene bg_computer_site_hack_2030
+        with mediumdissolve
 
         "Ensuite, ils disent d’essayer de changer le mot de passe et de suivre plusieurs étapes. Ca m’a l’être d’être un peu plus long et compliqué à faire."
         "Je ne sais pas si je vais me lancer là dedans tout de suite, voyons déjà ce que j’ai d’autre à faire."
@@ -1421,15 +1455,25 @@ label start:
     label _2_6E_nondestructive:
 
         "Vu ce que j’ai vu ce matin dans ma boîte mail, je vais me dépêcher d’appeler la banque. Je vais le faire tout de suite."
-        #Icône du téléphone
+
+        show sarah_phone:
+            xalign 0.03
+            yalign 0.98
+        with slowdissolve
+
         play sound "audio/phone_ring.mp3"
+
         "Dring…"
         "\nDring…"
         "\n\nDring…"
+
         stop sound
+
         VS "Votre banque est fermée pour le moment. Nous sommes ouverts du lundi au vendredi, de 8h à 18h et le samedi de 8h à 12h. Merci de nous rappeler ultérieurement."
 
         "C’est vrai qu’il est déjà tard. Il faut que je réessaye d’appeler au plus vite demain."
+
+        hide sarah_phone
 
         jump _2_6_done
     label _2_6_done:
@@ -1453,7 +1497,7 @@ label start:
             "Tiens et si j’appelais Alice ? C’est toujours agréable de discuter avec elle." if flag_2_6!=2:
                 jump _2_7D
             "Je me demande qui peut bien être derrière mon problème sur facebook. Je vais essayer de creuser un peu." if flag_2_6!=3:
-                jump _2_7_E
+                jump _2_7E
             "Je vais poursuivre ma piste pour trouver l’identité du hacker. Ca va me prendre du temps mais ça peut marcher. Je vais tenter le coup."if flag_2_6==3:
                 jump _2_7F
             "Je vais chercher sur Internet comment demander la fermeture de ce faux compte.":
@@ -1474,12 +1518,19 @@ label start:
         label _2_7C:
             $ flag_2_7=2
 
-            #Icône du téléphone
+            show sarah_phone:
+                xalign 0.03
+                yalign 0.98
+            with slowdissolve
+
             play sound "audio/phone_ring.mp3"
+
             "Dring…"
             "\nDring…"
             "\n\nDring…"
+
             stop sound
+
             play music "audio/dispute1.mp3" fadeout 1.0 fadein 1.0
 
             P "Bob ? Tout va bien ?"
@@ -1493,6 +1544,8 @@ label start:
             P "Surtout lorsque je vous confie un projet comme celui-là."
             P "Je pensais que vous aviez compris l’ampleur de ce travail mais apparemment ce n’est pas le cas."
             P "Bonne soirée Bob, je vous attends au bureau demain."
+
+            hide sarah_phone
 
             play music "audio/intrigue1.mp3" fadeout 1.0 fadein 1.0
 
@@ -1519,6 +1572,8 @@ label start:
         label _2_7F_nondestructive:
 
             #Afficher page : https://www.243tech.com/retrouver-la-personne-qui-vous-espionne-facebook/
+            scene bg_computer_site_hack_2130
+            with slowdissolve
 
             "Du coup pour la dernière étape ils disent d’essayer de changer le mot de passe."
             "Ils précisent que je n’arriverai pas à changer le mot de passe du faux-compte étant donné que je ne le connais pas, mais qu’essayer de le changer est suffisant."
@@ -1551,6 +1606,8 @@ label start:
 
             #Afficher page : https://www.facebook.com/help/306643639690823?helpref=uf_permalink
             #+ voir images à la fin du doc
+            scene bg_computer_report_fb_2130
+            with slowdissolve
 
             "La procédure pour fermer un compte m’a l’air claire."
             "Je vais prendre mon temps pour être sûr de ne pas me tromper."
@@ -1577,7 +1634,7 @@ label start:
                 jump _2_8B
             "Je vais poursuivre ma piste pour trouver l’identité du hacker. Ca va me prendre du temps mais ça peut marcher. Je vais tenter le coup." if flag_2_7!=5 and (flag_2_6==3 or flag_2_7==4):
                 jump _2_8C
-            "Je vais chercher sur Internet comment demander la fermeture de ce faux compte." if flag_2_8!=6:
+            "Je vais chercher sur Internet comment demander la fermeture de ce faux compte." if flag_2_7!=6:
                 jump _2_8D
         label _2_8A:
             $ flag_2_8=0
@@ -1606,9 +1663,19 @@ label start:
         label _2_8_done:
     #------------------------------------------------------CHOIX_4--------------
 
-    if flag_2_6!=0  and flag_2_7!=0 and flag_2_8!=0 and flag_2_9==-1 :
+    # Dans le cas où il n'y qu'un choix possible, ça montre pas le menu mais ça prend directement le
+    # premier choix (j'ai copy/paste les conditions du menu)
+    if  flag_2_6!=0  and flag_2_7!=0 and flag_2_8!=0 and flag_2_9==-1 and not (flag_2_6!=3 and flag_2_7!=4 and flag_2_8!=1) and not (flag_2_7!=5 and flag_2_8!=2 and (flag_2_6==3 or flag_2_7==4 or flag_2_8==1)) and not (flag_2_7!=6 and flag_2_8!=3):
 
-        show bg_computer_0045
+        scene bg_black
+        with slowdissolve
+
+        "J’ai abusé sur l’heure… Je vais être crevé demain, au lit."
+        jump _2_9A
+
+    elif flag_2_6!=0  and flag_2_7!=0 and flag_2_8!=0 and flag_2_9==-1 :
+
+        scene bg_computer_0045
         with slowdissolve
 
         menu:
@@ -1650,6 +1717,8 @@ label start:
 
     "Fin de la demo. Nous espérons qu'elle vous aura plu et à bientôt pour la suite des aventures de Bob !"
     "END OF SCRIPT"
+
+    stop sound
 
     return
 
