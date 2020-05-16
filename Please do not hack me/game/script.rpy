@@ -67,23 +67,23 @@ label start:
     "Mmmh... ?"
     "Pfff et dire que j’ai déjà mis le réveil le plus tard possible..."
     "Faut vraiment que je pense à me coucher plus tôt."
-    "Bon aller pas le temps de trainer, petite douche et c’est parti."
+    "Bon allez pas le temps de trainer, petite douche et c’est parti."
 
     scene bg_living_room
     with slowdissolve
 
-    "Ok je suis prêt"
-    "Je n’ai pas l’impression d’avoir entendu le réveil de Gabriel, je vais aller rapidement vérifier qu’il est réveillé."
+    "-Ok je suis prêt-"
+    "-Je n’ai pas l’impression d’avoir entendu le réveil de mon fils, je vais aller rapidement vérifier qu’il est réveillé.-"
     B_shout "Gabriel ! N'oublie pas que tu dois être à l’arrêt de bus dans moins de 20 minutes !"
     B_shout "Eh Gabriel tu es réveillé ?"
 
     show gabriel_normal
     with mediumdissolve
     G "Ouais ouais, c’est bon t’inquiète."
-    G "Je serai au bus à l’heure, je prend juste une douche j’ai pas envie de petit déjeuner ce matin."
+    G "Je serai au bus à l’heure, je prends juste une douche j’ai pas envie de petit déjeuner ce matin."
 
     "Bon ça marche."
-    "D’ailleurs ca te dirait qu’on se mate un film ce soir pour fêter la fin de la semaine ?
+    "D’ailleurs ça te dirait qu’on se mate un film ce soir pour fêter la fin de la semaine ?
         \nJe pensais télécharger le dernier Star Wars."
 
     G "Heu ouais pourquoi pas mais je devais peut-être voir Loris ce soir. Je te redis."
@@ -128,7 +128,7 @@ label start:
 
     "Mais attends comment tu sais déjà ça ? "
 
-    Al "Héhé, j’ai mes informateurs tu sais ? J’ai embauché pleins de gens pour t’espionner !"
+    Al "Héhé, j’ai mes informateurs tu sais ? J’ai embauché plein de gens pour t’espionner !"
 
     "Non mais arrête, il vient juste de l’annoncer comment tu as fait pour être déjà au courant ?"
 
@@ -276,7 +276,7 @@ label start:
     show gabriel_normal
     with mediumdissolve
 
-    "Alors Gabriel, comment s’est passé ta journée aujourd’hui ?"
+    "Alors Gabriel, comment s’est passée ta journée aujourd’hui ?"
 
     hide gabriel_normal
     show gabriel_angry
@@ -368,7 +368,7 @@ label start:
 
         hide gabriel_normal
 
-        "*Soupire*"
+        "*Soupirs*"
         "[Compose le numéro de Sarah sur son portable]"
         "Salut Sarah, c’est moi."
 
@@ -401,7 +401,7 @@ label start:
 
         S "Tu es vraiment pas croyable."
         S "Tu ne pourrais pas prendre mon parti pour une fois ?"
-        S "À chaque fois que tu en a l’opportunité, tu me rappelles pourquoi j’ai demandé le divorce c’est dingue !"
+        S "À chaque fois que tu en as l’opportunité, tu me rappelles pourquoi j’ai demandé le divorce c’est dingue !"
         S "Mon week-end, ma décision."
         S "Et dire oui tout le temps à ton fils ne fera pas de toi un meilleur père."
         S "Salut, on se voit demain matin."
@@ -431,7 +431,7 @@ label start:
 
     "\"Super journée, je commence à bosser sur un nouveau projet très cool et important au boulot, affaire à suivre... ;)\""
 
-    "Voilà pas mal, j’imagine déjà la tête d’Andrew quand il va lire ça."
+    "Voilà, pas mal, j’imagine déjà la tête d’Andrew quand il va lire ça."
 
 #-------------------------------------------------------------------------------
 
@@ -504,7 +504,7 @@ label start:
     scene bg_computer_starwars_first_link
     with slowdissolve
 
-    "Je vais essayer sur ce site"
+    "Je vais essayer sur ce site."
     "[Télécharge le fichier]"
     "Mmmh... La qualité est vraiment pas terrible..."
 
@@ -709,8 +709,8 @@ label start:
 
         G "Oui c’est ça. C’est un jeu coopératif, les effets sont super bien faits."
         "Je n’aime pas trop que tu joues à des jeux de guerre."
-        "Il y a pleins de jeux sympas pour les jeunes sur la console, pourquoi tu choisis ceux-là ?"
-        G "J’ai pleins de copains qui y jouent, et ils en parlent tout le temps à l’école. Du coup, ça me permet d’en discuter avec eux."
+        "Il y a plein de jeux sympas pour les jeunes sur la console, pourquoi tu choisis ceux-là ?"
+        G "J’ai plein de copains qui y jouent, et ils en parlent tout le temps à l’école. Du coup, ça me permet d’en discuter avec eux."
         G "Et puis c’est pas réel, c’est qu’un jeu."
         "Tu sais, faire quelque chose pour être comme les autres, c’est jamais une bonne idée. Réfléchis-y !"
         "Si tu veux, on regarde ensemble pour te trouver un nouveau jeu plus sympa et plus adapté à ton âge. Et je te l’offre."
@@ -733,7 +733,7 @@ label start:
 
         G "Vous êtes pénibles avec maman ! C’est bon je suis grand et c’est qu’un jeu ! Et c’est des rumeurs ton truc là."
         G "Je suis sûr que c’est des parents pénibles qui ont créé cette rumeur pour pas que leurs enfants jouent aux jeux vidéos."
-        G "Si tu te renseignais un peu, tu verrais qu’il y a pleins d'études qui montrent qu’il n’y a aucun lien."
+        G "Si tu te renseignais un peu, tu verrais qu’il y a plein d'études qui montrent qu’il n’y a aucun lien."
         "Bon écoute, c’est simple, tu n’as plus le droit de jouer à ce jeu."
         G "C’est injuste !"
         "C’est pour ton bien, Gabriel. En plus il fait beau, tu n’as qu’à aller voir tes copains ou profiter de l’extérieur."
@@ -785,7 +785,7 @@ label start:
     "C’est bizarre, aurais-je cliqué dessus par inadvertance en me connectant ?"
     "Tiens donc... et comme par hasard un mail de ma banque juste après."
     "Tentative de connexion depuis un nouvel appareil ? Je n’aime pas ça du tout... "
-    "Bon aller calme toi Bob et garde la tête froide, ça a un bon en-tête d'e-mail frauduleux."
+    "Bon allez calme toi Bob et garde la tête froide, ça a un bon en-tête d'e-mail frauduleux."
     "Je me rappelle qu’on avait fait un mini briefing sur les tentatives de phishing il y a quelques années."
     "Bon qu’est-ce que je fais du coup ? "
 
@@ -806,7 +806,7 @@ label start:
 
     label _2_3A:
         $ flag_2_3 = 0
-        "Aller hop, adieu vilain petit poisson."
+        "Allez hop, adieu vilain petit poisson."
         "Faut pas me prendre pour un pigeon non plus."
         jump _2_3_done
 
@@ -1052,7 +1052,7 @@ label start:
 
     "C’est quoi cette histoire de compte piraté ? Ce n’est pas moi qui ai publié ce post."
     "Et Marc avait bien l’air d’être convaincu qu’il venait de moi. Ça ne doit pas être le seul."
-    "Je vais aller regarder tout ça d’un peu plus prêt."
+    "Je vais aller regarder tout ça d’un peu plus près."
 
     show bg_phone_publication
     with slowdissolve
@@ -1060,7 +1060,7 @@ label start:
     "Effectivement, je peux comprendre qu’ils pensent que ce soit moi. Même nom, mêmes photos, mêmes infos personnelles... Ce compte est presque entièrement identique au mien."
     "Comment a-t-il pu avoir accès à toutes ces informations ?"
     "Et merde, on dirait que le hackeur a pu se connecter à mon véritable compte..."
-    "Il a publié pleins de spams publicitaires sur mon vrai mur pour appuyer l’hypothèse que je me suis fait piraté !"
+    "Il a publié plein de spams publicitaires sur mon vrai mur pour appuyer l’hypothèse que je me suis fait pirater !"
     "Je ne sais pas trop ce que je peux faire."
 
     hide bg_phone_publication
@@ -1118,7 +1118,7 @@ label start:
         G "Du coup, commence par changer ton mot de passe par sûreté."
         G "Tu pourrais également activer l'authentification à deux facteurs. Finalement, une fois que tu auras sécurisé ton compte, tu devrais signaler le faux à Facebook."
         "Ça marche, je vais commencer par changer le mot de passe du coup. Je verrai ce soir pour le reste."
-        "Merci mille fois Gabriel, tu me sors une épine du pieds !"
+        "Merci mille fois Gabriel, tu me sors une épine du pied !"
         G "De rien papa, aller je te laisse à tes mots de passe, je dois y aller. À ce soir !"
 
         hide sarah_phone
@@ -1162,7 +1162,7 @@ label start:
         "Brave petit Gargamel, tu es vraiment la meilleure des sécurités !"
         "Voilà, ça devrait faire l’affaire."
         "Je vais noter ce nouveau mot de passe quelque part, sinon je risque de l’oublier."
-        "Aller il faut vraiment que je m’y mette maintenant, tout le monde doit déjà m’attendre pour la distribution des tâches du projet Baker..."
+        "Allez il faut vraiment que je m’y mette maintenant, tout le monde doit déjà m’attendre pour la distribution des tâches du projet Baker..."
 
         $ relation_gabriel=relation_gabriel+1
         # A changé son mot de passe de Facebook -> met fin à futurs problèmes avec Facebook MAIS le joueur devra se rappeler le nouveau mdp à un moment de l’aventure
@@ -1220,9 +1220,9 @@ label start:
         G "Du coup, commence par changer ton mot de passe par sûreté."
         G "Tu pourrais également activer l'authentification à deux facteurs. Finalement, une fois que tu auras sécurisé ton compte, tu devrais signaler le faux à Facebook."
         "Ça marche, je vais commencer par changer le mot de passe du coup."
-        "Merci mille fois Gabriel, tu me sors une épine du pieds !"
+        "Merci mille fois Gabriel, tu me sors une épine du pied !"
 
-        G "De rien papa, aller je te laisse à tes mots de passe, je vais dans ma chambre."
+        G "De rien papa, allez je te laisse à tes mots de passe, je vais dans ma chambre."
 
         "Ok, changer mon mot de passe Facebook, ça devrait pas être sorcier."
 
@@ -1286,11 +1286,11 @@ label start:
     $ flag_2_9=-1 #need to initialize this here to allow _2_9 to reuse choices in _2_8
 
     menu:
-        " Je vais essayer de me détendre et de me coucher tôt pour réattaquer du bon pied demain. Après la journée que j’ai passé, je n’ai pas le courage de m‘en occuper ce soir":
+        " Je vais essayer de me détendre et de me coucher tôt pour réattaquer du bon pied demain. Après la journée que j’ai passée, je n’ai pas le courage de m‘en occuper ce soir":
             jump _2_6A
         "Je vais appeler M. Parker pour voir s’il ne peut pas me libérer ma journée de demain. Il faut que je m’occupe de mes soucis persos.":
             jump _2_6B
-        "Tiens, et si j’appelais Alice ? C’est toujours agréable de discuter avec elle. Aller je me lance !":
+        "Tiens, et si j’appelais Alice ? C’est toujours agréable de discuter avec elle. Allez je me lance !":
             jump _2_6C
         "Je me demande qui peut bien être derrière mon problème sur facebook. Je vais essayer de creuser un peu.":
             jump _2_6D
@@ -1340,7 +1340,7 @@ label start:
         menu:
             "Je peux te parler de mon nouveau sujet favori haha ! Cette histoire de compte   facebook me prend la tête !":
                 jump _2_6C_1A
-            "Je peux te décrire à quelqu’un point je t’ai trouvé ravissante aujourd’hui ?":
+            "Je peux te décrire à quel point je t’ai trouvé ravissante aujourd’hui ?":
                 jump _2_6C_1B
 
         label _2_6C_1A:
