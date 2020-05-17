@@ -1365,7 +1365,7 @@ label start:
         menu:
             "Je peux te parler de mon nouveau sujet favori haha ! Cette histoire de compte   facebook me prend la tête !":
                 jump _2_6C_1A
-            "Je peux te décrire à quel point je t’ai trouvé ravissante aujourd’hui ?":
+            "Je peux te décrire à quel point je t’ai trouvée ravissante aujourd’hui ?":
                 jump _2_6C_1B
 
         label _2_6C_1A:
