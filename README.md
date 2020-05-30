@@ -18,7 +18,7 @@ Bon et n'oubliez pas qu'il est toujours possible de s'en sortir en se tournant v
 
 __**Crédits:**__  
 
-Musiques:  
+__Musiques:__  
 Tender Remains par Myuu  
   Titre:  Tender Remains  
   Auteur: Myuu  
@@ -88,8 +88,7 @@ Amarià - Lovely Swindler
   Licence: https://creativecommons.org/licenses/by/3.0/deed.fr  
   Téléchargement (4MB): https://auboutdufil.com/?id=545  
     
-Graphiques:  
-
+__Graphiques:__  
 Gabriel: Name = "Code: Shounen A (V3)", Author = "runeraccoon", License = CC BY-NC 4.0: "https://creativecommons.org/licenses/by-nc/4.0/", link: "https://runeraccoon.itch.io/code-shounen-a"   
 Alice: (modified) Name = "Visual Novel Character - Miranda", Author = "artbykelci", License = Pro Licence : "https://www.gamedevmarket.net/about/licences/", link: "https://www.gamedevmarket.net/asset/visual-novel-character-miranda/"  
 Andrew: Name = "Visual Novel Character - Edward", Author = "artbykelci", License = Pro Licence : "https://www.gamedevmarket.net/about/licences/", link: "https://www.gamedevmarket.net/asset/visual-novel-character-edward/"  
