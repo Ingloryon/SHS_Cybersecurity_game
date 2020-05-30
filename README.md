@@ -1,10 +1,11 @@
 __Pitch du jeu **Please, don't hack me**:__
 
-"Veuillez entrer votre nouveau mot de passe"
-"Votre mot de passe doit contenir une majuscule"
-"Votre mot de passe doit contenir un caractère spécial"
-"Activez l'authentification à deux facteurs"
-- "Rhaa mais ils vont arrêter de m'emmerder avec leurs demandes à la noix ?"
+"Veuillez entrer votre nouveau mot de passe" \n
+"Votre mot de passe doit contenir une majuscule" \n
+"Votre mot de passe doit contenir un caractère spécial" \n
+"Activez l'authentification à deux facteurs" \n
+
+"Rhaa mais ils vont arrêter de m'emmerder avec leurs demandes à la noix ?"
 
 Vous êtes-vous déjà demandé pour quelles sont les raisons derrière ces demandes ? Plongez dans la vie monotone de Bob qui en fonction de vos choix, prendra probablement un tournant inattendu...
 
