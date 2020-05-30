@@ -1,4 +1,4 @@
-Pitch du jeu Please, don't hack me :
+__Pitch du jeu **Please, don't hack me**:__
 
 "Veuillez entrer votre nouveau mot de passe"
 "Votre mot de passe doit contenir une majuscule"
@@ -8,13 +8,13 @@ Pitch du jeu Please, don't hack me :
 
 Vous êtes-vous déjà demandé pour quelles sont les raisons derrière ces demandes ? Plongez dans la vie monotone de Bob qui en fonction de vos choix, prendra probablement un tournant inattendu...
 
-Disclaimer: 
+__**Disclaimer:**__ 
 Ce jeu a été réalisé dans le cadre du cours SHS: "Le jeu vidéo: média natif du numérique" (HUM-380)
 Il a pour but de sensibiliser à de meilleures pratiques en matière de sécurité informatique.
 Dans une optique de simplification narrative et technique, certaines situations présentes dans le jeu peuvent ne pas refléter les systèmes de sécurité réellement mis en place.
 Bon et n'oubliez pas qu'il est toujours possible de s'en sortir en se tournant vers les bonnes personnes...
 
-Crédits:
+__**Crédits:**__
 
 Musiques:
 Tender Remains par Myuu
